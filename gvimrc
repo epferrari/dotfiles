@@ -1,6 +1,13 @@
-set guioptions-=T " hide toolbar
-set lines=55 columns=100
+colorscheme wombat
+if has("mac")
+  set guifont=Monaco:h12.00
+  set fuopt=maxhorz,maxvert
+else
+  set gfn=DejaVu\ Sans\ Mono\ Bold\ 10
+end
 
-colorscheme railscasts
+set guioptions-=T  "remove toolbar
+set guioptions-=m  "remove menu
 
-set guifont=DejaVu\ Sans\ Mono:h13
+set lines=47
+set columns=161

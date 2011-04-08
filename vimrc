@@ -1,207 +1,120 @@
-" based on http://github.com/jferris/config_files/blob/master/vimrc
-
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
+syntax on
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+filetype off
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
-set nobackup
-set nowritebackup
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+compiler ruby
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" This is an alternative that also works in block mode, but the deleted
-" text is lost and it only works for putting the current register.
-"vnoremap p "_dp
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-  set hlsearch
-endif
-
-" Switch wrap off for everything
-set nowrap
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Set File type to 'text' for files ending in .txt
-  autocmd BufNewFile,BufRead *.txt setfiletype text
-
-  " Enable soft-wrapping for text files
-  autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  " autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  " Automatically load .vimrc source when saved
-  autocmd BufWritePost .vimrc source $MYVIMRC
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-" if has("folding")
-  " set foldenable
-  " set foldmethod=syntax
-  " set foldlevel=1
-  " set foldnestmax=2
-  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-" endif
-
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-" Always display the status line
-set laststatus=2
-
-" \ is the leader character
-let mapleader = ","
-
-" Edit the README_FOR_APP (makes :R commands work)
-map <Leader>R :e doc/README_FOR_APP<CR>
-
-" Leader shortcuts for Rails commands
-map <Leader>m :Rmodel 
-map <Leader>c :Rcontroller 
-map <Leader>v :Rview 
-map <Leader>u :Runittest 
-map <Leader>f :Rfunctionaltest 
-map <Leader>tm :RTmodel 
-map <Leader>tc :RTcontroller 
-map <Leader>tv :RTview 
-map <Leader>tu :RTunittest 
-map <Leader>tf :RTfunctionaltest 
-map <Leader>sm :RSmodel 
-map <Leader>sc :RScontroller 
-map <Leader>sv :RSview 
-map <Leader>su :RSunittest 
-map <Leader>sf :RSfunctionaltest 
-
-" Hide search highlighting
-map <Leader>h :set invhls <CR>
-
-" Opens an edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>e
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-" Opens a tab edit command with the path of the currently edited file filled in
-" Normal mode: <Leader>t
-map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-" Inserts the path of the currently edited file into a command
-" Command mode: Ctrl+P
-cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-
-" Duplicate a selection
-" Visual mode: D
-vmap D y'>p
-
-" Press Shift+P while in visual mode to replace the selection without
-" overwriting the default register
-vmap P p :call setreg('"', getreg('0')) <CR>
-
-" For Haml
-au! BufRead,BufNewFile *.haml         setfiletype haml
-
-" No Help, please
-nmap <F1> <Esc>
-
-" Press ^F from insert mode to insert the current file name
-imap <C-F> <C-R>=expand("%")<CR>
-
-" Maps autocomplete to tab
-imap <Tab> <C-N>
-
-imap <C-L> <Space>=><Space>
-
-" Display extra whitespace
-" set list listchars=tab:»·,trail:·
-
-" Edit routes
-command! Rroutes :e config/routes.rb
-command! Rschema :e db/schema.rb
-
-" Local config
-if filereadable(".vimrc.local")
-  source .vimrc.local
-endif
-
-" Use Ack instead of Grep when available
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor\ --ignore-dir=tmp\ --ignore-dir=coverage
-endif
-
-" Color scheme
-" colorscheme vividchalk
-" highlight NonText guibg=#060606
-" highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
-" Numbers
+set hlsearch
 set number
-set numberwidth=5
+set showmatch
+set incsearch
+set background=dark
+set hidden
+set backspace=indent,eol,start
+set textwidth=0 nosmartindent tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+set ruler
+set wrap
+set dir=/tmp//
+set scrolloff=5
 
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
-
-" Tab completion options
-" (only complete to the longest unambiguous match, and show a menu)
-set completeopt=longest,menu
-set wildmode=list:longest,list:full
-set complete=.,t
-
-" case only matters with mixed case expressions
 set ignorecase
 set smartcase
 
-" Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-set tags=./tags;
+let g:AckAllFiles = 0
+let g:AckCmd = 'ack --type-add ruby=.feature --ignore-dir=tmp 2> /dev/null'
 
-let g:fuf_splitPathMatching=1
+let html_use_css=1
+let html_number_lines=0
+let html_no_pre=1
 
-" Open URL
-command -bar -nargs=1 OpenURL :!open <args>
-function! OpenURL()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
-  echo s:uri
-  if s:uri != ""
-	  exec "!open \"" . s:uri . "\""
-  else
-	  echo "No URI found in line."
-  endif
+let vimclojure#WantNailgun = 0
+let vimclojure#HighlightBuiltins = 1
+let vimclojure#ParenRainbow = 1
+
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+
+let g:rubycomplete_buffer_loading = 1
+
+let g:fuzzy_ignore = "*.log,tmp/*,db/sphinx/*,data"
+let g:fuzzy_ceiling = 50000
+let g:fuzzy_matching_limit = 10
+
+let g:no_html_toolbar = 'yes'
+
+autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
+
+autocmd FileType tex setlocal textwidth=78
+autocmd BufNewFile,BufRead *.txt setlocal textwidth=78
+
+autocmd FileType ruby runtime ruby_mappings.vim
+imap <C-L> <SPACE>=><SPACE>
+map <silent> <LocalLeader>cj :!clj %<CR>
+map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f<CR>
+map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
+map <silent> <LocalLeader>nr :NERDTree<CR>
+map <silent> <LocalLeader>nf :NERDTreeFind<CR>
+map <silent> <LocalLeader>ff :FuzzyFinderTextMate<CR>
+map <silent> <LocalLeader>ft :FuzzyFinderTag<CR>
+map <silent> <LocalLeader>fb :FuzzyFinderBuffer<CR>
+map <silent> <LocalLeader>fr :FuzzyFinderTextMateRefreshFiles<CR>
+map <silent> <LocalLeader>gd :e product_diff.diff<CR>:%!git diff<CR>:setlocal buftype=nowrite<CR>
+map <silent> <LocalLeader>pd :e product_diff.diff<CR>:%!svn diff<CR>:setlocal buftype=nowrite<CR>
+map <silent> <LocalLeader>nh :nohls<CR>
+map <LocalLeader>aw :Ack '<C-R><C-W>'
+map <silent> <LocalLeader>bd :bufdo :bd<CR>
+map <silent> <LocalLeader>cc :TComment<CR>
+map <silent> <LocalLeader>uc :TComment<CR>
+command Wsudo w !sudo tee %
+cnoremap <Tab> <C-L><C-D>
+
+if version >= 700
+    autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
+    autocmd FileType tex setlocal spell spelllang=en_us
+endif
+
+if &t_Co == 256
+  colorscheme vibrantink
+endif
+
+" Highlight trailing whitespace
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
+" Set up highlight group & retain through colorscheme changes
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+map <silent> <LocalLeader>ws :highlight clear ExtraWhitespace<CR>
+
+" Highlight too-long lines
+autocmd BufRead,InsertEnter,InsertLeave * 2match LineLengthError /\%126v.*/
+highlight LineLengthError ctermbg=black guibg=black
+autocmd ColorScheme * highlight LineLengthError ctermbg=black guibg=black
+
+set laststatus=2
+set statusline=
+set statusline+=%<\                       " cut at start
+set statusline+=%2*[%n%H%M%R%W]%*\        " buffer number, and flags
+set statusline+=%-40f\                    " relative path
+set statusline+=%=                        " seperate between right- and left-aligned
+set statusline+=%1*%y%*%*\                " file type
+set statusline+=%10(L(%l/%L)%)\           " line
+set statusline+=%2(C(%v/125)%)\           " column
+set statusline+=%P                        " percentage of file
+
+" http://techspeak.plainlystated.com/2009/08/vim-tohtml-customization.html
+function! DivHtml(line1, line2)
+  exec a:line1.','.a:line2.'TOhtml'
+  %g/<style/normal $dgg
+  %s/<\/style>\n<\/head>\n//
+  %s/body {/.vim_block {/
+  %s/<body\(.*\)>\n/<div class="vim_block"\1>/
+  %s/<\/body>\n<\/html>/<\/div>
+  "%s/\n/<br \/>\r/g
+
+  set nonu
 endfunction
-map <Leader>w :call OpenURL()<CR>
-
+command -range=% DivHtml :call DivHtml(<line1>,<line2>)
