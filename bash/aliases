@@ -13,3 +13,5 @@ function railsapp {
 
 # misc
 alias reload='. ~/.bash_profile'
+alias cuke='cucumber -r features'
+alias remove_all_whitespace="find . -name '*.rb' -type f -print0 | xargs -0 sed -i '' 's/[ ]*$//g'"
