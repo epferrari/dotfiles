@@ -69,7 +69,7 @@ map <LocalLeader>aw :Ack '<C-R><C-W>'
 map <silent> <LocalLeader>bd :bufdo :bd<CR>
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
-command Wsudo w !sudo tee %
+"command Wsudo w !sudo tee %       <----uncomment for Shift+W sudo save"
 cnoremap <Tab> <C-L><C-D>
 
 if version >= 700
