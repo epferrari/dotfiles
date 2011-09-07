@@ -118,3 +118,8 @@ function! DivHtml(line1, line2)
   set nonu
 endfunction
 command -range=% DivHtml :call DivHtml(<line1>,<line2>)
+
+" Fix copy/paste on Ubuntu
+nmap <C-V> "+gP
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y
