@@ -22,3 +22,6 @@ alias lq='find ./ -type f -name "*.feature" -print | xargs ls -rt | tail -1 | xa
 
 # Show last 5 modified cukes
 alias slq='find ./ -type f -name "*.feature" -print | xargs ls -rlt | tail -5'
+
+alias log='tail -f -n 800 log/development.log'
+alias qlog='tail -f -n 800 log/cucumber.log'
