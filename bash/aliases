@@ -18,7 +18,7 @@ alias remove_all_whitespace="find . -name '*.rb' -type f -print0 | xargs -0 sed 
 alias ts='tddium spec'
 
 # Run last cuke
-alias lq='find -type f -name "*.feature" -print | xargs ls -rt | tail -1 | xargs bundle exec cucumber -r features'
+alias lq='find ./ -type f -name "*.feature" -print | xargs ls -rt | tail -1 | xargs bundle exec cucumber -r features'
 
 # Show last 5 modified cukes
-alias slq='find -type f -name "*.feature" -print | xargs ls -rlt | tail -5'
+alias slq='find ./ -type f -name "*.feature" -print | xargs ls -rlt | tail -5'
