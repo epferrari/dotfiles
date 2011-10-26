@@ -25,3 +25,13 @@ alias slq='find ./ -type f -name "*.feature" -print | xargs ls -rlt | tail -5'
 
 alias log='tail -f -n 800 log/development.log'
 alias qlog='tail -f -n 800 log/cucumber.log'
+
+
+# Operating-system dependent commands
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+  alias mvim=gvim
+  alias pbcopy="xsel -b"
+  alias logout="gnome-session-save --logout"
+fi
