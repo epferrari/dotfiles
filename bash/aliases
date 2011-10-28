@@ -31,7 +31,7 @@ alias qlog='tail -f -n 800 log/cucumber.log'
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
-  alias mvim=gvim
+  alias mvim="gvim -f &"
   alias pbcopy="xsel -b"
   alias logout="gnome-session-save --logout"
 fi
