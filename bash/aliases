@@ -32,6 +32,5 @@ platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
   alias pbcopy="xsel -b"
-  gvim_load() { gvim $1 -f & }
-  alias mvim=gvim_load
+  alias mvim=gvim
 fi

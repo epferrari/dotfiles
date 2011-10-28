@@ -120,6 +120,7 @@ endfunction
 command -range=% DivHtml :call DivHtml(<line1>,<line2>)
 
 " Fix copy/paste on Ubuntu
-nmap <C-V> "+gP
-imap <C-V> <ESC><C-V>i
-vmap <C-C> "+y
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
