@@ -11,6 +11,12 @@ function railsapp {
   rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
 }
 
+function delete_merged_branches {
+  git branch -d $( git branch --merged | grep -v '^\*' | grep -v 'master' );
+}
+
+alias dmb='delete_merged_branches'
+
 # misc
 alias reload='. ~/.bash_profile'
 alias cuke='bundle exec cucumber -r features'
