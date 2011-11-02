@@ -40,3 +40,26 @@ if [[ "$unamestr" == 'Linux' ]]; then
   alias pbcopy="xsel -b"
   alias mvim=gvim
 fi
+
+# Jeff aliases
+alias fbolt='cd ~/dev/fbolt'
+alias s='script/server'
+alias c='script/console'
+alias migrate='rake db:migrate'
+alias mp='rake db:migrate && rake db:test:prepare'
+alias m='script/generate migration'
+alias gp='git pull origin master'
+alias qc='cucumber --tags ~@javascript --tags ~@sphinx'
+
+alias setlib='export DYLD_LIBRARY_PATH="/usr/local/lib:$DYLD_LIBRARY_PATH"'
+alias unsetlib='unset DYLD_LIBRARY_PATH'
+
+alias gpom='git push origin master'
+
+gf () { git fetch origin $*:$* && git co $*; }
+
+bm () { ./script/generate migration $* && rake db:migrate && rake db:test:prepare; }
+
+brclean () { git branch -d $( git branch --merged | grep -v '^\*' | grep -v 'master' ); }
+
+
