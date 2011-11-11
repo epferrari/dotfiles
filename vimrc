@@ -69,7 +69,8 @@ map <LocalLeader>aw :Ack '<C-R><C-W>'
 map <silent> <LocalLeader>bd :bufdo :bd<CR>
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
-map <silent> <LocalLeader>ws :%s/\s*$//g
+map <silent> <LocalLeader>ws :%s/\s*$//g<CR>
+map <silent> <LocalLeader>fl :s/\([;,{]\) */\1\r  /g<CR>:s/  }/}/g<CR>:nohls<CR>
 "command Wsudo w !sudo tee %       <----uncomment for Shift+W sudo save"
 cnoremap <Tab> <C-L><C-D>
 
