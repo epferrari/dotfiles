@@ -131,3 +131,7 @@ vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+
+" Create a VIM scratch file with F4
+map <F4> :tabe ~/vim_scratch.txt<CR>
+imap <F4> :tabe ~/vim_scratch.txt<CR>
