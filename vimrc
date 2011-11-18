@@ -135,3 +135,8 @@ imap <C-v> <ESC>"+pa
 " Create a VIM scratch file with F4
 map <F4> :tabe ~/vim_scratch.txt<CR>
 imap <F4> :tabe ~/vim_scratch.txt<CR>
+
+" Ctags
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <F5> :TlistToggle<cr>
