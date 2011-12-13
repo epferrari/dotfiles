@@ -59,5 +59,14 @@ gf () { git fetch origin $*:$* && git co $*; }
 
 bm () { ./script/generate migration $* && rake db:migrate && rake db:test:prepare; }
 
+# Branch Clean: clears out all local git branches that have already been merged into the active branch
 brclean () { git branch -d $( git branch --merged | grep -v '^\*' | grep -v 'master' ); }
+
+# Remote Branch Clean: clears out all remote branches that have already been merged into master
+rbrclean () {
+  git fetch
+  git checkout master
+  git pull origin master
+  git push --delete origin $(git branch -r --merged | grep -v '^\*' | grep -v 'origin/master' | grep 'origin/' | sed 's/origin\///g')
+}
 
