@@ -64,7 +64,7 @@ brclean () { git branch -d $( git branch --merged | grep -v '^\*' | grep -v 'mas
 
 # Remote Branch Clean: clears out all remote branches that have already been merged into master
 rbrclean () {
-  git fetch
+  git fetch --prune
   git checkout master
   git pull origin master
   git push --delete origin $(git branch -r --merged | grep -v '^\*' | grep -v 'origin/master' | grep 'origin/' | sed 's/origin\///g')
