@@ -20,7 +20,11 @@ alias dmb='delete_merged_branches'
 # misc
 alias reload='. ~/.bash_profile'
 alias cuke='bundle exec cucumber -r features'
-alias remove_all_whitespace="find . -name '*.rb' -type f -print0 | xargs -0 sed -i '' 's/[ ]*$//g'"
+
+# example: replace *.rb find_string replace_string
+function replace {
+  find . -name "$1" -type f -print0 | xargs -0 sed -i -e "s/$2/$3/g"
+}
 alias ts='tddium spec'
 
 # Run last cuke
