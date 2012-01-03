@@ -45,6 +45,9 @@ let g:fuzzy_matching_limit = 10
 
 let g:no_html_toolbar = 'yes'
 
+" Delete this line (or set g:autoclose_on to 1) to enable autoclose parens
+let g:autoclose_on = 0
+
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
