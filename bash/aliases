@@ -71,6 +71,11 @@ rbrclean () {
   git fetch --prune
   git checkout master
   git pull origin master
-  git push --delete origin $(git branch -r --merged | grep -v '^\*' | grep -v 'origin/master' | grep 'origin/' | sed 's/origin\///g')
+  branches_to_delete="$(git branch -r --merged | grep -v '^\*' | grep -v 'origin/master' | grep 'origin/' | sed 's/origin\///g')"
+  if [[ "$branches_to_delete" == "" ]]; then
+    echo "No remote branches to delete"
+  else
+    git push --delete origin $branches_to_delete
+  fi
 }
 
