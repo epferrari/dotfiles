@@ -73,8 +73,8 @@ map <silent> <LocalLeader>bd :bufdo :bd<CR>
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
 
-"ws -- white space: removes all extra whitespace from a file
-map <silent> <LocalLeader>ws :%s/\s*$//g<CR>
+"ws -- white space: removes all trailing whitespace from a file
+map <silent> <LocalLeader>ws :%s/\s\+$//<CR>
 
 "fl -- format line: expands a single line of parameters into multiple lines
 map <silent> <LocalLeader>fl :s/\([;,{]\) */\1\r  /g<CR>:s/  }/}/g<CR>:nohls<CR>
@@ -97,7 +97,7 @@ autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
 " Set up highlight group & retain through colorscheme changes
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-map <silent> <LocalLeader>ws :highlight clear ExtraWhitespace<CR>
+map <silent> <LocalLeader>hws :highlight clear ExtraWhitespace<CR>
 
 " Highlight too-long lines
 autocmd BufRead,InsertEnter,InsertLeave * 2match LineLengthError /\%126v.*/
