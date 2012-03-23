@@ -42,10 +42,10 @@ fi
 
 # Jeff aliases
 alias fbolt='cd ~/dev/fbolt'
-alias s='script/server'
+alias s='rails server'
 alias migrate='rake db:migrate'
 alias mp='rake db:migrate && rake db:test:prepare'
-alias m='script/generate migration'
+alias m='rails generate migration'
 alias gp='git pull origin master'
 alias qc='bundle exec cucumber --tags ~@javascript --tags ~@sphinx'
 
