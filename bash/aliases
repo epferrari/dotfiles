@@ -89,3 +89,6 @@ function gbclean {
 }
 
 alias gbc='gbclean'
+
+alias qspork='bundle exec spork cucumber'
+alias rspork='bundle exec spork'
