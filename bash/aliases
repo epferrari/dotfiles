@@ -14,6 +14,7 @@ function railsapp {
 # misc
 alias reload='. ~/.bash_profile'
 alias cuke='bundle exec cucumber -r features'
+alias icuke='CUCUMBER_INTERACTIVE=true bundle exec cucumber -r features'
 
 # example: replace *.rb find_string replace_string
 function replace {
