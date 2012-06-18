@@ -13,6 +13,12 @@ function replace {
   find . -name "$1" -type f -print0 | xargs -0 sed -i -e "s/$2/$3/g"
 }
 
+# autoFormat: remove trailing whitespace and auto-indent multiple files
+#     example: autoFormat *.rb
+function autoFormat {
+  find . -name "$1" -exec vim -s ~/.bin/formatDocs.vim {} \;
+}
+
 ######### Rails ###########
 alias qspork='bundle exec spork cucumber'
 alias rspork='bundle exec spork'
