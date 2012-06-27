@@ -1,2 +1,4 @@
 :%s/\s\+$//
-gg=G :wq!
+:norm gg=G
+:%s/^  end\n*  \(\w\)/  end\r\r  \1/
+:wq!
