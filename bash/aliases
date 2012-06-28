@@ -1,38 +1,47 @@
 . ~/.zsh/aliases
 
+####### General ###########
+
 # changing directory to code project
 function c { cd ~/code/$1; }
 
-# alternative to "rails" command to use templates
-function railsapp {
-  template=$1
-  appname=$2
-  shift 2
-  rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
-}
-
-# misc
 alias reload='. ~/.bash_profile'
-alias cuke='bundle exec cucumber -r features'
 
-# example: replace *.rb find_string replace_string
+# replace: find/replace strings across multiple files
+#     example: replace *.rb find_string replace_string
 function replace {
   find . -name "$1" -type f -print0 | xargs -0 sed -i -e "s/$2/$3/g"
 }
-alias ts='tddium spec'
 
-# Run last cuke
-alias lq='find . -type f -name "*.feature" -print | xargs ls -rt | tail -1 | xargs bundle exec cucumber -r features'
+# autoFormat: remove trailing whitespace and auto-indent multiple files
+#     example: autoFormat *.rb
+function autoFormat {
+  find . -name "$1" -exec vim -s ~/.bin/formatDocs.vim {} \;
+}
 
-# Show last 5 modified cukes
-alias slq='find . -type f -name "*.feature" -print | xargs ls -rlt | tail -5'
+######### Rails ###########
+alias qspork='bundle exec spork cucumber'
+alias rspork='bundle exec spork'
 
 alias log='tail -f -n 800 log/development.log'
 alias qlog='tail -f -n 800 log/cucumber.log'
 alias tlog='tail -f -n 800 log/test.log'
 
+alias ts='tddium spec'
 
-# Operating-system dependent commands
+
+####### Cucumber ##########
+alias cuke='bundle exec cucumber -r features'
+alias icuke='CUCUMBER_INTERACTIVE=true bundle exec cucumber -r features'
+
+# slq (show last cukes): Show last 5 modified cukes
+alias slq='find . -type f -name "*.feature" -print | xargs ls -rlt | tail -5'
+
+# lq (last cuke): Run last modified cuke
+alias lq='find . -type f -name "*.feature" -print | xargs ls -rt | tail -1 | xargs bundle exec cucumber -r features'
+
+
+####### Linux-Mac Compatibility ###########
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
@@ -40,23 +49,8 @@ if [[ "$unamestr" == 'Linux' ]]; then
   alias mvim=gvim
 fi
 
-# Jeff aliases
-alias fbolt='cd ~/dev/fbolt'
-alias s='rails server'
-alias migrate='rake db:migrate'
-alias mp='rake db:migrate && rake db:test:prepare'
-alias m='rails generate migration'
-alias gp='git pull origin master'
-alias qc='bundle exec cucumber --tags ~@javascript --tags ~@sphinx'
 
-alias setlib='export DYLD_LIBRARY_PATH="/usr/local/lib:$DYLD_LIBRARY_PATH"'
-alias unsetlib='unset DYLD_LIBRARY_PATH'
-
-alias gpom='git push origin master'
-
-gf () { git fetch origin $*:$* && git co $*; }
-
-bm () { ./script/generate migration $* && rake db:migrate && rake db:test:prepare; }
+################# Git ###############
 
 # Branch Clean: clears out all local git branches that have already been merged into the active branch
 brclean () { git branch -d $( git branch --merged | grep -v '^\*' | grep -v 'master' ); }
@@ -90,5 +84,3 @@ function gbclean {
 
 alias gbc='gbclean'
 
-alias qspork='bundle exec spork cucumber'
-alias rspork='bundle exec spork'
