@@ -46,7 +46,7 @@ show_branch_if_git_folder ()
 show_host_if_remote ()
 {
   if [[ $(who am i) =~ \([0-9\.]+\)$ ]]; then
-    echo -e '\h'
+    echo `hostname`
   else
     return 0
   fi
