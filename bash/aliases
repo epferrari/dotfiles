@@ -19,6 +19,8 @@ function autoFormat {
   find . -name "$1" -exec vim -s ~/.bin/formatDocs.vim {} \;
 }
 
+alias yummy='yum -y'
+
 ######### Rails ###########
 alias qspork='bundle exec spork cucumber'
 alias rspork='bundle exec spork'
