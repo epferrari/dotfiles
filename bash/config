@@ -2,18 +2,3 @@ export PS1="\w$ "
 export EDITOR="vi"
 export AUTOFEATURE="true"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
-# Start SSH Agent
-if [ ! -z $SSH_AGENT_PID ]; then
-  echo "Agent running as $SSH_AGENT_PID"
-
-  if [ ! -d /proc/$SSH_AGENT_PID ]; then
-    # Stale agent PID, restart agent
-    ssh-agent > ~/.ssh_agent && source ~/.ssh_agent
-  fi
-else
-  # Agent is not running
-  ssh-agent > ~/.ssh_agent
-  source ~/.ssh_agent > /dev/null
-fi
-
