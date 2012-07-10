@@ -43,4 +43,13 @@ show_branch_if_git_folder ()
   fi
 }
 
-PS1='$(show_branch_if_git_folder)\u@\h\[${c_red}\]\w\[${c_sgr0}\]: '
+show_host_if_remote ()
+{
+  if [[ $(who am i) =~ \([0-9\.]+\)$ ]]; then
+    echo -e '\h'
+  else
+    return 0
+  fi
+}
+
+PS1='$(show_branch_if_git_folder)\u@$(show_host_if_remote)\[${c_red}\]\w\[${c_sgr0}\]: '
