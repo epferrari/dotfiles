@@ -34,11 +34,13 @@ branch_color ()
 show_branch_if_git_folder ()
 {
   git_branch=$(parse_git_branch)
-  if [ -z git_branch ]; then
-    echo -e 'git'
+
+  if [ -n "$git_branch" ]; then
+    echo -n [$(branch_color)$git_branch${c_sgr0}]
+    echo -n ' '
   else
     return 0
   fi
 }
 
-PS1='[\[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]] \u@\[${c_red}\]\w\[${c_sgr0}\]: '
+PS1='$(show_branch_if_git_folder)\u@\h\[${c_red}\]\w\[${c_sgr0}\]: '
