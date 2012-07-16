@@ -31,18 +31,6 @@ branch_color ()
   echo -ne $color
 }
 
-show_branch_if_git_folder ()
-{
-  git_branch=$(parse_git_branch)
-
-  if [ -n "$git_branch" ]; then
-    echo -n [$git_branch]
-    echo -n ' '
-  else
-    return 0
-  fi
-}
-
 show_host_if_remote ()
 {
   if [[ $(who am i) =~ \([0-9\.]+\)$ ]]; then
@@ -52,4 +40,4 @@ show_host_if_remote ()
   fi
 }
 
-PS1='\[$(branch_color)\]$(show_branch_if_git_folder)\[${c_sgr0}\]\u@$(show_host_if_remote)\[${c_red}\]\w\[${c_sgr0}\]: '
+PS1='$(if [ -n "$(parse_git_branch)" ]; then echo "[\[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]] "; fi)\u@$(show_host_if_remote)\[${c_red}\]\w\[${c_sgr0}\]: '
