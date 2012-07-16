@@ -36,7 +36,7 @@ show_branch_if_git_folder ()
   git_branch=$(parse_git_branch)
 
   if [ -n "$git_branch" ]; then
-    echo -n [$(branch_color)$git_branch${c_sgr0}]
+    echo -n [$git_branch]
     echo -n ' '
   else
     return 0
@@ -52,4 +52,4 @@ show_host_if_remote ()
   fi
 }
 
-PS1='$(show_branch_if_git_folder)\u@$(show_host_if_remote)\[${c_red}\]\w\[${c_sgr0}\]: '
+PS1='\[$(branch_color)\]$(show_branch_if_git_folder)\[${c_sgr0}\]\u@$(show_host_if_remote)\[${c_red}\]\w\[${c_sgr0}\]: '
