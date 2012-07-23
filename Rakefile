@@ -30,6 +30,7 @@ task :install do
       link_file(file)
     end
   end
+  initialize_submodules
 end
 
 desc "install dotfiles without any prompts, assuming overwrite"
@@ -49,6 +50,7 @@ task :promptless_install do
       link_file(file)
     end
   end
+  initialize_submodules
 end
 
 def replace_file(file)
@@ -66,4 +68,8 @@ def link_file(file)
     puts "linking ~/.#{file}"
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
   end
+end
+
+def initialize_submodules
+  system %Q{git submodule init && git submodule update && git submodule status}
 end
