@@ -43,15 +43,7 @@ alias scaffold='script/generate nifty_scaffold'
 
 alias rc='bundle exec rails console'
 alias rg='bundle exec rails generate'
-# Use thin if it is installed
-function rs {
-  if command_exists thin ; then
-    thin start $@
-  else
-    rails server $@
-  fi
-}
-
+alias rs='bundle exec rails server'
 
 ####### Cucumber ##########
 alias cuke='bundle exec cucumber -r features'
