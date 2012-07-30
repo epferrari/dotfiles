@@ -25,19 +25,8 @@ alias gma='git commit -am'
 alias gra='git remote add'
 alias grr='git remote rm'
 
-# rails 2
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias scaffold='script/generate nifty_scaffold'
-
-# rails 3
-alias rc='bundle exec rails console'
-alias rs='bundle exec rails server'
-alias rg='bundle exec rails generate'
-
+# rails
 alias a='autotest -rails'
-alias tlog='tail -f log/development.log'
 alias migrate='rake db:migrate db:test:clone'
 alias rst='touch tmp/restart.txt'
 
