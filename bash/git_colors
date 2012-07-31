@@ -40,4 +40,4 @@ show_host_if_remote ()
   fi
 }
 
-PS1='$(if [ -n "$(parse_git_branch)" ]; then echo "[\[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]] "; fi)\u@$(show_host_if_remote)\[${c_red}\]\w\[${c_sgr0}\]: '
+PS1='$(if [ -n "$(parse_git_branch)" ]; then echo "[\[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]] "; fi)\u@\[${c_cyan}\]$(show_host_if_remote)\[${c_red}\]\w\[${c_sgr0}\]: '
