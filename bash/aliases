@@ -115,3 +115,5 @@ function git-branch-authors {
     fi
   done
 }
+
+alias gba='git-branch-authors'
