@@ -25,6 +25,7 @@ command_exists () {
 
 alias yumy='yum -y'
 alias yummy='yum -y'
+alias vi='vim'
 
 ######### Rails ###########
 alias qspork='bundle exec spork cucumber'
