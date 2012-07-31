@@ -14,11 +14,16 @@ function replace {
 }
 
 # autoFormat: remove trailing whitespace and auto-indent multiple files
-#     example: autoFormat *.rb
-function autoFormat {
+#     example: autoformat *.rb
+function autoformat {
   find . -name "$1" -exec vim -s ~/.bin/formatDocs.vim {} \;
 }
 
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+
+alias yumy='yum -y'
 alias yummy='yum -y'
 
 ######### Rails ###########
@@ -31,6 +36,14 @@ alias tlog='tail -f -n 800 log/test.log'
 
 alias ts='tddium spec'
 
+alias sc='script/console'
+alias ss='script/server'
+alias sg='script/generate'
+alias scaffold='script/generate nifty_scaffold'
+
+alias rc='bundle exec rails console'
+alias rg='bundle exec rails generate'
+alias rs='bundle exec rails server'
 
 ####### Cucumber ##########
 alias cuke='bundle exec cucumber -r features'
