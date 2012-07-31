@@ -101,7 +101,7 @@ function gbclean {
 alias gbc='gbclean'
 
 function git-branch-authors {
-  git branch -r | while read branch
+  git branch -r | grep -v 'HEAD' | while read branch
   do
     name="$(git log --pretty=tformat:%an -1 $branch)"
     if [ $# -gt 0 ] && [ "$name" == "$1" ]
