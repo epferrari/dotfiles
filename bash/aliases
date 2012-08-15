@@ -25,6 +25,7 @@ command_exists () {
 
 alias yumy='yum -y'
 alias yummy='yum -y'
+alias vi='vim'
 
 ######### Rails ###########
 alias qspork='bundle exec spork cucumber'
@@ -61,6 +62,7 @@ platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
   alias pbcopy="xsel -b"
+  function gvim () { (/usr/bin/gvim -f "$@" &) }
   alias mvim=gvim
 fi
 
@@ -99,3 +101,20 @@ function gbclean {
 
 alias gbc='gbclean'
 
+function git-branch-authors {
+  git branch -r | grep -v 'HEAD' | while read branch
+  do
+    name="$(git log --pretty=tformat:%an -1 $branch)"
+    if [ $# -gt 0 ] && [ "$name" == "$1" ]
+    then
+      echo $branch : $name
+    fi
+
+    if [ $# -eq 0 ]
+    then
+      echo $branch : $name
+    fi
+  done
+}
+
+alias gba='git-branch-authors'

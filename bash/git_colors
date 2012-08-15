@@ -1,7 +1,16 @@
-c_cyan=`tput setaf 6`
+# Text formatting params
+c_default=`tput sgr0`
+
 c_red=`tput setaf 1`
 c_green=`tput setaf 2`
-c_sgr0=`tput sgr0`
+c_yellow=`tput setaf 3`
+c_blue=`tput setaf 4`
+c_purple=`tput setaf 5`
+c_cyan=`tput setaf 6`
+c_white=`tput setaf 7`
+
+c_bold=`tput bold`
+c_underline=`tput sgr 0 1`
 
 parse_git_branch ()
 {
@@ -40,4 +49,4 @@ show_host_if_remote ()
   fi
 }
 
-PS1='$(if [ -n "$(parse_git_branch)" ]; then echo "[\[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]] "; fi)\u@$(show_host_if_remote)\[${c_red}\]\w\[${c_sgr0}\]: '
+PS1='$(if [ -n "$(parse_git_branch)" ]; then echo "[\[$(branch_color)\]$(parse_git_branch)\[${c_default}\]] "; fi)\u@\[${c_blue}\]$(show_host_if_remote)\[${c_cyan}\]\w\[${c_default}\]: '
