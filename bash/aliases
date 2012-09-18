@@ -15,6 +15,10 @@ function replace {
 
 # autoformat: remove trailing whitespace and auto-indent multiple files
 function autoformat {
+  find "$1" -type f -exec vim -s ~/.bin/formatDocs.vim {} \;
+}
+
+function autoformatall {
   find . -name .git -prune -o -iname "*.rb" -exec vim -s ~/.bin/formatDocs.vim {} \;
   find . -name .git -prune -o -iname "*.css" -exec vim -s ~/.bin/formatDocs.vim {} \;
   find . -name .git -prune -o -iname "*.js" -exec vim -s ~/.bin/formatDocs.vim {} \;
