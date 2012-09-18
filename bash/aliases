@@ -25,7 +25,6 @@ function autoformatall {
   autoformat "*.coffee"
   autoformat "*.scss"
   autoformat "*.sass"
-  autoformat "*.yml"
   autoformat "*.feature"
 }
 
