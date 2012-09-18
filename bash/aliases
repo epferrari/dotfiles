@@ -22,6 +22,7 @@ function autoformat {
   find . -name .git -prune -o -iname "*.scss" -exec vim -s ~/.bin/formatDocs.vim {} \;
   find . -name .git -prune -o -iname "*.sass" -exec vim -s ~/.bin/formatDocs.vim {} \;
   find . -name .git -prune -o -iname "*.yml" -exec vim -s ~/.bin/formatDocs.vim {} \;
+  find . -name .git -prune -o -iname "*.feature" -exec vim -s ~/.bin/formatDocs.vim {} \;
 }
 
 command_exists () {
