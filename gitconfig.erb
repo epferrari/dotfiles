@@ -11,6 +11,7 @@
   rl = branch -a
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%%an>%Creset' --abbrev-commit --date=relative
   pup = !sh -c 'git pull && git submodule init && git submodule update && git submodule status'
+  autoformat = !sh -c 'cp ~/bin/pre-commit .git/hooks/'
 [color]
 	diff = auto
 	status = auto
