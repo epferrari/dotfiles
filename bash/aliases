@@ -15,6 +15,7 @@ function replace {
 
 function autoformatall {
   autoformat "*.rb"
+  autoformat "*.erb"
   autoformat "*.css"
   autoformat "*.js"
   autoformat "*.coffee"
