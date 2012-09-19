@@ -1,0 +1,1 @@
+vim -s ~/.bin/formatDocs.vim $1

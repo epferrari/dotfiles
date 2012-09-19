@@ -13,11 +13,6 @@ function replace {
   find . -name "$1" -type f -print0 | xargs -0 sed -i -e "s/$2/$3/g"
 }
 
-# autoformat: remove trailing whitespace and auto-indent multiple files
-function autoformat {
-  find . -wholename ".git/*" -prune -o -iwholename "./$1" -type f -exec vim -s ~/.bin/formatDocs.vim {} \;
-}
-
 function autoformatall {
   autoformat "*.rb"
   autoformat "*.css"
