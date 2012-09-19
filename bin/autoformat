@@ -1,1 +1,1 @@
-find . -wholename ".git/*" -prune -o -iwholename "./$1" -type f -exec vim -r -s ~/.bin/formatDocs.vim {} \;
+find . -wholename ".git/*" -prune -o -iwholename "./$1" -type f -exec vim -n -s ~/.bin/formatDocs.vim {} \;
