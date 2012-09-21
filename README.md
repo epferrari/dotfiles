@@ -8,6 +8,8 @@ Provides an organized, version controlled, portable system configuration for *ni
 	cd dotfiles
 	rake install
 
+**Note:** if you already have some commands in .bashrc or .bash_profile you would like to keep, just place them in the file **~/.localrc**.
+
 ## Bash Aliases
 
 ### General
