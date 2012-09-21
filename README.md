@@ -1,6 +1,6 @@
 # Kurt Preston Dot Files
 
-Provides an organized, version controlled, portable system configuration for *nix systems (including OSs).  In includes shell customizations and aliases, as well as custom VI commands and plugins.
+Provides an organized, version controlled, portable system configuration for *nix systems (including MacOS).  Notably, in includes shell customizations and aliases, as well as custom VI commands and plugins.
 
 ## Installation
 
@@ -113,8 +113,6 @@ Note: many of the VI commands will require the installation of **gvim** on Linux
 	ctrl+x, ctrl-c, ctrl-v
 		Cut, copy, and paste now work in Linux VI
 
-## VI Features
-
 ## Credits
 
-This project is a fork of Ryan Bates' dotfiles, and begun as an attempt to integrate Drew Olson's vim_dotfiles
+This project is a fork of Ryan Bates' dotfiles, and borrowed significantly from Drew Olson's vim_dotfiles, in addition to dozens of other sources.
