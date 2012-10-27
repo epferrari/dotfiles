@@ -1,8 +1,8 @@
 #!/bin/sh
 
-git diff --cached --name-only | grep -x '.*\.\(rb\|erb\|css\|js\|coffee\|scss\|sass\|feature\)' | xargs -L 1 -r autoformat
-git diff --cached --name-only | grep -x '.*\.\(rb\|erb\|css\|js\|coffee\|scss\|sass\|feature\)' | xargs -r git add
-NUM_FILES=$(git diff --cached --numstat | wc -l)
+git diff --cached --name-only --diff-filter=M | grep -x '.*\.\(rb\|erb\|css\|js\|coffee\|scss\|sass\|feature\)' | xargs -L 1 -r autoformat
+git diff --cached --name-only --diff-filter=M | grep -x '.*\.\(rb\|erb\|css\|js\|coffee\|scss\|sass\|feature\)' | xargs -r git add
+NUM_FILES=$(git diff --cached --numstat --diff-filter=M | wc -l)
 reset
 echo "Formatted $NUM_FILES file(s)"
 

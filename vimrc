@@ -65,6 +65,7 @@ map <silent> <LocalLeader>ff :FuzzyFinderTextMate<CR>
 map <silent> <LocalLeader>ft :FuzzyFinderTag<CR>
 map <silent> <LocalLeader>fb :FuzzyFinderBuffer<CR>
 map <silent> <LocalLeader>fr :FuzzyFinderTextMateRefreshFiles<CR>
+map <silent> <LocalLeader>fv :vsplit<CR>:FuzzyFinderTextMate<CR>
 map <silent> <LocalLeader>gd :e product_diff.diff<CR>:%!git diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>pd :e product_diff.diff<CR>:%!svn diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>nh :nohls<CR>
