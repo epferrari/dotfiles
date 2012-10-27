@@ -1,7 +1,6 @@
 export PS1="\w$ "
 export EDITOR="vi"
 export AUTOFEATURE="true"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # Prepend 'bundle exec' to gem commands
 [ -f ~/.bin/.bundler-exec.sh ] && source ~/.bin/.bundler-exec.sh
