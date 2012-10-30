@@ -49,4 +49,13 @@ show_host_if_remote ()
   fi
 }
 
-PS1='$(if [ -n "$(parse_git_branch)" ]; then echo "[\[$(branch_color)\]$(parse_git_branch)\[${c_default}\]] "; fi)\u@\[${c_blue}\]$(show_host_if_remote)\[${c_cyan}\]\w\[${c_default}\]: '
+show_colored_user ()
+{
+  if [[ "$user" = "root" ]]; then
+    echo -ne "${c_red}$USER${c_white}"
+  else
+    echo -ne "${c_white}$USER"
+  fi
+}
+
+PS1='$(if [ -n "$(parse_git_branch)" ]; then echo "[\[$(branch_color)\]$(parse_git_branch)\[${c_default}\]] "; fi)$(show_colored_user)@\[${c_blue}\]$(show_host_if_remote)\[${c_cyan}\]\w\[${c_default}\]: '
