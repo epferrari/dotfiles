@@ -42,9 +42,7 @@ branch_color ()
 
 git_prompt ()
 {
-  if [[ -n "$(parse_git_branch)" ]]; then
-    echo -ne "[\[$(branch_color)\]$(parse_git_branch)\[${c_default}\]] "
-  fi
+  echo -ne '$(if [ -n "$(parse_git_branch)" ]; then echo "[\[$(branch_color)\]$(parse_git_branch)\[${c_default}\]] "; fi)'
 }
 
 show_host_if_remote ()
@@ -65,4 +63,9 @@ show_colored_user ()
   fi
 }
 
-PS1="\[$(git_prompt)\]$(show_colored_user)@$(show_host_if_remote)\[${c_cyan}\]\w\[${c_default}\]: "
+show_path ()
+{
+  echo -ne '\[${c_cyan}\]\w'
+}
+
+PS1="$(git_prompt)$(show_colored_user)@$(show_host_if_remote)$(show_path)\[${c_default}\]: "
