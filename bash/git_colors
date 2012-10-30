@@ -65,4 +65,4 @@ show_colored_user ()
   fi
 }
 
-PS1='\[$(git_prompt)\]$(show_colored_user)@\[${c_blue}\]$(show_host_if_remote)\[${c_cyan}\]\w\[${c_default}\]: '
+PS1='\[$(git_prompt)\]\[$(show_colored_user)\]@\[${c_blue}\]$(show_host_if_remote)\[${c_cyan}\]\w\[${c_default}\]: '
