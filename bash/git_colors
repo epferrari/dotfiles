@@ -51,7 +51,7 @@ show_host_if_remote ()
 
 show_colored_user ()
 {
-  if [[ "$user" = "root" ]]; then
+  if [[ "$(whoami)" = "root" ]]; then
     echo -ne "${c_red}$(whoami)${c_white}"
   else
     echo -ne "${c_white}$(whoami)"
