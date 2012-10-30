@@ -49,7 +49,7 @@ git_prompt ()
 
 show_host_if_remote ()
 {
-  if [[ $(who am i) =~ \([0-9\.]+\)$ ]]; then
+  if [[ ! -z "$SSH_CONNECTION" ]]; then
     echo `hostname`
   else
     return 0
