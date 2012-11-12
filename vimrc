@@ -61,9 +61,9 @@ map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg
 map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
-map <silent> <LocalLeader>ff :FuzzyFinderTextMate<CR>
-map <silent> <LocalLeader>ft :FuzzyFinderTag<CR>
-map <silent> <LocalLeader>fb :FuzzyFinderBuffer<CR>
+map <silent> <LocalLeader>ff :FufCoverageFile<CR>
+map <silent> <LocalLeader>ft :FufTag<CR>
+map <silent> <LocalLeader>fb :FufBuffer<CR>
 map <silent> <LocalLeader>fr :FuzzyFinderTextMateRefreshFiles<CR>
 map <silent> <LocalLeader>fv :vsplit<CR>:FuzzyFinderTextMate<CR>
 map <silent> <LocalLeader>gd :e product_diff.diff<CR>:%!git diff<CR>:setlocal buftype=nowrite<CR>
