@@ -36,7 +36,7 @@ git_prompt ()
 show_host_if_remote ()
 {
   if [[ ! -z "$SSH_CONNECTION" ]]; then
-    echo -ne '%{$fg[blue]%}$(hostname)%{$reset_color%}%'
+    echo -ne '%{$fg[blue]%}$(hostname)%{$reset_color%}'
   else
     return 0
   fi
