@@ -1,16 +1,4 @@
 # Text formatting params
-c_default=`tput sgr0`
-
-c_red=`tput setaf 1`
-c_green=`tput setaf 2`
-c_yellow=`tput setaf 3`
-c_blue=`tput setaf 4`
-c_purple=`tput setaf 5`
-c_cyan=`tput setaf 6`
-c_white=`tput setaf 7`
-
-c_bold=`tput bold`
-c_underline=`tput sgr 0 1`
 
 parse_git_branch ()
 {
@@ -29,9 +17,9 @@ branch_color ()
     color=""
     if git diff --quiet 2>/dev/null >&2
       then
-        color="${c_green}"
+        color="%{$fg[green]%}"
     else
-      color=${c_red}
+      color="%{$fg[red]%}"
     fi
   else
     return 0
@@ -42,13 +30,13 @@ branch_color ()
 
 git_prompt ()
 {
-  echo -ne '$(if [ -n "$(parse_git_branch)" ]; then echo "[$(branch_color)$(parse_git_branch)${c_default}] "; fi)'
+  echo -ne '$(if [ -n "$(parse_git_branch)" ]; then echo "[$(branch_color)$(parse_git_branch)%{$reset_color%}] "; fi)'
 }
 
 show_host_if_remote ()
 {
   if [[ ! -z "$SSH_CONNECTION" ]]; then
-    echo -ne '${c_blue}$(hostname)${c_default}'
+    echo -ne '%{$fg[blue]%}$(hostname)%{$reset_color%}%'
   else
     return 0
   fi
@@ -57,15 +45,15 @@ show_host_if_remote ()
 show_colored_user ()
 {
   if [[ "$(whoami)" = "root" ]]; then
-    echo -ne '${c_red}$(whoami)${c_white}'
+    echo -ne '%{$fg[red]%}$(whoami)%{$reset_color%}'
   else
-    echo -ne '${c_white}$(whoami)'
+    echo -ne '%{$reset_color%}$(whoami)'
   fi
 }
 
 show_path ()
 {
-  echo -ne '${c_cyan}%~'
+  echo -ne '%{$fg[cyan]%}%~'
 }
 
-PS1="$(git_prompt)$(show_colored_user)@$(show_host_if_remote)$(show_path)${c_default}: "
+PS1="$(git_prompt)$(show_colored_user)@$(show_host_if_remote)$(show_path)%{$reset_color%}: "
