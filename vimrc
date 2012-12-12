@@ -39,7 +39,9 @@ let g:gist_detect_filetype = 1
 
 let g:rubycomplete_buffer_loading = 1
 
-let g:fuzzy_ignore = "*.log,tmp/*,db/sphinx/*,data,public/system/*"
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po]|class|png|jpeg|jpg)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
+let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po]|class|png|jpeg|jpg)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|node_modules\/|public\/system\/'
+let g:fuf_dir_exclude = '\v(^|[/\\])((.*node_modules)|(public\/system)|(\.(hg|git|bzr|svn)))($|[/\\])'
 let g:fuzzy_ceiling = 50000
 let g:fuzzy_matching_limit = 10
 
