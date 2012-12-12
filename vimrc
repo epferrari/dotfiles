@@ -130,3 +130,31 @@ imap <F4> :tabe ~/vim_scratch.txt<CR>
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F5> :TlistToggle<cr>
+
+" Sync open window with NERDTree
+
+" returns true iff is NERDTree open/active
+function! rc:isNTOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" returns true iff focused window is NERDTree window
+function! rc:isNTFocused()
+  return -1 != match(expand('%'), 'NERD_Tree')
+endfunction
+
+" returns true iff focused window is FuzzyFinder
+function! rc:isFFFocused()
+  return -1 != match(expand('%'), 'fuf')
+endfunction
+
+
+" calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+function! rc:syncTree()
+  if &modifiable && rc:isNTOpen() && !rc:isNTFocused() && !rc:isFFFocused() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+autocmd BufEnter * call rc:syncTree()
