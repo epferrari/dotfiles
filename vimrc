@@ -2,6 +2,13 @@ set nocompatible
 syntax on
 
 filetype off
+" Disable FuzzyFinder for old version of VIM
+if v:version < '702'
+  let g:pathogen_disabled = []
+  call add(g:pathogen_disabled, 'l9')
+  call add(g:pathogen_disabled, 'vim-fuzzyfinder')
+endif
+
 call pathogen#infect()
 filetype plugin indent on
 
@@ -86,8 +93,8 @@ map <silent> <LocalLeader>fl :s/\([;,{]\) */\1\r  /g<CR>:s/  }/}/g<CR>:nohls<CR>
 cnoremap <Tab> <C-L><C-D>
 
 if version >= 700
-    autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
-    autocmd FileType tex setlocal spell spelllang=en_us
+  autocmd BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
+  autocmd FileType tex setlocal spell spelllang=en_us
 endif
 
 if &t_Co == 256
