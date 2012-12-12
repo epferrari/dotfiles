@@ -22,7 +22,7 @@ function l9#isCompatible(ver)
   return 
 endfunction
 
-let s:VERSION_FACTOR = str2float('0.01')
+let s:VERSION_FACTOR = 0.01
 
 " returns false if the caller script should finish.
 " a:vimVersion: if 0, don't check vim version
