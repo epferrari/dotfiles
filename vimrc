@@ -2,7 +2,7 @@ set nocompatible
 syntax on
 
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 filetype plugin indent on
 
 compiler ruby
