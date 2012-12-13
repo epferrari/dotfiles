@@ -16,6 +16,7 @@ To set a theme, set the name to the ZSH_THEME environment variable in the ~/.loc
     ZSH_THEME="robbyrussell"
 
 The Dot Files enable many plugins by default, but to enable additional oh-my-zsh plugins, list them in the plugins environment variable in ~/.localrc.  For example:
+
     plugins=(django osx)
 
 ## Bash Aliases
