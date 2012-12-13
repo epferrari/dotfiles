@@ -56,4 +56,6 @@ show_path ()
   echo -ne '%{$fg[cyan]%}%~'
 }
 
-PS1="$(git_prompt)$(show_colored_user)@$(show_host_if_remote)$(show_path)%{$reset_color%}: "
+if [ -z "$ZSH_THEME_SELECTED" ]; then
+  PS1="$(git_prompt)$(show_colored_user)@$(show_host_if_remote)$(show_path)%{$reset_color%}: "
+fi
