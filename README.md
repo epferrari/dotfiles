@@ -12,6 +12,7 @@ Provides an organized, version controlled, portable system configuration for *ni
 
 ## Theme Selection
 To set a theme, set the name to the ZSH_THEME environment variable in the ~/.localrc file.  For example, add the following line:
+
   ZSH_THEME="robbyrussell"
 
 ## Bash Aliases
