@@ -10,6 +10,10 @@ Provides an organized, version controlled, portable system configuration for *ni
 
 **Note:** if you already have some commands in .bashrc or .bash_profile you would like to keep, just place them in the file **~/.localrc**.
 
+## Theme Selection
+To set a theme, set the name to the ZSH_THEME environment variable in the ~/.localrc file.  For example, add the following line:
+  ZSH_THEME="robbyrussell"
+
 ## Bash Aliases
 
 ### General
