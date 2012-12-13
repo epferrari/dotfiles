@@ -1,10 +1,10 @@
 # Kurt Preston Dot Files
 
-Provides an organized, version controlled, portable system configuration for *nix systems (including MacOS).  Notably, in includes shell customizations and aliases, as well as custom VI commands and plugins.
+Provides an organized, version controlled, portable system configuration for *nix systems (including MacOS).  Notably, in includes shell customizations and aliases, custom VI commands and plugins, and the oh-my-zsh project.
 
 ## Installation
 
-	git clone git://github.com/KurtPreston/dotfiles 
+	git clone git://github.com/KurtPreston/dotfiles
 	cd dotfiles
 	rake install
 
@@ -17,30 +17,30 @@ Provides an organized, version controlled, portable system configuration for *ni
 	autoformat [filename]
 		Removes whitespace and standardizes spacing
 		ex: autoformat *.rb
-		
+
 	autoformatall
 		Will autoformat all compatible files within a directory
-		
+
 	replace [files] [find text] [replace text]
 		Performs a find/replace across multiple files
 		ex: replace "*.erb" "<b>" "<strong>"
-		
+
 	reload
 		Reload all bash files
-		
+
 	h [file in the home directory]
 		Jump to a folder in the home directory with tab completion
 		ex: h Mu[tab] -> h Music
-		
+
 	c [file in the ~/code directory]
 		Jump to a folder in the ~/code directory with tab completion
 		This is helpful if you store all programming projects in ~/code
 		ex: c do[tab] -> c dotfiles
-		
+
 ### Git
 
 Git gets tab completion, colored branch data at the prompt, as well as the following commands.
-	
+
 	gco -or- git co
 		git checkout
 	gs -or- git st
@@ -49,12 +49,12 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
 		git branch
 	ga
 		git add
-		
+
 	git rb [remote branch name]
 		checkout and track a remote branch
 	git lg
 		Detailed log view, including authors and branch history
-		
+
 	brclean
 		Remove all *local* branches that have been merged
 	rbrclean
@@ -66,9 +66,9 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
 	git autoformat
 		Installs a git hook to autoformat all files during commit
 		Note: This feature is still experimental
-	
+
 ### Rails
-	
+
 	log
 		tail the development log
 	tlog
@@ -117,4 +117,4 @@ Note: many of the VI commands will require the installation of **gvim** on Linux
 
 ## Credits
 
-This project is a fork of Ryan Bates' dotfiles, and borrowed significantly from Drew Olson's vim_dotfiles, in addition to dozens of other sources.
+This project is a fork of Ryan Bates' dotfiles, integrates oh-my-zsh, and borrows significantly from Drew Olson's vim_dotfiles, in addition to dozens of other sources.
