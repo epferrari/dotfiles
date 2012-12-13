@@ -3,6 +3,7 @@ require 'erb'
 
 desc "install the dot files into user's home directory"
 task :install do
+  initialize_submodules
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README.rdoc LICENSE].include? file
@@ -30,11 +31,11 @@ task :install do
       link_file(file)
     end
   end
-  initialize_submodules
 end
 
 desc "install dotfiles without any prompts, assuming overwrite"
 task :promptless_install do
+  initialize_submodules
   $promptless = true
 
   Dir['*'].each do |file|
@@ -50,7 +51,6 @@ task :promptless_install do
       link_file(file)
     end
   end
-  initialize_submodules
 end
 
 def replace_file(file)
