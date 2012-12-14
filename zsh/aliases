@@ -35,7 +35,3 @@ alias reload='. ~/.zshrc'
 
 # commands starting with % for pasting from web
 alias %=' '
-
-function replace {
-  find . -name "$1" -type f -print0 | xargs -0 sed -i "s/$2/$3/g"
-}
