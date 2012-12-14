@@ -162,9 +162,14 @@ function! rc:isBEFocused()
   return -1 != match(expand('%'), 'BufExplorer')
 endfunction
 
+" returns true iff focused window is BufferExplorer
+function! rc:isRspecFocused()
+  return -1 != match(expand('%'), 'rb_test_output')
+endfunction
+
 " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
 function! rc:syncTree()
-  if &modifiable && rc:isNTOpen() && !rc:isNTFocused() && !rc:isFFFocused() && !rc:isBEFocused() && strlen(expand('%')) > 0 && !&diff
+  if &modifiable && rc:isNTOpen() && !rc:isNTFocused() && !rc:isFFFocused() && !rc:isBEFocused() && !rc:isRspecFocused() && strlen(expand('%')) > 0 && !&diff
     NERDTreeFind
     wincmd p
   endif
