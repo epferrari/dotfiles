@@ -96,7 +96,7 @@ rbrclean () {
     if [[ "$branches_to_delete" == "" ]]; then
       echo "No remote branches to delete"
     else
-      git push --delete origin $branches_to_delete
+      echo $branches_to_delete | xargs git push --delete origin $1
     fi
   else
     echo "Checkout unsuccessful -- Commit any working changes"
