@@ -10,7 +10,11 @@ alias reload='. ~/.bash_profile'
 # replace: find/replace strings across multiple files
 #     example: replace *.rb find_string replace_string
 function replace {
-  find . -name "$1" -type f -print0 | xargs -0 sed -i -e "s/$2/$3/g"
+  if [[ "$unamestr" == 'Darwin' ]]; then
+    find . -name "$1" -type f -print0 | xargs -0 sed -i '' -e "s/$2/$3/g"
+  else
+    find . -name "$1" -type f -print0 | xargs -0 sed -i -e "s/$2/$3/g"
+  fi
 }
 
 function autoformatall {
@@ -92,7 +96,7 @@ rbrclean () {
     if [[ "$branches_to_delete" == "" ]]; then
       echo "No remote branches to delete"
     else
-      git push --delete origin $branches_to_delete
+      echo $branches_to_delete | xargs git push --delete origin $1
     fi
   else
     echo "Checkout unsuccessful -- Commit any working changes"
