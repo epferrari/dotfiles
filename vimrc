@@ -14,6 +14,9 @@ filetype plugin indent on
 
 compiler ruby
 
+highlight FoldColumn  gui=bold    guifg=grey65     guibg=Grey90
+highlight Folded      gui=italic  guifg=Black      guibg=Grey90
+highlight LineNr      gui=NONE    guifg=grey60     guibg=Grey90
 set hlsearch
 set number
 set showmatch
@@ -26,7 +29,9 @@ set ruler
 set wrap
 set dir=/tmp//
 set scrolloff=5
+set foldmethod=syntax
 
+set foldcolumn=4
 set ignorecase
 set smartcase
 
@@ -56,6 +61,8 @@ let g:no_html_toolbar = 'yes'
 
 " Delete this line (or set g:autoclose_on to 1) to enable autoclose parens
 let g:autoclose_on = 0
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
 
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
