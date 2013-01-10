@@ -11,6 +11,7 @@ if [[ "$unamestr" == 'Darwin' ]]; then
   plugins=($plugins osx)
 fi
 
+DISABLE_AUTO_UPDATE="true"
 . ~/.oh-my-zsh/oh-my-zsh.sh
 
 # Bash settings
