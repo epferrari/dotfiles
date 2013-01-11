@@ -30,7 +30,7 @@ set wrap
 set dir=/tmp//
 set scrolloff=5
 set foldmethod=syntax
-
+set foldlevelstart=20
 set foldcolumn=4
 set ignorecase
 set smartcase
