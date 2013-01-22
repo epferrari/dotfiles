@@ -17,6 +17,12 @@ function replace {
   fi
 }
 
+# ls
+alias ls='ls --color="auto" -F'
+alias l="ls -lAh"
+alias ll="ls -l"
+alias la='ls -A'
+
 function autoformatall {
   autoformat "*.rb"
   autoformat "*.erb"
