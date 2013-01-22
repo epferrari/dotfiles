@@ -13,9 +13,10 @@
   pup = !sh -c 'git pull && git submodule init && git submodule update && git submodule status'
   autoformat = !sh -c 'git rev-parse && cp ~/.bin/pre-commit $(git rev-parse --show-cdup).git/hooks/ && echo "Autoformat enabled on commit"'
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
+  ui = auto
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
 	editor = vim
