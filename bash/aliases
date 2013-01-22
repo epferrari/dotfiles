@@ -72,7 +72,8 @@ unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
   alias pbcopy="xsel -b"
   function gvim () { (/usr/bin/gvim -f "$@" &) }
-  alias mvim=gvim
+  alias mvim='gvim'
+  alias open='gnome-open'
 fi
 
 
