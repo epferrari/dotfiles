@@ -61,8 +61,8 @@ let g:no_html_toolbar = 'yes'
 
 " Delete this line (or set g:autoclose_on to 1) to enable autoclose parens
 let g:autoclose_on = 0
-au BufWinLeave * silent! mkview
-au BufWinEnter * silent! loadview
+" au BufWinLeave * silent! mkview
+" au BufWinEnter * silent! loadview
 
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
