@@ -3,7 +3,7 @@ if has("mac")
   set guifont=Monaco:h12.00
   set fuopt=maxhorz,maxvert
 else
-  set gfn=DejaVu\ Sans\ Mono\ Bold\ 10
+  set anti gfn=Inconsolata\ 11,DejaVu\ Sans\ Mono\ Bold\ 10
 end
 
 set guioptions-=T  "remove toolbar
