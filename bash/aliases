@@ -18,7 +18,7 @@ function replace {
 }
 
 # ls
-alias ls='ls --color="auto" -F'
+alias ls='ls -G -F'
 alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
