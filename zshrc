@@ -14,6 +14,9 @@ fi
 DISABLE_AUTO_UPDATE="true"
 . ~/.oh-my-zsh/oh-my-zsh.sh
 
+# Disable auto-correct
+unsetopt correct_all
+
 # Bash settings
 . ~/.bash/aliases
 . ~/.bash/paths
