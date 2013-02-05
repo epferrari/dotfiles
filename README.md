@@ -58,6 +58,8 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
 		git branch
 	ga
 		git add
+  gg -or- git g
+    git grep (with line breaks for clearer output)
 
 	git rb [remote branch name]
 		checkout and track a remote branch

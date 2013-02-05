@@ -12,6 +12,7 @@
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%%an>%Creset' --abbrev-commit --date=relative
   pup = !sh -c 'git pull && git submodule init && git submodule update && git submodule status'
   autoformat = !sh -c 'git rev-parse && cp ~/.bin/pre-commit $(git rev-parse --show-cdup).git/hooks/ && echo "Autoformat enabled on commit"'
+  g = grep --break --heading --line-number
 [color]
   diff = auto
   status = auto
@@ -24,4 +25,6 @@
 [apply]
 	whitespace = nowarn
 [format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+  pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+[grep]
+  lineNumber = true
