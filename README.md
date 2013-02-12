@@ -1,6 +1,6 @@
 # Kurt Preston Dot Files
 
-Provides an organized, version controlled, portable system configuration for *nix systems (including MacOS).  Notably, in includes shell customizations and aliases, custom VI commands and plugins, and the oh-my-zsh project.
+Provides an organized, version controlled, portable system configuration for *nix systems (including MacOS).  Notably, in includes shell customizations and aliases, custom VI commands and plugins, and the [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) project.
 
 ## Installation
 
@@ -36,6 +36,10 @@ The Dot Files enable many plugins by default, but to enable additional oh-my-zsh
 
 	reload
 		Reload all bash files
+
+  open .
+    Open current folder in file browser
+    (This is default MacOS behavior, but dotfiles enables it on Linux)
 
 	h [file in the home directory]
 		Jump to a folder in the home directory with tab completion
@@ -97,6 +101,8 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
 
 Note: many of the VI commands will require the installation of **gvim** on Linux machines, or **mvim** on MacOS machines.
 
+	start ty[tab] -> start typing
+	    Autocomplete is enabled via the YouCompleteMe plugin
 	\ff
 		Open Fuzzy Finder, an excellent way to quickly open files
 	\nt
