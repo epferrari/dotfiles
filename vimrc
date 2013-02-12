@@ -183,3 +183,8 @@ function! rc:syncTree()
 endfunction
 
 autocmd BufEnter * call rc:syncTree()
+
+" Vundle configuration
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'Valloric/YouCompleteMe'

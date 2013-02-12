@@ -31,6 +31,8 @@ task :install do
       link_file(file)
     end
   end
+
+  setup_vundle
 end
 
 desc "install dotfiles without any prompts, assuming overwrite"
@@ -51,6 +53,14 @@ task :promptless_install do
       link_file(file)
     end
   end
+
+  setup_vundle
+end
+
+def setup_vundle
+  # Set-up vundle and YouCompleteMe plugin
+  system('vim +BundleInstall +qall')
+  system('cd vim/bundle/YouCompleteMe/ && ./install.sh')
 end
 
 def replace_file(file)
