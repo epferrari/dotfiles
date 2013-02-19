@@ -32,7 +32,7 @@ task :install do
     end
   end
 
-  setup_vundle
+  #setup_vundle
 end
 
 desc "install dotfiles without any prompts, assuming overwrite"
@@ -54,7 +54,7 @@ task :promptless_install do
     end
   end
 
-  setup_vundle
+  #setup_vundle
 end
 
 def setup_vundle

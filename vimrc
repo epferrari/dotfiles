@@ -184,7 +184,12 @@ endfunction
 
 autocmd BufEnter * call rc:syncTree()
 
+" Enable PowerLine
+let g:Powerline_symbols = 'fancy'
+set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
+
 " Vundle configuration
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'Lokaltog/vim-powerline'
