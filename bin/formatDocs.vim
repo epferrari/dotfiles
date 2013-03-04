@@ -1,7 +1,7 @@
-:%s/\s\+$//
-:norm gg=G
-:%s/^  end\n*  \(\w\)/  end\r\r  \1/
-:%s/^end\n*\(\w\)/end\r\r\1/
-:%s/\n*  Scenario/\r\r  Scenario/g
-:%s/\(@\w\+\)\n\n  Scenario/\1\r  Scenario/g
-:wq!
+:%s/\s\+$//  "Remove trailing whitespace
+:norm gg=G   "Perform indentation
+:%s/end\n\n*/end\r\r/g "Insert two newlines after any 'end'
+:%s/^\n*\( *\)end/\1end/g "Remove all newlines before 'end'
+:%s/\n*  Scenario/\r\r  Scenario/g "Standard indentation for scenarios
+:%s/\(@\w\+\)\n\n  Scenario/\1\r  Scenario/g "Standard indentation for scenarios
+:wq! "Save file
