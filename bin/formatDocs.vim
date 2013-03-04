@@ -1,1 +1,2 @@
-execute 'AutoFormat'
+:call AutoFormat()
+:wq
