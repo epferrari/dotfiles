@@ -14,6 +14,9 @@ function AutoFormat()
   "Remove all newlines before 'end'
   %s/^\n*\( *\)end/\1end/g
 
+  "Remove all newlines before 'else'
+  %s/^\n*\( *\)else/\1else/g
+
   "Standard indentation for scenarios
   %s/\n*  Scenario/\r\r  Scenario/g
 
