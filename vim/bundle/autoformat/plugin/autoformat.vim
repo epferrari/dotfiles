@@ -8,9 +8,6 @@ function AutoFormat()
   "Insert two newlines after any 'end'
   %s/end\n\n*/end\r\r/g
 
-  "Insert two newlines after any '}'
-  %s/}\n\n*/}\r\r/g
-
   "Remove blank lines after a comma
   %s/,\n\n*/,\r/g
 
