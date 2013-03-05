@@ -109,6 +109,8 @@ Note: many of the VI commands will require the installation of **gvim** on Linux
 		Open Nerd Tree, a tree-style directory browser
 	\be
 		Open Buffer Explorer, a list of recently opened files
+  \==
+    Autoformat entire file, fixing indentation and spacing
 	\cc
 		Comment lines
 	\uc

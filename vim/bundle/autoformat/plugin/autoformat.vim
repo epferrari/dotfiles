@@ -1,28 +1,31 @@
 function AutoFormat()
   "Remove trailing whitespace
-  %s/\s\+$//
+  %s/\s\+$//e
 
   "Perform indentation
   norm gg=G
 
   "Insert two newlines after any 'end'
-  %s/end\n\n*/end\r\r/g
+  %s/end\n\n*/end\r\r/e
 
   "Remove blank lines after a comma
-  %s/,\n\n*/,\r/g
+  %s/,\n\n*/,\r/e
 
   "Remove all newlines before 'end'
-  %s/^\n*\( *\)end/\1end/g
+  %s/^\n*\( *\)end/\1end/e
 
   "Remove all newlines before 'else'
-  %s/^\n*\( *\)else/\1else/g
+  %s/^\n*\( *\)else/\1else/e
 
   "Standard indentation for scenarios
-  %s/\n*  Scenario/\r\r  Scenario/g
+  %s/\n*  Scenario/\r\r  Scenario/e
 
   "Standard indentation for scenarios
-  %s/\(@\w\+\)\n\n  Scenario/\1\r  Scenario/g
+  %s/\(@\w\+\)\n\n  Scenario/\1\r  Scenario/e
 
   "Remove trailing newlines
-  %s/\n*\%$//g
+  %s/\n*\%$//e
+
+  "Remove highlighting
+  nohls
 endfunction
