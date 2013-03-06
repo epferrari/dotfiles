@@ -26,6 +26,18 @@ function AutoFormat()
   "Remove trailing newlines
   %s/\n*\%$//e
 
+  "CSS-only fixes
+  if expand('%:e') == 'css' || expand('%:e') == 'scss'
+    "Insert a space after all colons
+    %s/:\s*\(\w\)/: \1/e
+
+    "Collapse multi-line newlines into a single
+    %s/\n\n*/\r/e
+
+    "Insert a return character after all }
+    %s/\}/}\r/e
+  endif
+
   "Remove highlighting
   nohls
 endfunction
