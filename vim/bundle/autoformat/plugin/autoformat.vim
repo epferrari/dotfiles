@@ -31,11 +31,12 @@ function AutoFormat()
     "Insert a space after all colons
     %s/:\s*\(\w\)/: \1/e
 
-    "Collapse multi-line newlines into a single
-    %s/\n\n*/\r/e
-
     "Insert a return character after all }
-    %s/\}/}\r/e
+    %s/\}\n*/}\r/e
+
+    "Insert a second return character between } and other styles
+    %s/\}\n\(\s*[\w#\.&]\)/}\r\r\1/e
+
   endif
 
   "Remove highlighting
