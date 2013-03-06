@@ -1,4 +1,7 @@
 function AutoFormat()
+  "Save cursor position
+  let l:winview = winsaveview()
+
   "Remove trailing whitespace
   %s/\s\+$//e
 
@@ -36,9 +39,11 @@ function AutoFormat()
 
     "Insert a second return character between } and other styles
     %s/\}\n\(\s*[\w#\.&]\)/}\r\r\1/e
-
   endif
 
   "Remove highlighting
   nohls
+
+  "Restore cursor position
+  call winrestview(l:winview)
 endfunction
