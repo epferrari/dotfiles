@@ -41,7 +41,7 @@ function AutoFormat()
     %s/\}\n*/}\r/e
 
     "Insert a second return character between } and other styles
-    %s/\}\n\(\s*[\w#\.&]\)/}\r\r\1/e
+    %s/\}\n*\(\s*[a-z#\.&\*\@]\)/}\r\r\1/e
   endif
 
   "Remove highlighting
