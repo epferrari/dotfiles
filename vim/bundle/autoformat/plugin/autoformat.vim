@@ -34,6 +34,9 @@ function AutoFormat()
     "Insert a space after all colons
     %s/:\s*\(\w\)/: \1/e
 
+    "Always insert { character on same line as declaration
+    %s/\n{/ {/e
+
     "Remove space if it's a declaration like :hover
     %s/: \(.*[{,]\)/:\1/e
 
