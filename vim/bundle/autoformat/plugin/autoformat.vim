@@ -11,11 +11,11 @@ function AutoFormat()
   "Remove blank lines after a comma
   %s/,\n\n*/,\r/e
 
-  "Remove trailing newlines
-  %s/\n*\%$//e
-
   "Ruby-file fixes
   if expand('%:e') == 'rb'
+    "Remove extra lines after 'do'
+    %s/do\((\s*\|.*\|)?\)\n*/do\1\r/e
+
     "Insert two newlines after any 'end'
     %s/end\n\n*/end\r\r/e
 
@@ -52,6 +52,9 @@ function AutoFormat()
     "Insert a second return character between } and other styles
     %s/\}\n*\(\s*[a-z#\.&\*\@]\)/}\r\r\1/e
   endif
+
+  "Remove trailing newlines
+  %s/\n*\%$//e
 
   "Remove highlighting
   nohls
