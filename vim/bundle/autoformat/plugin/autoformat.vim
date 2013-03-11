@@ -14,7 +14,8 @@ function AutoFormat()
   "Ruby-file fixes
   if expand('%:e') == 'rb'
     "Remove extra lines after 'do'
-    %s/ do\((\s*\|.*\|)?\)\n\n*/ do\1\r/e
+    %s/ do\(\s*\|.*\|\)\n\n*/ do\1\r/e
+    %s/ do\n\n*/ do\r/e
 
     "Insert two newlines after any 'end'
     %s/end\n\n*/end\r\r/e
