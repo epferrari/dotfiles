@@ -38,14 +38,14 @@ function AutoFormat()
 
   "CSS-only fixes
   if expand('%:e') == 'css' || expand('%:e') == 'scss'
-    "Insert a space after all colons
-    %s/:\s*\(\w\)/: \1/e
+    "Insert a space after all non-selector colons
+    %s/:\s*\(.*\)\s*;/: \1;/e
+
+    "Always remove spaces before selector colons
+    %s/\(\w*:\)\s*\(.*\)\s*{/\1\2 {/e
 
     "Always insert { character on same line as declaration
-    %s/\n{/ {/e
-
-    "Remove space if it's a declaration like :hover
-    %s/: \(.*[{,]\)/:\1/e
+    %s/\s*\n*{/ {/e
 
     "Insert a return character after all }
     %s/\}\n*/}\r/e
