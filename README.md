@@ -37,9 +37,9 @@ The Dot Files enable many plugins by default, but to enable additional oh-my-zsh
 	reload
 		Reload all bash files
 
-  open .
-    Open current folder in file browser
-    (This is default MacOS behavior, but dotfiles enables it on Linux)
+    open .
+        Open current folder in file browser
+        (This is default MacOS behavior, but dotfiles enables it on Linux)
 
 	h [file in the home directory]
 		Jump to a folder in the home directory with tab completion
@@ -56,28 +56,37 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
 
 	gco -or- git co
 		git checkout
+
 	gs -or- git st
 		git status
+
 	gb -or- git br
 		git branch
+
+	gg -or- git g
+        git grep (with line breaks for clearer output)
+
 	ga
 		git add
-  gg -or- git g
-    git grep (with line breaks for clearer output)
 
 	git rb [remote branch name]
 		checkout and track a remote branch
+
 	git lg
 		Detailed log view, including authors and branch history
 
 	brclean
 		Remove all *local* branches that have been merged
+
 	rbrclean
 		Remove all *remote* branches that have been merged
+
 	gbc -or- gbclean
 		Remove all *local and remote* merged branches
+
 	gba -or- git-branch-authors
 		List the authors of all git branches
+
 	git autoformat
 		Installs a git hook to autoformat all files during commit
 		Note: This feature is still experimental
@@ -86,14 +95,19 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
 
 	log
 		tail the development log
+
 	tlog
 		tail the test log
+
 	rs
 		rails server
+
 	rc
 		rails console
+
 	rg
 		rails generate
+
 	rst
 		restart server (touch tmp/restart.txt)
 
@@ -103,22 +117,31 @@ Note: many of the VI commands will require the installation of **gvim** on Linux
 
 	start ty[tab] -> start typing
 	    Autocomplete is enabled via the YouCompleteMe plugin
+
 	\ff
 		Open Fuzzy Finder, an excellent way to quickly open files
+
 	\nt
 		Open Nerd Tree, a tree-style directory browser
+
 	\be
 		Open Buffer Explorer, a list of recently opened files
-  \==
-    Autoformat entire file, fixing indentation and spacing
+
+	\==
+    	Autoformat entire file, fixing indentation and spacing
+
 	\cc
 		Comment lines
+
 	\uc
 		Uncomment lines
+
 	\ws
 		Remove all trailing whitespace from file
+
 	\nh
 		Stop highlighting words (after a find operation)
+
 	\fl
 		Format a line into multiple lines
 		ex: some_method_call(param1, param2, param3)
@@ -127,10 +150,13 @@ Note: many of the VI commands will require the installation of **gvim** on Linux
 		    	param1,
 		    	param2,
 		    	param3)
+
 	:A
 		Switch between test files and implementation file
+
 	ctrl+p
 		Autocomplete
+
 	ctrl+x, ctrl-c, ctrl-v
 		Cut, copy, and paste now work in Linux VI
 
