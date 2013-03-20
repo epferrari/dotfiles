@@ -52,6 +52,9 @@ function AutoFormat()
 
     "Insert a second return character between } and other styles
     %s/\}\n*\(\s*[a-z#\.&\*\@]\)/}\r\r\1/e
+
+    "Add a space above comment lines
+    %s/\([;}]\)\n\(\s*\)\/\//\1\r\r\2\/\//e
   endif
 
   "Remove trailing newlines
