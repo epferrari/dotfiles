@@ -33,6 +33,18 @@ function AutoFormat()
     %s/^\n*\( *\)else/\1else/e
   endif
 
+  "ERB-fixes
+  if expand('%:e') == 'erb'
+    "Always have one space after '<%=' or '<%#'
+    %s/<%\([=#]\)\s*/<%\1 /e
+
+    "Always have one space after '<%'
+    %s/<%\s*\(\w\)/<% \1/e
+
+    "Always have one space before '%>'
+    %s/\s*%>/ %>/e
+  endif
+
   "Cucumber-file fixes
   if expand('%:e') == 'feature'
     "Standard indentation for scenarios
