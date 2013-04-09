@@ -35,14 +35,11 @@ function AutoFormat()
 
   "ERB-fixes
   if expand('%:e') == 'erb'
-    "Always have one space after '<%=' or '<%#'
-    %s/<%\([=#]\)\s*/<%\1 /e
+    "Always have one space after '<%=', '<%#', '<%-', or '<%'
+    %s/<%\([=#-]\?\)\s*/<%\1 /e
 
-    "Always have one space after '<%'
-    %s/<%\s*\(\w\)/<% \1/e
-
-    "Always have one space before '%>'
-    %s/\s*%>/ %>/e
+    "Always have one space before '-%>' or '%>'
+    %s/\s*\(-\?\)%>/ \1%>/e
   endif
 
   "Cucumber-file fixes
