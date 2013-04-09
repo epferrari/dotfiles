@@ -11,6 +11,9 @@ function AutoFormat()
   "Remove blank lines after a comma
   %s/,\n\n*/,\r/e
 
+  "Don't allow more than 3 consecutive newlines
+  %s/\n\n\n\n*/\r\r\r/e
+
   "Ruby-file fixes
   if expand('%:e') == 'rb'
     "Remove extra lines after 'do'
