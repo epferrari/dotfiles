@@ -20,6 +20,9 @@ function AutoFormat()
     %s/ do\(\s*|.*|\)\n\n*/ do\1\r/e
     %s/ do\n\n*/ do\r/e
 
+    "Remove extra lines after 'def'
+    %s/^\(\s*def \)\(.*\)\n\n*/\1\2\r/e
+
     "Insert two newlines after any 'end'
     %s/end\n\n*/end\r\r/e
 
