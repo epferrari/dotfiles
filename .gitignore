@@ -3,6 +3,7 @@ vim/.VimballRecord
 vim/view/
 vim/bundle/YouCompleteMe/
 vim/bundle/vim-powerline/
+vim/bundle/vim-autoformat-rails/
 .bundle/
 .rvmrc
 Gemfile

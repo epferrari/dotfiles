@@ -1,2 +1,2 @@
-:call AutoFormat()
+:call AutoFormatRails()
 :wq
