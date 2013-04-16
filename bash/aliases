@@ -94,7 +94,7 @@ fi
 ################# Git ###############
 
 # Branch Clean: clears out all local git branches that have already been merged into the active branch
-brclean () { git branch -d $( git branch --merged | grep -v '^\*' | grep -v 'master' ); }
+brclean () { git branch -d $( git branch --merged | grep -v '^\*' | grep -v 'master' | grep -v 'staging' ); }
 
 # Remote Branch Clean: clears out all remote branches that have already been merged into master
 rbrclean () {
@@ -107,7 +107,7 @@ rbrclean () {
   if [ $? -eq 0 ]; then
     echo "Checkout successful -- Updating/cleaning code"
 
-    branches_to_delete="$(git branch -r --merged | grep -v '^\*' | grep -v 'origin/master' | grep 'origin/' | sed 's/origin\///g')"
+    branches_to_delete="$(git branch -r --merged | grep -v '^\*' | grep -v 'origin/master' | grep -v 'origin/staging' | grep 'origin/' | sed 's/origin\///g')"
     if [[ "$branches_to_delete" == "" ]]; then
       echo "No remote branches to delete"
     else
