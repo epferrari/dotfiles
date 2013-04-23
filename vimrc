@@ -188,6 +188,12 @@ autocmd BufEnter * call rc:syncTree()
 let g:Powerline_symbols = 'fancy'
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
 
+" VIM Split Enhancements
+nnoremap <M-Right> <C-W>l
+nnoremap <M-Left> <C-W>h
+nnoremap <M-Down> <C-W>j
+nnoremap <M-Up> <C-W>k
+
 " Vundle configuration
 call vundle#rc()
 Bundle 'gmarik/vundle'
