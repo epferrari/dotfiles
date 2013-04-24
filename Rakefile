@@ -60,7 +60,7 @@ end
 def setup_vundle
   # Set-up vundle and YouCompleteMe plugin
   system('vim +BundleInstall +qall')
-  unless File.exists?('vim/bundle/YouCompleteMe/doc/tags')
+  if File.exists?('vim/bundle/YouCompleteMe') && !File.exists?('vim/bundle/YouCompleteMe/doc/tags')
     system('cd vim/bundle/YouCompleteMe/ && ./install.sh')
   end
 end
