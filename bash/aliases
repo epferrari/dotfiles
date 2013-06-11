@@ -118,13 +118,16 @@ rbrclean () {
   fi
 }
 
+# Git Branch Clean: cleans out local and remote branches
 function gbclean {
   rbrclean
   brclean
+  git gc
 }
 
 alias gbc='gbclean'
 
+# Git Branch Authors: show authors of all git branches
 function git-branch-authors {
   git branch -r | grep -v 'HEAD' | while read branch
   do
@@ -143,6 +146,7 @@ function git-branch-authors {
 
 alias gba='git-branch-authors'
 
+# Git Recent: show git branches organized by date
 function git-recent {
   git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
 }
