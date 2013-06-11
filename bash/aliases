@@ -142,3 +142,7 @@ function git-branch-authors {
 }
 
 alias gba='git-branch-authors'
+
+function git-recent {
+  git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
+}
