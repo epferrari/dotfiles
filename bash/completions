@@ -3,7 +3,11 @@ complete -C ~/.bash/completion_scripts/rake_completion -o default rake
 complete -C ~/.bash/completion_scripts/project_completion -o default c
 complete -C ~/.bash/completion_scripts/capistrano_completion -o default cap
 
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+case "$TERM" in
+xterm*|rxvt*)
+  bind '"\e[A": history-search-backward'
+  bind '"\e[B": history-search-forward'
+  ;;
+esac
 set show-all-if-ambiguous on
 set completion-ignore-case on
