@@ -2,10 +2,6 @@ vim/.netrwhist
 vim/.VimballRecord
 vim/view/
 vim/bundle/YouCompleteMe/
-vim/bundle/vim-less/
-vim/bundle/vim-powerline/
-vim/bundle/vim-autoformat-rails/
-vim/bundle/vim-startify/
 .bundle/
 .rvmrc
 Gemfile

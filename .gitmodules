@@ -19,3 +19,15 @@
 [submodule "vim/bundle/vim-jst"]
 	path = vim/bundle/vim-jst
 	url = git@github.com:briancollins/vim-jst.git
+[submodule "vim/bundle/vim-autoformat-rails"]
+	path = vim/bundle/vim-autoformat-rails
+	url = git@github.com:KurtPreston/vim-autoformat-rails.git
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
+	url = git@github.com:Lokaltog/vim-powerline.git
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = git@github.com:lunaru/vim-less.git
+[submodule "vim/bundle/vim-startify"]
+	path = vim/bundle/vim-startify
+	url = git@github.com:mhinz/vim-startify.git
