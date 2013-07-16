@@ -1,17 +1,17 @@
 require 'rake'
 require 'erb'
+require 'digest/md5'
 
 PLATFORM_IS_OSX = (Object::RUBY_PLATFORM =~ /darwin/i) ? true : false
-
 
 desc "install the dot files into user's home directory"
 task :install do
   initialize_submodules
 
-  link_files(Dir.pwd, ENV['HOME'], '.', false)
+  link_files(Dir.pwd, ENV['HOME'], prefix: '.')
 
   if PLATFORM_IS_OSX
-    link_files("#{Dir.pwd}/fonts", "#{ENV['HOME']}/Library/Fonts", '', false, true)
+    link_files("#{Dir.pwd}/fonts", "#{ENV['HOME']}/Library/Fonts", copy_file: true)
   end
 
   setup_vundle
@@ -22,7 +22,7 @@ task :promptless_install do
   initialize_submodules
   $promptless = true
 
-  link_files(Dir.pwd, ENV['HOME'], '.', true)
+  link_files(Dir.pwd, ENV['HOME'], prefix: '.', replace_all: true)
 
   setup_vundle
 end
@@ -35,7 +35,11 @@ def setup_vundle
   end
 end
 
-def link_files(source_dir, destination_dir, prefix = '.', replace_all = false, copy_file = false)
+def link_files(source_dir, destination_dir, opts)
+  prefix = opts[:prefix] || ''
+  replace_all = opts[:replace_all] || false
+  copy_file = opts[:copy_file] || false
+
   files = Dir.chdir(source_dir) do
     Dir.glob('*')
   end
@@ -48,6 +52,8 @@ def link_files(source_dir, destination_dir, prefix = '.', replace_all = false, c
 
     if File.exist?(destination_file)
       if File.identical? source_file, destination_file
+        puts "identical #{destination_file}"
+      elsif copy_file && file_hash(source_file) == file_hash(destination_file)
         puts "identical #{destination_file}"
       elsif replace_all
         replace_file(source_file, destination_file, copy_file)
@@ -96,4 +102,8 @@ end
 
 def initialize_submodules
   system %Q{git submodule init && git submodule update && git submodule status}
+end
+
+def file_hash(filename)
+  Digest::MD5.hexdigest(IO.read(filename))
 end
