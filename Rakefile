@@ -8,10 +8,10 @@ desc "install the dot files into user's home directory"
 task :install do
   initialize_submodules
 
-  link_files(Dir['*'], ENV['HOME'], '.', false)
+  link_files(Dir.pwd, ENV['HOME'], '.', false)
 
   if PLATFORM_IS_OSX
-    #link_files(Dir['fonts', '*'], "#{ENV['HOME']}/Library/Fonts", '', false)
+    link_files("#{Dir.pwd}/fonts", "#{ENV['HOME']}/Library/Fonts", '', false)
   end
 
   setup_vundle
@@ -22,7 +22,7 @@ task :promptless_install do
   initialize_submodules
   $promptless = true
 
-  link_files(Dir['*'], ENV['HOME'], '.', true)
+  link_files(Dir.pwd, ENV['HOME'], '.', true)
 
   setup_vundle
 end
@@ -35,12 +35,16 @@ def setup_vundle
   end
 end
 
-def link_files(files, destination, prefix = '.', replace_all = false)
+def link_files(source_dir, destination_dir, prefix = '.', replace_all = false)
+  files = Dir.chdir(source_dir) do
+    Dir.glob('*')
+  end
+
   files.each do |filename|
     next if %w[Rakefile README.rdoc LICENSE].include? filename
 
     source_file = File.join(Dir.pwd, filename)
-    destination_file = File.join(destination, ".#{filename.sub('.erb', '')}")
+    destination_file = File.join(destination_dir, "#{prefix}#{filename.sub('.erb', '')}")
 
     if File.exist?(destination_file)
       if File.identical? source_file, destination_file
