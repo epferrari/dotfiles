@@ -3,7 +3,7 @@ if has("mac")
   set fuopt=maxhorz,maxvert
   set guifont=Inconsolata-dz\ for\ Powerline:h18
 else
-  set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 14
+  set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 13
 end
 
 set guioptions-=T  "remove toolbar
