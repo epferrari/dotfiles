@@ -1,6 +1,7 @@
 colorscheme wombat
 if has("mac")
   set fuopt=maxhorz,maxvert
+  set guifont=Inconsolata-dz\ for\ Powerline:h18
 end
 
 set guioptions-=T  "remove toolbar

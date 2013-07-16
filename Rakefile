@@ -11,7 +11,7 @@ task :install do
   link_files(Dir.pwd, ENV['HOME'], '.', false)
 
   if PLATFORM_IS_OSX
-    link_files("#{Dir.pwd}/fonts", "#{ENV['HOME']}/Library/Fonts", '', false)
+    link_files("#{Dir.pwd}/fonts", "#{ENV['HOME']}/Library/Fonts", '', false, true)
   end
 
   setup_vundle
@@ -35,7 +35,7 @@ def setup_vundle
   end
 end
 
-def link_files(source_dir, destination_dir, prefix = '.', replace_all = false)
+def link_files(source_dir, destination_dir, prefix = '.', replace_all = false, copy_file = false)
   files = Dir.chdir(source_dir) do
     Dir.glob('*')
   end
@@ -43,28 +43,30 @@ def link_files(source_dir, destination_dir, prefix = '.', replace_all = false)
   files.each do |filename|
     next if %w[Rakefile README.rdoc LICENSE].include? filename
 
-    source_file = File.join(Dir.pwd, filename)
+    source_file = File.join(source_dir, filename)
     destination_file = File.join(destination_dir, "#{prefix}#{filename.sub('.erb', '')}")
 
     if File.exist?(destination_file)
       if File.identical? source_file, destination_file
         puts "identical #{destination_file}"
       elsif replace_all
-        replace_file(source_file, destination_file)
+        replace_file(source_file, destination_file, copy_file)
       else
         print "overwrite #{destination_file}? [ynaq] "
         case $stdin.gets.chomp
         when 'a'
           replace_all = true
-          replace_file(source_file, destination_file)
+          replace_file(source_file, destination_file, copy_file)
         when 'y'
-          replace_file(source_file, destination_file)
+          replace_file(source_file, destination_file, copy_file)
         when 'q'
           exit
         else
           puts "skipping #{destination_file}"
         end
       end
+    elsif copy_file
+      replace_file(source_file, destination_file, copy_file)
     else
       link_file(source_file, destination_file)
     end
@@ -82,9 +84,14 @@ def link_file(source, destination)
   end
 end
 
-def replace_file(source, destination)
+def replace_file(source, destination, copy = false)
   system %Q{rm -rf "#{destination}"}
-  link_file(source, destination)
+  if copy
+    puts "writing #{destination}"
+    system %Q{cp "#{source}" "#{destination}"}
+  else
+    link_file(source, destination)
+  end
 end
 
 def initialize_submodules
