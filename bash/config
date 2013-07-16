@@ -2,7 +2,7 @@ export EDITOR="vi"
 export AUTOFEATURE="true"
 
 # Prepend 'bundle exec' to gem commands
-[ -f ~/.bin/.bundler-exec.sh ] && source ~/.bin/.bundler-exec.sh
+[ -f ~/.bin/bundler-exec.sh ] && source ~/.bin/bundler-exec.sh
 
 # Automatically load environment variables stored in .env
 function cd {
