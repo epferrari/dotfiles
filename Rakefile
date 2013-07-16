@@ -1,35 +1,17 @@
 require 'rake'
 require 'erb'
 
+PLATFORM_IS_OSX = (Object::RUBY_PLATFORM =~ /darwin/i) ? true : false
+
+
 desc "install the dot files into user's home directory"
 task :install do
   initialize_submodules
-  replace_all = false
-  Dir['*'].each do |file|
-    next if %w[Rakefile README.rdoc LICENSE].include? file
 
-    if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
-      if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
-        puts "identical ~/.#{file.sub('.erb', '')}"
-      elsif replace_all
-        replace_file(file)
-      else
-        print "overwrite ~/.#{file.sub('.erb', '')}? [ynaq] "
-        case $stdin.gets.chomp
-        when 'a'
-          replace_all = true
-          replace_file(file)
-        when 'y'
-          replace_file(file)
-        when 'q'
-          exit
-        else
-          puts "skipping ~/.#{file.sub('.erb', '')}"
-        end
-      end
-    else
-      link_file(file)
-    end
+  link_files(Dir['*'], ENV['HOME'], '.', false)
+
+  if PLATFORM_IS_OSX
+    #link_files(Dir['fonts', '*'], "#{ENV['HOME']}/Library/Fonts", '', false)
   end
 
   setup_vundle
@@ -40,19 +22,7 @@ task :promptless_install do
   initialize_submodules
   $promptless = true
 
-  Dir['*'].each do |file|
-    next if %w[Rakefile README.rdoc LICENSE].include? file
-
-    if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
-      if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
-        puts "identical ~/.#{file.sub('.erb', '')}"
-      else
-        replace_file(file)
-      end
-    else
-      link_file(file)
-    end
-  end
+  link_files(Dir['*'], ENV['HOME'], '.', true)
 
   setup_vundle
 end
@@ -68,6 +38,37 @@ end
 def replace_file(file)
   system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
   link_file(file)
+end
+
+def link_files(files, destination, prefix = '.', replace_all = false)
+  files.each do |file|
+    next if %w[Rakefile README.rdoc LICENSE].include? file
+
+    filename = File.join(destination, ".#{file.sub('.erb', '')}")
+
+    if File.exist?(filename)
+      if File.identical? file, filename
+        puts "identical #{filename}"
+      elsif replace_all
+        replace_file(file)
+      else
+        print "overwrite #{filename}? [ynaq] "
+        case $stdin.gets.chomp
+        when 'a'
+          replace_all = true
+          replace_file(file)
+        when 'y'
+          replace_file(file)
+        when 'q'
+          exit
+        else
+          puts "skipping #{filename}"
+        end
+      end
+    else
+      link_file(file)
+    end
+  end
 end
 
 def link_file(file)
