@@ -35,52 +35,52 @@ def setup_vundle
   end
 end
 
-def replace_file(file)
-  system %Q{rm -rf "$HOME/.#{file.sub('.erb', '')}"}
-  link_file(file)
-end
-
 def link_files(files, destination, prefix = '.', replace_all = false)
-  files.each do |file|
-    next if %w[Rakefile README.rdoc LICENSE].include? file
+  files.each do |filename|
+    next if %w[Rakefile README.rdoc LICENSE].include? filename
 
-    filename = File.join(destination, ".#{file.sub('.erb', '')}")
+    source_file = File.join(Dir.pwd, filename)
+    destination_file = File.join(destination, ".#{filename.sub('.erb', '')}")
 
-    if File.exist?(filename)
-      if File.identical? file, filename
-        puts "identical #{filename}"
+    if File.exist?(destination_file)
+      if File.identical? source_file, destination_file
+        puts "identical #{destination_file}"
       elsif replace_all
-        replace_file(file)
+        replace_file(source_file, destination_file)
       else
-        print "overwrite #{filename}? [ynaq] "
+        print "overwrite #{destination_file}? [ynaq] "
         case $stdin.gets.chomp
         when 'a'
           replace_all = true
-          replace_file(file)
+          replace_file(source_file, destination_file)
         when 'y'
-          replace_file(file)
+          replace_file(source_file, destination_file)
         when 'q'
           exit
         else
-          puts "skipping #{filename}"
+          puts "skipping #{destination_file}"
         end
       end
     else
-      link_file(file)
+      link_file(source_file, destination_file)
     end
   end
 end
 
-def link_file(file)
-  if file =~ /.erb$/
-    puts "generating ~/.#{file.sub('.erb', '')}"
-    File.open(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"), 'w') do |new_file|
-      new_file.write ERB.new(File.read(file)).result(binding)
+def link_file(source, destination)
+  if source =~ /.erb$/
+    File.open(destination, 'w') do |new_file|
+      new_file.write ERB.new(File.read(source)).result(binding)
     end
   else
-    puts "linking ~/.#{file}"
-    system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
+    puts "linking #{destination}"
+    system %Q{ln -s "#{source}" "#{destination}"}
   end
+end
+
+def replace_file(source, destination)
+  system %Q{rm -rf "#{destination}"}
+  link_file(source, destination)
 end
 
 def initialize_submodules
