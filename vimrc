@@ -146,6 +146,7 @@ imap <F4> :tabe ~/vim_scratch.txt<CR>
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F5> :TlistToggle<cr>
+nnoremap <F6> :GundoToggle<CR>
 
 " Sync open window with NERDTree
 
