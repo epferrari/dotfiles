@@ -195,6 +195,6 @@ nnoremap <M-Down> <C-W>j
 nnoremap <M-Up> <C-W>k
 
 " Vundle configuration
-call vundle#rc()
-Bundle 'gmarik/vundle'
+"call vundle#rc()
+"Bundle 'gmarik/vundle'
 "Bundle 'Valloric/YouCompleteMe'
