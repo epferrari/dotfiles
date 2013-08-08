@@ -19,11 +19,12 @@
   branch = auto
   ui = auto
 [core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = vim
-	autocrlf = input
+  excludesfile = <%= ENV['HOME'] %>/.gitignore
+  editor = vim
+  autocrlf = input
+  pager = less -S
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
 [grep]
