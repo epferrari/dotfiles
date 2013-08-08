@@ -146,6 +146,7 @@ imap <F4> :tabe ~/vim_scratch.txt<CR>
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F5> :TlistToggle<cr>
+nnoremap <F6> :GundoToggle<CR>
 
 " Sync open window with NERDTree
 
@@ -186,7 +187,6 @@ autocmd BufEnter * call rc:syncTree()
 
 " Enable PowerLine
 let g:Powerline_symbols = 'fancy'
-set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 12
 
 " VIM Split Enhancements
 nnoremap <M-Right> <C-W>l
@@ -195,6 +195,6 @@ nnoremap <M-Down> <C-W>j
 nnoremap <M-Up> <C-W>k
 
 " Vundle configuration
-call vundle#rc()
-Bundle 'gmarik/vundle'
+"call vundle#rc()
+"Bundle 'gmarik/vundle'
 "Bundle 'Valloric/YouCompleteMe'

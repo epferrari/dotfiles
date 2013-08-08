@@ -1,9 +1,6 @@
 export EDITOR="vi"
 export AUTOFEATURE="true"
 
-# Prepend 'bundle exec' to gem commands
-[ -f ~/.bin/.bundler-exec.sh ] && source ~/.bin/.bundler-exec.sh
-
 # Automatically load environment variables stored in .env
 function cd {
     builtin cd "$@"
@@ -12,4 +9,8 @@ function cd {
     fi
 }
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Prepend 'bundle exec' to gem commands
+[ -f ~/.bin/bundler-exec.sh ] && source ~/.bin/bundler-exec.sh

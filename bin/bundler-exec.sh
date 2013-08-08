@@ -32,7 +32,7 @@ run-with-bundler()
 
 ## Main program
 
-BUNDLED_COMMANDS="${BUNDLED_COMMANDS:-
+BUNDLED_COMMANDS=(
 cap
 capify
 cucumber
@@ -60,10 +60,10 @@ tt
 turn
 unicorn
 unicorn_rails
-}"
+)
 
 for CMD in $BUNDLED_COMMANDS; do
     if [[ $CMD != "bundle" && $CMD != "gem" ]]; then
-        alias $CMD="run-with-bundler $CMD"
+      alias $CMD="run-with-bundler $CMD"
     fi
 done
