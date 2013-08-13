@@ -91,6 +91,12 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
 		Installs a git hook to autoformat all files during commit
 		Note: This feature is still experimental
 
+  git pup
+    Install and initialize all git submodules to version in tree
+
+  git su
+    Submodule update: update all submodules to recent version
+
 ### Rails
 
 	log
