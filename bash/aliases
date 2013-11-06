@@ -46,6 +46,10 @@ alias vi='vim'
 alias qspork='bundle exec spork cucumber'
 alias rspork='bundle exec spork'
 
+alias zr='zeus rspec'
+alias zc='zeus cucumber'
+alias zs='zeus server'
+
 alias log='tail -f -n 800 log/development.log'
 alias qlog='tail -f -n 800 log/cucumber.log'
 alias tlog='tail -f -n 800 log/test.log'
