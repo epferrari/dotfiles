@@ -120,7 +120,14 @@ alias grr='git remote rm'
 alias gg='git g'
 
 # Branch Clean: clears out all local git branches that have already been merged into the active branch
-brclean () { git branch -d $( git branch --merged | grep -v '^\*' | grep -v 'master' | grep -v 'staging' ); }
+brclean () {
+  branches_to_delete="$( git branch --merged | grep -v '^\*' | grep -v 'master' | grep -v 'staging' )"
+  if [[ "$branches_to_delete" == "" ]]; then
+    echo "No branches to delete"
+  else
+    echo $branches_to_delete | xargs git branch -d
+  fi
+}
 
 # Remote Branch Clean: clears out all remote branches that have already been merged into master
 rbrclean () {
