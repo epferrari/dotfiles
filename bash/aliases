@@ -177,6 +177,10 @@ function git-branch-authors {
   done
 }
 
+function git-remote-branches {
+  for k in `git branch -r|awk '{print $1}'`;do echo `git show --pretty=format:"%Cgreen%ci %Cblue%cr %Cred%cn %Creset" $k|head -n 1`\\t$k;done|sort -r
+}
+
 alias gba='git-branch-authors'
 
 # Git Recent: show git branches organized by date
