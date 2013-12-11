@@ -69,6 +69,9 @@ alias rst='touch tmp/restart.txt'
 alias migrate='rake db:migrate db:test:clone'
 
 ####### Cucumber ##########
+alias irspec='RSPEC_INTERACTIVE=true bundle exec rspec'
+
+####### Cucumber ##########
 alias cuke='bundle exec cucumber -r features'
 alias icuke='CUCUMBER_INTERACTIVE=true bundle exec cucumber -r features'
 
