@@ -51,11 +51,10 @@ let g:gist_detect_filetype = 1
 
 let g:rubycomplete_buffer_loading = 1
 
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po]|class|png|jpeg|jpg)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po]|class|png|jpeg|jpg)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|node_modules\/|public\/system\/'
-let g:fuf_dir_exclude = '\v(^|[/\\])((.*node_modules)|(public\/system)|(\.(hg|git|bzr|svn)))($|[/\\])'
-let g:fuzzy_ceiling = 50000
-let g:fuzzy_matching_limit = 10
+let g:ctrlp_custom_ignore = {
+  \ 'file': '\v\.(exe|so|dll|bak|orig|sw[po]|class|png|jpeg|jpg)$',
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp)$'
+  \ }
 
 let g:no_html_toolbar = 'yes'
 
@@ -77,11 +76,8 @@ map <silent> <LocalLeader>rt :!ctags -F `ack --ruby -f`<CR>
 map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
-map <silent> <LocalLeader>ff :FufCoverageFile<CR>
-map <silent> <LocalLeader>ft :FufTag<CR>
-map <silent> <LocalLeader>fb :FufBuffer<CR>
-map <silent> <LocalLeader>fr :FufRenewCache<CR>
-map <silent> <LocalLeader>fv :vsplit<CR>:FufCoverageFile<CR>
+map <silent> <LocalLeader>ff :CtrlP<CR>
+map <silent> <LocalLeader>fr :CtrlPClearCache<CR>
 map <silent> <LocalLeader>gd :e product_diff.diff<CR>:%!git diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>pd :e product_diff.diff<CR>:%!svn diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>nh :nohls<CR>
