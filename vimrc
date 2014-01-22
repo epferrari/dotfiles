@@ -55,6 +55,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|bak|orig|sw[po]|class|png|jpeg|jpg)$',
   \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp)$'
   \ }
+let g:ctrlp_match_window  = 'top,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_reuse_window = 'startify'
 
 let g:no_html_toolbar = 'yes'
 
