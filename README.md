@@ -4,9 +4,9 @@ Provides an organized, version controlled, portable system configuration for *ni
 
 ## Installation
 
-	git clone git://github.com/KurtPreston/dotfiles
-	cd dotfiles
-	rake install
+  git clone git://github.com/KurtPreston/dotfiles
+  cd dotfiles
+  rake install
 
 **Note:** if you already have some commands in .bashrc or .bash_profile you would like to keep, just place them in the file **~/.localrc**.
 
@@ -23,73 +23,69 @@ The Dot Files enable many plugins by default, but to enable additional oh-my-zsh
 
 ### General
 
-	autoformat [filename]
-		Removes whitespace and standardizes spacing
-		ex: autoformat *.rb
+  autoformat [filename]
+    Removes whitespace and standardizes spacing
+    ex: autoformat *.rb
 
-	autoformatall
-		Will autoformat all compatible files within a directory
+  autoformatall
+    Will autoformat all compatible files within a directory
 
-	replace [files] [find text] [replace text]
-		Performs a find/replace across multiple files
-		ex: replace "*.erb" "<b>" "<strong>"
+  replace [files] [find text] [replace text]
+    Performs a find/replace across multiple files
+    ex: replace "*.erb" "<b>" "<strong>"
 
-	reload
-		Reload all bash files
+  reload
+    Reload all bash files
 
     open .
         Open current folder in file browser
         (This is default MacOS behavior, but dotfiles enables it on Linux)
 
-	h [file in the home directory]
-		Jump to a folder in the home directory with tab completion
-		ex: h Mu[tab] -> h Music
+  h [file in the home directory]
+    Jump to a folder in the home directory with tab completion
+    ex: h Mu[tab] -> h Music
 
-	c [file in the ~/code directory]
-		Jump to a folder in the ~/code directory with tab completion
-		This is helpful if you store all programming projects in ~/code
-		ex: c do[tab] -> c dotfiles
+  c [file in the ~/code directory]
+    Jump to a folder in the ~/code directory with tab completion
+    This is helpful if you store all programming projects in ~/code
+    ex: c do[tab] -> c dotfiles
 
 ### Git
 
 Git gets tab completion, colored branch data at the prompt, as well as the following commands.
 
-	gco -or- git co
-		git checkout
+  gco -or- git co
+    git checkout
 
-	gs -or- git st
-		git status
+  gs -or- git st
+    git status
 
-	gb -or- git br
-		git branch
+  gb -or- git br
+    git branch
 
-	gg -or- git g
-        git grep (with line breaks for clearer output)
+  gg -or- git g
+    git grep (with line breaks for clearer output)
 
-	ga
-		git add
+  ga
+    git add
 
-	git rb [remote branch name]
-		checkout and track a remote branch
+  git rb [remote branch name]
+    checkout and track a remote branch
 
-	git lg
-		Detailed log view, including authors and branch history
+  git lg
+    Detailed log view, including authors and branch history
 
-	brclean
-		Remove all *local* branches that have been merged
+  brclean
+    Remove all *local* branches that have been merged
 
-	rbrclean
-		Remove all *remote* branches that have been merged
+  rbrclean
+    Remove all *remote* branches that have been merged
 
-	gbc -or- gbclean
-		Remove all *local and remote* merged branches
+  gbc -or- gbclean
+    Remove all *local and remote* merged branches
 
-	gba -or- git-branch-authors
-		List the authors of all git branches
-
-	git autoformat
-		Installs a git hook to autoformat all files during commit
-		Note: This feature is still experimental
+  gba -or- git-branch-authors
+    List the authors of all git branches
 
   git pup
     Install and initialize all git submodules to version in tree
@@ -97,74 +93,78 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
   git su
     Submodule update: update all submodules to recent version
 
+  git autoformat
+    Installs a git hook to autoformat all files during commit
+    Note: This feature is still experimental
+
 ### Rails
 
-	log
-		tail the development log
+  log
+    tail the development log
 
-	tlog
-		tail the test log
+  tlog
+    tail the test log
 
-	rs
-		rails server
+  rs
+    rails server
 
-	rc
-		rails console
+  rc
+    rails console
 
-	rg
-		rails generate
+  rg
+    rails generate
 
-	rst
-		restart server (touch tmp/restart.txt)
+  rst
+    restart server (touch tmp/restart.txt)
 
 ## VI Aliases
 
 Note: many of the VI commands will require the installation of **gvim** on Linux machines, or **mvim** on MacOS machines.
 
-	start ty[tab] -> start typing
-	    Autocomplete is enabled via the YouCompleteMe plugin
+  start ty[tab] -> start typing
+      Autocomplete is enabled via the YouCompleteMe plugin
 
-	\ff
-		Open Fuzzy Finder, an excellent way to quickly open files
+  \ff
+    Open CtrlP, an excellent way to quickly open files
 
-	\nt
-		Open Nerd Tree, a tree-style directory browser
+  \nt
+    Open Nerd Tree, a tree-style directory browser
 
-	\be
-		Open Buffer Explorer, a list of recently opened files
+  \be
+    Open Buffer Explorer, a list of recently opened files
 
-	\==
-    	Autoformat entire file, fixing indentation and spacing
+  \==
+      Autoformat entire file, fixing indentation and spacing
 
-	\cc
-		Comment lines
+  \cc
+    Comment lines
 
-	\uc
-		Uncomment lines
+  \uc
+    Uncomment lines
 
-	\ws
-		Remove all trailing whitespace from file
+  \ws
+    Remove all trailing whitespace from file
 
-	\nh
-		Stop highlighting words (after a find operation)
+  \nh
+    Stop highlighting words (after a find operation)
 
-	\fl
-		Format a line into multiple lines
-		ex: some_method_call(param1, param2, param3)
-		    \fl
-		    some_method_call(
-		    	param1,
-		    	param2,
-		    	param3)
+  \fl
+    Format a line into multiple lines
+    ex: some_method_call(param1, param2, param3)
+        \fl
+        some_method_call(
+          param1,
+          param2,
+          param3)
 
-	:A
-		Switch between test files and implementation file
+  :A
+    Switch between test files and implementation file
 
-	ctrl+p
-		Autocomplete
+  ctrl+p
+    Autocomplete
 
-	ctrl+x, ctrl-c, ctrl-v
-		Cut, copy, and paste now work in Linux VI
+  ctrl+x, ctrl-c, ctrl-v
+    Cut, copy, and paste now work in Linux VI
 
 ## Credits
 
