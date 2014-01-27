@@ -10,7 +10,7 @@
   rb = !sh -c 'git fetch &&  git checkout --track -b $0 origin/$0'
   rl = branch -a
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%%an>%Creset' --abbrev-commit --date=relative
-  pup = !sh -c 'git pull && git submodule init && git submodule update && git submodule status'
+  pup = !sh -c 'git submodule init && git submodule update && git submodule status'
   su = !sh -c 'git submodule -q foreach git pull -q origin master'
   autoformat = !sh -c 'git rev-parse && cp ~/.bin/pre-commit $(git rev-parse --show-cdup).git/hooks/ && echo "Autoformat enabled on commit"'
   g = grep --break --heading --line-number
