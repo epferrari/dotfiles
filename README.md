@@ -4,25 +4,32 @@ Provides an organized, version controlled, portable system configuration for *ni
 
 ## Installation
 
+```
   git clone git://github.com/KurtPreston/dotfiles
   cd dotfiles
   rake install
+```
 
 **Note:** if you already have some commands in .bashrc or .bash_profile you would like to keep, just place them in the file **~/.localrc**.
 
 ## Theme and Plugin Selection
 To set a theme, set the name to the ZSH_THEME environment variable in the ~/.localrc file.  For example, add the following line:
 
+```
     ZSH_THEME="robbyrussell"
+```
 
 The Dot Files enable many plugins by default, but to enable additional oh-my-zsh plugins, list them in the plugins environment variable in ~/.localrc.  For example:
 
+```
     plugins=(django osx)
+```
 
 ## Bash Aliases
 
 ### General
 
+```
   autoformat [filename]
     Removes whitespace and standardizes spacing
     ex: autoformat *.rb
@@ -49,11 +56,13 @@ The Dot Files enable many plugins by default, but to enable additional oh-my-zsh
     Jump to a folder in the ~/code directory with tab completion
     This is helpful if you store all programming projects in ~/code
     ex: c do[tab] -> c dotfiles
+```
 
 ### Git
 
 Git gets tab completion, colored branch data at the prompt, as well as the following commands.
 
+```
   gco -or- git co
     git checkout
 
@@ -96,9 +105,11 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
   git autoformat
     Installs a git hook to autoformat all files during commit
     Note: This feature is still experimental
+```
 
 ### Rails
 
+```
   log
     tail the development log
 
@@ -116,11 +127,13 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
 
   rst
     restart server (touch tmp/restart.txt)
+```
 
 ## VI Aliases
 
 Note: many of the VI commands will require the installation of **gvim** on Linux machines, or **mvim** on MacOS machines.
 
+```
   start ty[tab] -> start typing
       Autocomplete is enabled via the YouCompleteMe plugin
 
@@ -165,6 +178,7 @@ Note: many of the VI commands will require the installation of **gvim** on Linux
 
   ctrl+x, ctrl-c, ctrl-v
     Cut, copy, and paste now work in Linux VI
+```
 
 ## Credits
 
