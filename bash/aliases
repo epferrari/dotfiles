@@ -158,6 +158,7 @@ rbrclean () {
 function gbclean {
   rbrclean
   brclean
+  git pup
   git gc
 }
 
