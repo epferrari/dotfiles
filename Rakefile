@@ -8,10 +8,10 @@ desc "install the dot files into user's home directory"
 task :install do
   initialize_submodules
 
-  link_files(Dir.pwd, ENV['HOME'], prefix: '.')
+  link_files(Dir.pwd, ENV['HOME'], :prefix => '.')
 
   if PLATFORM_IS_OSX
-    link_files("#{Dir.pwd}/fonts", "#{ENV['HOME']}/Library/Fonts", copy_file: true)
+    link_files("#{Dir.pwd}/fonts", "#{ENV['HOME']}/Library/Fonts", :copy_file => true)
   end
 
   setup_vundle
@@ -22,7 +22,7 @@ task :promptless_install do
   initialize_submodules
   $promptless = true
 
-  link_files(Dir.pwd, ENV['HOME'], prefix: '.', replace_all: true)
+  link_files(Dir.pwd, ENV['HOME'], :prefix => '.', :replace_all => true)
 
   setup_vundle
 end
