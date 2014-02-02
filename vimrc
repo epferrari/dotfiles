@@ -72,6 +72,8 @@ autocmd FileType tex setlocal textwidth=78
 autocmd BufNewFile,BufRead *.txt setlocal textwidth=78
 
 autocmd FileType ruby runtime ruby_mappings.vim
+autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
+
 imap <C-L> <SPACE>=><SPACE>
 map <silent> <LocalLeader>cj :!clj %<CR>
 map <silent> <LocalLeader>rt :!ctags -F `ack --ruby -f`<CR>
