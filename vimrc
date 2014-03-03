@@ -7,6 +7,7 @@ if v:version < '702'
   let g:pathogen_disabled = []
   call add(g:pathogen_disabled, 'l9')
   call add(g:pathogen_disabled, 'vim-fuzzyfinder')
+  call add(g:pathogen_disabled, 'vimclojure')
 endif
 
 call pathogen#infect()
