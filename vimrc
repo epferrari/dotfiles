@@ -119,6 +119,9 @@ autocmd BufRead,InsertEnter,InsertLeave * 2match LineLengthError /\%126v.*/
 highlight LineLengthError ctermbg=black guibg=black
 autocmd ColorScheme * highlight LineLengthError ctermbg=black guibg=black
 
+" Treat .god files as Ruby
+au BufRead,BufNewFile *.god set filetype=ruby
+
 set laststatus=2
 set statusline=
 set statusline+=%<\                       " cut at start
