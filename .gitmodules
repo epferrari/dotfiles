@@ -1,45 +1,81 @@
-[submodule "vim/bundle/vim-ruby"]
-	path = vim/bundle/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "vim/bundle/vim-rails"]
-	path = vim/bundle/vim-rails
-	url = git://github.com/tpope/vim-rails.git
-[submodule "vim/bundle/vim-ragtag"]
-	path = vim/bundle/vim-ragtag
-	url = git://github.com/tpope/vim-ragtag.git
-[submodule "vim/bundle/NERD_tree"]
-	path = vim/bundle/NERD_tree
-	url = git://github.com/scrooloose/nerdtree.git
+###### Shell Plugins ######
+
+# ZSH enhancements
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
+  url = git://github.com/robbyrussell/oh-my-zsh.git
+
+###### VI Plugins #######
+
+# VI plugin manager
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git
-[submodule "vim/bundle/vim-jst"]
-	path = vim/bundle/vim-jst
-	url = https://github.com/briancollins/vim-jst.git
-[submodule "vim/bundle/vim-autoformat-rails"]
-	path = vim/bundle/vim-autoformat-rails
-	url = https://github.com/KurtPreston/vim-autoformat-rails.git
+  url = https://github.com/gmarik/vundle.git
+
+# Fancier VIM status bar
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
-	url = https://github.com/lunaru/vim-less.git
+  url = https://github.com/Lokaltog/vim-powerline.git
+
+# Rails features
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+  url = git://github.com/tpope/vim-rails.git
+
+# Directory tree with \nt
+[submodule "vim/bundle/NERD_tree"]
+	path = vim/bundle/NERD_tree
+  url = git://github.com/scrooloose/nerdtree.git
+
+# Fuzzy file finder
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+  url = https://github.com/kien/ctrlp.vim.git
+
+# Autoformat Ruby / CSS /JS
+[submodule "vim/bundle/vim-autoformat-rails"]
+	path = vim/bundle/vim-autoformat-rails
+  url = https://github.com/KurtPreston/vim-autoformat-rails.git
+
+# Show recently opened files on load
 [submodule "vim/bundle/vim-startify"]
 	path = vim/bundle/vim-startify
-	url = https://github.com/mhinz/vim-startify.git
+  url = https://github.com/mhinz/vim-startify.git
+
+# Undo tree viewing
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "vim/bundle/typescript-vim"]
-	path = vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
+
+####### VI Syntax Highlighting ########
+
+# Syntax alerts on save
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+
+# Ruby syntax highlighting
+[submodule "vim/bundle/vim-ruby"]
+	path = vim/bundle/vim-ruby
+  url = git://github.com/vim-ruby/vim-ruby.git
+
+# HTML highlighting
+[submodule "vim/bundle/vim-ragtag"]
+	path = vim/bundle/vim-ragtag
+  url = git://github.com/tpope/vim-ragtag.git
+
+# .JST syntax highlighting support
+[submodule "vim/bundle/vim-jst"]
+	path = vim/bundle/vim-jst
+  url = https://github.com/briancollins/vim-jst.git
+
+# Less file support
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+  url = https://github.com/lunaru/vim-less.git
+
+# .TS file support
+[submodule "vim/bundle/typescript-vim"]
+	path = vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+
