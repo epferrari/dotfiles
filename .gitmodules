@@ -12,6 +12,11 @@
 	path = vim/bundle/vundle
   url = https://github.com/gmarik/vundle.git
 
+# Color schems
+[submodule "vim/bundle/vim-colorschemes"]
+  path = vim/bundle/vim-colorschemes
+  url = https://github.com/flazz/vim-colorschemes.git
+
 # Fancier VIM status bar
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
@@ -79,3 +84,22 @@
 	path = vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
 
+# .MD markdown support
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+
+# Cucumber file support
+[submodule "vim/bundle/vim-cucumber"]
+	path = vim/bundle/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+
+# CoffeeScript support
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+
+# Puppet suntax
+[submodule "vim/bundle/puppet-syntax-vim"]
+	path = vim/bundle/puppet-syntax-vim
+	url = https://github.com/puppetlabs/puppet-syntax-vim.git
