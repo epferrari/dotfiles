@@ -1,0 +1,2 @@
+sudo tc qdisc del dev wlan0 root
+echo "Regular network traffic restored"
