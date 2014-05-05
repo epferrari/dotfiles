@@ -57,17 +57,17 @@
 # Syntax alerts on save
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = git@github.com:scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
 
 # Ruby syntax highlighting
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
-  url = git://github.com/vim-ruby/vim-ruby.git
+  url = https://github.com/vim-ruby/vim-ruby.git
 
 # HTML highlighting
 [submodule "vim/bundle/vim-ragtag"]
 	path = vim/bundle/vim-ragtag
-  url = git://github.com/tpope/vim-ragtag.git
+  url = https://github.com/tpope/vim-ragtag.git
 
 # .JST syntax highlighting support
 [submodule "vim/bundle/vim-jst"]
