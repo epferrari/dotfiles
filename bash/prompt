@@ -9,8 +9,8 @@ c_purple=`tty -s && tput setaf 5`
 c_cyan=`tty -s && tput setaf 6`
 c_white=`tty -s && tput setaf 7`
 
-c_bold=`tput bold`
-c_underline=`tput sgr 0 1`
+c_bold=`tty -s && tput bold`
+c_underline=`tty -s && tput sgr 0 1`
 
 parse_git_branch ()
 {
