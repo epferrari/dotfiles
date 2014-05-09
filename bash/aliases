@@ -214,3 +214,6 @@ function green() {
 function yellow() {
     echo -e "$YELLOW$*$NORMAL"
 }
+
+############## NODE ###########
+alias npm-exec='PATH=$(npm bin):$PATH'
