@@ -99,7 +99,12 @@
 	path = vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
 
-# Puppet suntax
+# Puppet syntax
 [submodule "vim/bundle/puppet-syntax-vim"]
 	path = vim/bundle/puppet-syntax-vim
-	url = https://github.com/puppetlabs/puppet-syntax-vim.git
+  url = https://github.com/puppetlabs/puppet-syntax-vim.git
+
+# Handlebars (HBS file) syntax
+[submodule "vim/bundle/vim-handlebars"]
+	path = vim/bundle/vim-handlebars
+	url = https://github.com/nono/vim-handlebars.git
