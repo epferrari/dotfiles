@@ -199,7 +199,7 @@ function git-recent {
 
 ############## COLOR PRINTING #################
 NORMAL=$(tty -s && tput sgr0)
-GREEN=$(tty -s && tput setaf 2; tput bold)
+GREEN=$(tty -s && tput setaf 2 && tput bold)
 YELLOW=$(tty -s && tput setaf 3)
 RED=$(tty -s && tput setaf 1)
 
