@@ -198,6 +198,9 @@ nnoremap <M-Left> <C-W>h
 nnoremap <M-Down> <C-W>j
 nnoremap <M-Up> <C-W>k
 
+" Disable Markdown folding
+let g:vim_markdown_folding_disabled=1
+
 " Vundle configuration
 "call vundle#rc()
 "Bundle 'gmarik/vundle'
