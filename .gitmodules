@@ -45,7 +45,17 @@
 # Undo tree viewing
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
-	url = https://github.com/sjl/gundo.vim.git
+  url = https://github.com/sjl/gundo.vim.git
+
+# Fancy status bar
+[submodule "vim/bundle/airline"]
+	path = vim/bundle/airline
+  url = https://github.com/bling/vim-airline.git
+
+# Git integration
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
 
 ####### VI Syntax Highlighting ########
 
@@ -107,7 +117,4 @@
 # Clojure support
 [submodule "vim/bundle/vim-fireplace"]
 	path = vim/bundle/vim-fireplace
-	url = git://github.com/tpope/vim-fireplace.git
-[submodule "vim/bundle/airline"]
-	path = vim/bundle/airline
-	url = https://github.com/bling/vim-airline.git
+  url = git://github.com/tpope/vim-fireplace.git
