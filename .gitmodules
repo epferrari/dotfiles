@@ -107,4 +107,9 @@
 # Handlebars (HBS file) syntax
 [submodule "vim/bundle/vim-handlebars"]
 	path = vim/bundle/vim-handlebars
-	url = https://github.com/nono/vim-handlebars.git
+  url = https://github.com/nono/vim-handlebars.git
+
+# Clojure support
+[submodule "vim/bundle/vim-fireplace"]
+	path = vim/bundle/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
