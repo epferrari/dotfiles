@@ -191,6 +191,7 @@ autocmd BufEnter * call rc:syncTree()
 
 " Enable PowerLine
 let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
 
 " VIM Split Enhancements
 nnoremap <M-Right> <C-W>l

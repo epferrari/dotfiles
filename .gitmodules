@@ -18,11 +18,6 @@
   url = https://github.com/flazz/vim-colorschemes.git
 
 # Fancier VIM status bar
-[submodule "vim/bundle/vim-powerline"]
-	path = vim/bundle/vim-powerline
-  url = https://github.com/Lokaltog/vim-powerline.git
-
-# Rails features
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
   url = git://github.com/tpope/vim-rails.git
@@ -113,3 +108,6 @@
 [submodule "vim/bundle/vim-fireplace"]
 	path = vim/bundle/vim-fireplace
 	url = git://github.com/tpope/vim-fireplace.git
+[submodule "vim/bundle/airline"]
+	path = vim/bundle/airline
+	url = https://github.com/bling/vim-airline.git
