@@ -62,7 +62,7 @@ let g:ctrlp_reuse_window = 'startify'
 let g:no_html_toolbar = 'yes'
 
 " Delete this line (or set g:autoclose_on to 1) to enable autoclose parens
-let g:autoclose_on = 0
+let g:autoclose_on = 1
 " au BufWinLeave * silent! mkview
 " au BufWinEnter * silent! loadview
 
