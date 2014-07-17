@@ -62,6 +62,16 @@
 	path = vim/bundle/vim-fireplace
   url = git://github.com/tpope/vim-fireplace.git
 
+# Allow ,w to jump to next subword in variable
+[submodule "vim/bundle/CamelCaseMotion"]
+	path = vim/bundle/CamelCaseMotion
+  url = https://github.com/bkad/CamelCaseMotion.git
+
+# Automatically create 'end' when typing 'do'
+[submodule "vim/bundle/vim-endwise"]
+	path = vim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+
 ####### VI Syntax Highlighting ########
 
 # Syntax alerts on save
@@ -127,4 +137,4 @@
 # Rainbow parens
 [submodule "vim/bundle/vim-niji"]
 	path = vim/bundle/vim-niji
-	url = https://github.com/amdt/vim-niji.git
+  url = https://github.com/amdt/vim-niji.git

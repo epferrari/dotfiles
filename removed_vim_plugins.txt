@@ -1,20 +1,24 @@
-ack.vim
 align
 align_maps
 autoclose
 bufexplorer
-camelcasemotion
 haskellmode
 l9
-mako
-matchit
 mkd
 ruby_focused_unit_test
 snipmate
 taglist
 tcomment
-vim-endwise
 vim-javascript
 vim-repeat
 vim-surround
 web-indent
+
+Scrapped:
+ack.vim -- run ack from vim
+mako    -- mako python files
+matchit -- now standard library in vim
+
+Submoduled:
+camelcasemotion
+vim-endwise
