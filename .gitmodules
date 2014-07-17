@@ -122,4 +122,9 @@
 # Clojure syntax support
 [submodule "vim/bundle/vim-clojure-static"]
 	path = vim/bundle/vim-clojure-static
-	url = https://github.com/guns/vim-clojure-static.git
+  url = https://github.com/guns/vim-clojure-static.git
+
+# Rainbow parens
+[submodule "vim/bundle/vim-niji"]
+	path = vim/bundle/vim-niji
+	url = https://github.com/amdt/vim-niji.git
