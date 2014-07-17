@@ -118,7 +118,7 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 map <silent> <LocalLeader>hws :highlight clear ExtraWhitespace<CR>
 
 " Highlight too-long lines
-autocmd BufRead,InsertEnter,InsertLeave * 2match LineLengthError /\%126v.*/
+autocmd BufRead,InsertEnter,InsertLeave * 2match LineLengthError /\%81v.*/
 highlight LineLengthError ctermbg=black guibg=black
 autocmd ColorScheme * highlight LineLengthError ctermbg=black guibg=black
 
