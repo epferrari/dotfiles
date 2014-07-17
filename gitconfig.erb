@@ -14,6 +14,9 @@
   su = !sh -c 'git submodule -q foreach git pull -q origin master'
   autoformat = !sh -c 'git rev-parse && cp ~/.bin/pre-commit $(git rev-parse --show-cdup).git/hooks/ && echo "Autoformat enabled on commit"'
   g = grep --break --heading --line-number
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
 [color]
   diff = auto
   status = auto
