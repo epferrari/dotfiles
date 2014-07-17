@@ -83,6 +83,7 @@ map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
 map <silent> <LocalLeader>ff :CtrlP<CR>
 map <silent> <LocalLeader>fr :CtrlPClearCache<CR>
+map <silent> <LocalLeader>be :CtrlPBuffer<CR>
 map <silent> <LocalLeader>gd :e product_diff.diff<CR>:%!git diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>pd :e product_diff.diff<CR>:%!svn diff<CR>:setlocal buftype=nowrite<CR>
 map <silent> <LocalLeader>nh :nohls<CR>
@@ -169,19 +170,14 @@ function! rc:isFFFocused()
   return -1 != match(expand('%'), 'fuf')
 endfunction
 
-" returns true iff focused window is BufferExplorer
-function! rc:isBEFocused()
-  return -1 != match(expand('%'), 'BufExplorer')
-endfunction
-
-" returns true iff focused window is BufferExplorer
+" returns true iff focused window is rspec
 function! rc:isRspecFocused()
   return -1 != match(expand('%'), 'rb_test_output')
 endfunction
 
 " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
 function! rc:syncTree()
-  if &modifiable && rc:isNTOpen() && !rc:isNTFocused() && !rc:isFFFocused() && !rc:isBEFocused() && !rc:isRspecFocused() && strlen(expand('%')) > 0 && !&diff
+  if &modifiable && rc:isNTOpen() && !rc:isNTFocused() && !rc:isFFFocused() && !rc:isRspecFocused() && strlen(expand('%')) > 0 && !&diff
     NERDTreeFind
     wincmd p
   endif

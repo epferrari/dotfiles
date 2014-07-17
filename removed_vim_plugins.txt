@@ -1,10 +1,8 @@
 align
 align_maps
 autoclose
-bufexplorer
 haskellmode
 l9
-mkd
 ruby_focused_unit_test
 snipmate
 taglist
@@ -18,7 +16,9 @@ Scrapped:
 ack.vim -- run ack from vim
 mako    -- mako python files
 matchit -- now standard library in vim
+mkd     -- markdown support
 
 Submoduled:
+bufexplorer
 camelcasemotion
 vim-endwise
