@@ -1,24 +1,21 @@
-align
-align_maps
-autoclose
-haskellmode
+Scrapped:
+ack.vim   -- run ack from vim
+mako      -- mako python files
+matchit   -- now standard library in vim
+mkd       -- markdown support
+autoclose -- autoclose parens (use paredit instead)
 l9
-ruby_focused_unit_test
-snipmate
+snipmate  -- snippets support
 taglist
-tcomment
 vim-javascript
-vim-repeat
-vim-surround
+vim-surround -- ability to add quotes around word
 web-indent
 
-Scrapped:
-ack.vim -- run ack from vim
-mako    -- mako python files
-matchit -- now standard library in vim
-mkd     -- markdown support
 
 Submoduled:
 bufexplorer
 camelcasemotion
+ruby_focused_unit_test
+tcomment
 vim-endwise
+vim-repeat

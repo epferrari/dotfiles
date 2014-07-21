@@ -142,4 +142,19 @@
 # Auto-match parens
 [submodule "vim/bundle/paredit.vim"]
 	path = vim/bundle/paredit.vim
-	url = https://github.com/vim-scripts/paredit.vim.git
+  url = https://github.com/vim-scripts/paredit.vim.git
+
+# Run rspec tests in VIM
+[submodule "vim/bundle/ruby_focused_unit_test_vim"]
+	path = vim/bundle/ruby_focused_unit_test_vim
+  url = https://github.com/drewolson/ruby_focused_unit_test_vim.git
+
+# Auto-comment code
+[submodule "vim/bundle/tcomment"]
+	path = vim/bundle/tcomment
+  url = https://github.com/tomtom/tcomment_vim.git
+
+# Fix period character repeat with plugins
+[submodule "vim/bundle/repeat.vim"]
+	path = vim/bundle/repeat.vim
+	url = https://github.com/tpope/vim-repeat.git
