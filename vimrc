@@ -153,7 +153,8 @@ let Tlist_WinWidth = 50
 map <F5> :TlistToggle<cr>
 nnoremap <F6> :GundoToggle<CR>
 
-" Sync open window with NERDTree
+" Open NERDTree on launch
+autocmd vimenter * NERDTree
 
 " returns true iff is NERDTree open/active
 function! rc:isNTOpen()
