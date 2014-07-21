@@ -153,8 +153,12 @@ let Tlist_WinWidth = 50
 map <F5> :TlistToggle<cr>
 nnoremap <F6> :GundoToggle<CR>
 
-" Open NERDTree on launch
-autocmd vimenter * NERDTree
+" Close window if NERDTree is only open window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Open NERDTree on launch if no file specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " returns true iff is NERDTree open/active
 function! rc:isNTOpen()
