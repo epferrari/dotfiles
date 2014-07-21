@@ -70,7 +70,32 @@
 # Automatically create 'end' when typing 'do'
 [submodule "vim/bundle/vim-endwise"]
 	path = vim/bundle/vim-endwise
-	url = https://github.com/tpope/vim-endwise.git
+  url = https://github.com/tpope/vim-endwise.git
+
+# Rainbow parens
+[submodule "vim/bundle/vim-niji"]
+	path = vim/bundle/vim-niji
+  url = https://github.com/amdt/vim-niji.git
+
+# Auto-match parens
+[submodule "vim/bundle/paredit.vim"]
+	path = vim/bundle/paredit.vim
+  url = https://github.com/vim-scripts/paredit.vim.git
+
+# Run rspec tests in VIM
+[submodule "vim/bundle/ruby_focused_unit_test_vim"]
+	path = vim/bundle/ruby_focused_unit_test_vim
+  url = https://github.com/drewolson/ruby_focused_unit_test_vim.git
+
+# Auto-comment code
+[submodule "vim/bundle/tcomment"]
+	path = vim/bundle/tcomment
+  url = https://github.com/tomtom/tcomment_vim.git
+
+# Fix period character repeat with plugins
+[submodule "vim/bundle/repeat.vim"]
+	path = vim/bundle/repeat.vim
+	url = https://github.com/tpope/vim-repeat.git
 
 ####### VI Syntax Highlighting ########
 
@@ -129,32 +154,17 @@
 	path = vim/bundle/vim-handlebars
   url = https://github.com/nono/vim-handlebars.git
 
+# Jade file syntax
+[submodule "vim/bundle/vim-jade"]
+	path = vim/bundle/vim-jade
+  url = https://github.com/digitaltoad/vim-jade.git
+
+# Emblem file syntax
+[submodule "vim/bundle/vim-emblem"]
+	path = vim/bundle/vim-emblem
+	url = https://github.com/heartsentwined/vim-emblem.git
+
 # Clojure syntax support
 [submodule "vim/bundle/vim-clojure-static"]
 	path = vim/bundle/vim-clojure-static
   url = https://github.com/guns/vim-clojure-static.git
-
-# Rainbow parens
-[submodule "vim/bundle/vim-niji"]
-	path = vim/bundle/vim-niji
-  url = https://github.com/amdt/vim-niji.git
-
-# Auto-match parens
-[submodule "vim/bundle/paredit.vim"]
-	path = vim/bundle/paredit.vim
-  url = https://github.com/vim-scripts/paredit.vim.git
-
-# Run rspec tests in VIM
-[submodule "vim/bundle/ruby_focused_unit_test_vim"]
-	path = vim/bundle/ruby_focused_unit_test_vim
-  url = https://github.com/drewolson/ruby_focused_unit_test_vim.git
-
-# Auto-comment code
-[submodule "vim/bundle/tcomment"]
-	path = vim/bundle/tcomment
-  url = https://github.com/tomtom/tcomment_vim.git
-
-# Fix period character repeat with plugins
-[submodule "vim/bundle/repeat.vim"]
-	path = vim/bundle/repeat.vim
-	url = https://github.com/tpope/vim-repeat.git
