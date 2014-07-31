@@ -55,7 +55,7 @@ let g:rubycomplete_buffer_loading = 1
 
 let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|bak|orig|sw[po]|class|png|jpeg|jpg)$',
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp|node_modules|vendor\/assets\/bower_components)$'
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp|node_modules|vendor|source_maps)$'
   \ }
 let g:ctrlp_match_window  = 'top,order:ttb,min:1,max:20,results:20'
 let g:ctrlp_reuse_window = 'startify'
@@ -123,6 +123,9 @@ map <silent> <LocalLeader>hws :highlight clear ExtraWhitespace<CR>
 autocmd BufRead,InsertEnter,InsertLeave * 2match LineLengthError /\%81v.*/
 highlight LineLengthError ctermbg=black guibg=black
 autocmd ColorScheme * highlight LineLengthError ctermbg=black guibg=black
+
+" Treat .hamlbars files as HAML
+au BufRead,BufNewFile *.hamlbars set filetype=haml
 
 " Treat .god files as Ruby
 au BufRead,BufNewFile *.god set filetype=ruby
