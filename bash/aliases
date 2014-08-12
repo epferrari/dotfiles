@@ -217,3 +217,12 @@ function yellow() {
 
 ############## NODE ###########
 alias npm-exec='PATH=$(npm bin):$PATH'
+
+############# FILE EXTRACTION ##########
+function unzipall() {
+  ls *.zip | awk -F'.zip' '{print "unzip \""$0"\" -d \""$1"\""}' | sh
+}
+
+function unrarall() {
+  ls *.rar | awk -F'.rar' '{print "mkdir \""$1"\" && unrar x \""$0"\" \""$1"\""}' | sh
+}
