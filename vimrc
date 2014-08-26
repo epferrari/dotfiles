@@ -55,7 +55,7 @@ let g:rubycomplete_buffer_loading = 1
 
 let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|bak|orig|sw[po]|class|png|jpeg|jpg)$',
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp|node_modules|vendor|source_maps)$'
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|tmp|node_modules|vendor|source_maps|coverage)$'
   \ }
 let g:ctrlp_match_window  = 'top,order:ttb,min:1,max:20,results:20'
 let g:ctrlp_reuse_window = 'startify'
@@ -220,6 +220,12 @@ nnoremap <M-Right> <C-W>l
 nnoremap <M-Left> <C-W>h
 nnoremap <M-Down> <C-W>j
 nnoremap <M-Up> <C-W>k
+
+" Pane resizing
+noremap <C-M-Left> :vertical resize -2<CR>
+noremap <C-M-Right> :vertical resize +2<CR>
+noremap <C-M-Up> :resize +1<CR>
+noremap <C-M-Down> :resize -1<CR>
 
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled=1
