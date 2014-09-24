@@ -211,6 +211,9 @@ imap <Esc>OQ /
 imap <Esc>Ol +
 imap <Esc>OS -
 
+"Map esc to jj
+:imap jj <Esc>
+
 " Enable PowerLine
 let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1

@@ -60,11 +60,6 @@ alias tlog='tail -f -n 800 log/test.log'
 
 alias ts='tddium spec'
 
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias scaffold='script/generate nifty_scaffold'
-
 alias rc='bundle exec rails console'
 alias rg='bundle exec rails generate'
 alias rs='bundle exec rails server'
@@ -72,8 +67,12 @@ alias rs='bundle exec rails server'
 alias rst='touch tmp/restart.txt'
 alias migrate='rake db:migrate db:test:clone'
 
-####### Cucumber ##########
+####### Rspec ##########
 alias irspec='RSPEC_INTERACTIVE=true bundle exec rspec'
+
+function rrspec () {
+  for i in {1..10}; do rspec $1; done
+}
 
 ####### Cucumber ##########
 alias cuke='bundle exec cucumber -r features'
