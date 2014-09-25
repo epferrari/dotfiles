@@ -99,6 +99,9 @@ map <silent> <LocalLeader>ws :%s/\s\+$//<CR>
 "fl -- format line: expands a single line of parameters into multiple lines
 map <silent> <LocalLeader>fl :s/\([;,{]\) */\1\r  /g<CR>:s/  }/}/g<CR>:nohls<CR>
 
+"ss -- string-to-symbol: converts hash with string keys to symbol keys
+map <silent> <LocalLeader>ss :%s/\["\(.\{-}\)"]/[:\1]/g<CR>:nohls<CR>
+
 "command Wsudo w !sudo tee %       <----uncomment for Shift+W sudo save"
 cnoremap <Tab> <C-L><C-D>
 
@@ -108,7 +111,7 @@ if version >= 700
 endif
 
 if &t_Co == 256
-  colorscheme vibrantink
+  colorscheme vividchalk
 endif
 
 " Highlight trailing whitespace
