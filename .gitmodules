@@ -95,7 +95,12 @@
 # Fix period character repeat with plugins
 [submodule "vim/bundle/repeat.vim"]
 	path = vim/bundle/repeat.vim
-	url = https://github.com/tpope/vim-repeat.git
+  url = https://github.com/tpope/vim-repeat.git
+
+# Allow terminal-style key bindings (i.e. ctrl + a)
+[submodule "vim/bundle/vim-rsi"]
+	path = vim/bundle/vim-rsi
+	url = https://github.com/tpope/vim-rsi.git
 
 ####### VI Syntax Highlighting ########
 
