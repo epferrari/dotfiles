@@ -70,8 +70,26 @@ alias migrate='rake db:migrate db:test:clone'
 ####### Rspec ##########
 alias irspec='RSPEC_INTERACTIVE=true bundle exec rspec'
 
+# rrspec -- rerun rspec test 10 times
 function rrspec () {
   for i in {1..10}; do rspec $1; done
+}
+
+# trspec -- thrash CPU + rerun rspec test 10 times
+function trspec () {
+  # Start thrashing processes
+  THRASHERS=8
+  for ((i = 1 ; i <= THRASHERS ; i++)); do
+    echo "Starting thrasher $i/$THRASHERS"
+    (yes &) > /dev/null 2>&1
+  done
+
+  # Run rspec test 10 times
+  for i in {1..10}; do rspec $1; done
+
+  # Stop thrashers
+  echo "Stopping thrashers"
+  killall yes
 }
 
 ####### Cucumber ##########
