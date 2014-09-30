@@ -127,11 +127,16 @@ autocmd BufRead,InsertEnter,InsertLeave * 2match LineLengthError /\%81v.*/
 highlight LineLengthError ctermbg=black guibg=black
 autocmd ColorScheme * highlight LineLengthError ctermbg=black guibg=black
 
-" Treat .hamlbars files as HAML
-au BufRead,BufNewFile *.hamlbars set filetype=haml
-
-" Treat .god files as Ruby
-au BufRead,BufNewFile *.god set filetype=ruby
+"Set filetypes
+au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru,Guardfile,*.god}     set ft=ruby
+au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                                         set ft=markdown
+au BufNewFile,BufRead {*.coffee,*.coffee.erb}                                         set filetype=coffee
+au BufNewFile,BufRead {*.eco,*.eco.erb}                                               set filetype=mason
+au BufNewFile,BufRead {*.less,*.less.erb}                                             set filetype=less
+au BufNewFile,BufRead *.js.erb                                                        set filetype=javascript
+au BufNewFile,BufRead *.raml                                                          set filetype=yaml
+au BufNewFile,BufRead {*.handlebars,*.hbs}                                            set filetype=handlebars
+au BufRead,BufNewFile *.hamlbars                                                      set filetype=haml
 
 set laststatus=2
 set statusline=
