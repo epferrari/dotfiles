@@ -1,4 +1,4 @@
-gem install pre-commit scss-lint rubocop
+rvm default do gem install pre-commit scss-lint rubocop
 npm install -g coffeelint jshint
-pre-commit install
+pre-commit install --automatic
 git config pre-commit.checks "whitespace, console_log, debugger, pry, tabs, rubocop, before_all, coffeelint, scss_lint, yaml, json, jshint"
