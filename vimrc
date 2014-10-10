@@ -241,6 +241,9 @@ noremap <C-M-Down> :resize -1<CR>
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled=1
 
+" Enable Rubocop/Syntastic integration
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
 " Vundle configuration
 "call vundle#rc()
 "Bundle 'gmarik/vundle'
