@@ -3,7 +3,7 @@
 alias ..='cd ..'
 
 # changing directory to code project
-function c { cd ~/code/$1; }
+function c { cd $CODE_HOME/$1; }
 
 alias reload='. ~/.bash_profile'
 

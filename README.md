@@ -52,9 +52,8 @@ The Dot Files enable many plugins by default, but to enable additional oh-my-zsh
     Jump to a folder in the home directory with tab completion
     ex: h Mu[tab] -> h Music
 
-  c [file in the ~/code directory]
-    Jump to a folder in the ~/code directory with tab completion
-    This is helpful if you store all programming projects in ~/code
+  c [file in the $CODE_HOME directory (~/code by default)]
+    Jump to a folder in the $CODE_HOME directory with tab completion
     ex: c do[tab] -> c dotfiles
 ```
 
