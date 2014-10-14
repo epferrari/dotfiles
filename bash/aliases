@@ -46,6 +46,13 @@ alias yumy='yum -y'
 alias yummy='yum -y'
 alias vi='vim'
 
+# Open up last note in vim
+function notes () {
+  cd $NOTES_DIR &&
+  last_note=$(ls -t 2> /dev/null | head -n 1) &&
+  vim $last_note -c ":NERDTree" -c "wincmd p"
+}
+
 ######### Rails ###########
 alias qspork='bundle exec spork cucumber'
 alias rspork='bundle exec spork'
