@@ -10,9 +10,7 @@ task :install do
 
   link_files(Dir.pwd, ENV['HOME'], :prefix => '.')
 
-  if PLATFORM_IS_OSX
-    link_files("#{Dir.pwd}/fonts", "#{ENV['HOME']}/Library/Fonts", :copy_file => true)
-  end
+  system('bin/install_powerline_fonts.sh')
 
   setup_vundle
 end
