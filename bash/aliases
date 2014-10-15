@@ -48,9 +48,8 @@ alias vi='vim'
 
 # Open up last note in vim
 function notes () {
-  cd $NOTES_DIR &&
-  last_note=$(ls -t 2> /dev/null | head -n 1) &&
-  vim $last_note -c ":NERDTree" -c "wincmd p"
+  last_note=$(cd $NOTES_DIR; ls -t 2> /dev/null | head -n 1) &&
+  vim $NOTES_DIR/$last_note -c ":NERDTree" -c "wincmd p"
 }
 
 ######### Rails ###########
