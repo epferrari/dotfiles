@@ -248,3 +248,8 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 "call vundle#rc()
 "Bundle 'gmarik/vundle'
 "Bundle 'Valloric/YouCompleteMe'
+
+" Allow local settings overrides with ~/.vimrc.local
+if filereadable(glob("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
