@@ -6,3 +6,4 @@ vim/bundle/YouCompleteMe/
 .rvmrc
 Gemfile
 vimrc.local
+gvimrc.local
