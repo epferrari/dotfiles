@@ -8,6 +8,7 @@ desc "install the dot files into user's home directory"
 task :install do
   initialize_submodules
 
+  create_local_files
   link_files(Dir.pwd, ENV['HOME'], :prefix => '.')
 
   system('bin/install_powerline_fonts.sh')
@@ -20,9 +21,15 @@ task :promptless_install do
   initialize_submodules
   $promptless = true
 
+  create_local_files
   link_files(Dir.pwd, ENV['HOME'], :prefix => '.', :replace_all => true)
 
   setup_vundle
+end
+
+def create_local_files
+  system('touch ~/.vimrc.local')
+  system('touch ~/.gvimrc.local')
 end
 
 def setup_vundle
