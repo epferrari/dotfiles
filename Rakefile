@@ -50,7 +50,7 @@ def link_files(source_dir, destination_dir, opts)
   end
 
   files.each do |filename|
-    next if %w[Rakefile README.md LICENSE oh-my-zsh].include? filename
+    next if %w[Rakefile README.md LICENSE].include? filename
 
     source_file = File.join(source_dir, filename)
     destination_file = File.join(destination_dir, "#{prefix}#{filename.sub('.erb', '')}")
