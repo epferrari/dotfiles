@@ -7,3 +7,4 @@ vim/bundle/YouCompleteMe/
 Gemfile
 vimrc.local
 gvimrc.local
+bin/repos
