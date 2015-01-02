@@ -12,7 +12,8 @@ alias reload='. ~/.bash_profile'
 function replace {
   ignore_hidden_folders="-not -path '*/.*/*'"
   ignore_tmp_dir="-not -path './tmp/*'"
-  find_command="find . $ignore_hidden_folders $ignore_tmp_dir -name \"$1\" -type f -print0"
+  ignore_bower="-not -path '*/bower_components/*'"
+  find_command="find . $ignore_hidden_folders $ignore_tmp_dir $ignore_bower -name \"$1\" -type f -print0"
 
   if [[ "$unamestr" == 'Darwin' ]]; then
     eval $find_command | xargs -0 sed -i '' -e "s/$2/$3/g"
