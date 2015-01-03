@@ -243,6 +243,7 @@ let g:vim_markdown_folding_disabled=1
 
 " Enable Rubocop/Syntastic integration
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_html_tidy_ignore_errors=["proprietary attribute \"ng-", "trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
 
 " Vundle configuration
 "call vundle#rc()
