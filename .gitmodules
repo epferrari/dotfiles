@@ -177,4 +177,9 @@
 # Slim file support
 [submodule "vim/bundle/vim-slim"]
 	path = vim/bundle/vim-slim
-	url = https://github.com/slim-template/vim-slim.git
+  url = https://github.com/slim-template/vim-slim.git
+
+# Better JavaScript indentation
+[submodule "vim/bundle/JavaScript-Indent"]
+	path = vim/bundle/JavaScript-Indent
+	url = git@github.com:vim-scripts/JavaScript-Indent.git
