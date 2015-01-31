@@ -100,7 +100,12 @@
 # Allow terminal-style key bindings (i.e. ctrl + a)
 [submodule "vim/bundle/vim-rsi"]
 	path = vim/bundle/vim-rsi
-	url = https://github.com/tpope/vim-rsi.git
+  url = https://github.com/tpope/vim-rsi.git
+
+# Faster loading when editing extremely large files
+[submodule "vim/bundle/LargeFile"]
+	path = vim/bundle/LargeFile
+	url = https://github.com/vim-scripts/LargeFile.git
 
 ####### VI Syntax Highlighting ########
 
