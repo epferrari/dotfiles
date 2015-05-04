@@ -22,6 +22,14 @@ function replace {
   fi
 }
 
+# Extension move
+#     example: extmv . jpeg jpg
+extmv () {
+    find "${1}" -type f -name "*.${2}" |
+    sed "s/\.${2}$//" |
+    xargs -I% mv -iv "%.${2}" "%.${3}"
+}
+
 # ls
 alias ls='ls -G -F'
 alias l="ls -lAh"
