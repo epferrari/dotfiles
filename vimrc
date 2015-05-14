@@ -137,6 +137,7 @@ au BufNewFile,BufRead *.js.erb                                                  
 au BufNewFile,BufRead *.raml                                                          set filetype=yaml
 au BufNewFile,BufRead {*.handlebars,*.hbs}                                            set filetype=handlebars
 au BufRead,BufNewFile *.hamlbars                                                      set filetype=haml
+au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar                                   set filetype=zip
 
 set laststatus=2
 set statusline=

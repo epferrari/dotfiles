@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Only install fonts if in a Linux Windows Manager or MacOS
-if [[ (-z "$GDMSESSION") || (`uname` == "Darwin") ]]; then
+if [[ (-z "$GDMSESSION") || (-z "$DESKTOP_SESSION") || (`uname` == "Darwin") ]]; then
 
   powerline_install_dir="$( cd "$( dirname "$0" )" && pwd )"
   powerline_dir="$powerline_install_dir/repos"
