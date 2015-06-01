@@ -174,34 +174,34 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " returns true iff is NERDTree open/active
-function! rc:isNTOpen()
+function! RCisNTOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 
 " returns true iff focused window is NERDTree window
-function! rc:isNTFocused()
+function! RCisNTFocused()
   return -1 != match(expand('%'), 'NERD_Tree')
 endfunction
 
 " returns true iff focused window is FuzzyFinder
-function! rc:isFFFocused()
+function! RCisFFFocused()
   return -1 != match(expand('%'), 'fuf')
 endfunction
 
 " returns true iff focused window is rspec
-function! rc:isRspecFocused()
+function! RCisRspecFocused()
   return -1 != match(expand('%'), 'rb_test_output')
 endfunction
 
 " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
-function! rc:syncTree()
-  if &modifiable && rc:isNTOpen() && !rc:isNTFocused() && !rc:isFFFocused() && !rc:isRspecFocused() && strlen(expand('%')) > 0 && !&diff
+function! RCsyncTree()
+  if &modifiable && RCisNTOpen() && !RCisNTFocused() && !RCisFFFocused() && !RCisRspecFocused() && strlen(expand('%')) > 0 && !&diff
     NERDTreeFind
     wincmd p
   endif
 endfunction
 
-autocmd BufEnter * call rc:syncTree()
+autocmd BufEnter * call RCsyncTree()
 
 " Fix numpad escape character issue
 imap <Esc>Oq 1
