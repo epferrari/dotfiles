@@ -87,7 +87,7 @@ alias irspec='RSPEC_INTERACTIVE=true bundle exec rspec'
 
 # rrspec -- rerun rspec test 10 times
 function rrspec () {
-  for i in {1..10}; do rspec $1; done
+  for i in {1..10}; do bundle exec rspec $1; done
 }
 
 # trspec -- thrash CPU + rerun rspec test 10 times
