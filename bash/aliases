@@ -62,25 +62,15 @@ function notes () {
 }
 
 ######### Rails ###########
-alias qspork='bundle exec spork cucumber'
-alias rspork='bundle exec spork'
-
-alias zr='zeus rspec'
-alias zc='zeus cucumber'
-alias zs='zeus server'
-
 alias log='tail -f -n 800 log/development.log'
 alias qlog='tail -f -n 800 log/cucumber.log'
 alias tlog='tail -f -n 800 log/test.log'
-
-alias ts='tddium spec'
 
 alias rc='bundle exec rails console'
 alias rg='bundle exec rails generate'
 alias rs='bundle exec rails server'
 
 alias rst='touch tmp/restart.txt'
-alias migrate='rake db:migrate db:test:clone'
 
 ####### Rspec ##########
 alias irspec='RSPEC_INTERACTIVE=true bundle exec rspec'
