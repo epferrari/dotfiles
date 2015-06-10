@@ -75,7 +75,7 @@
 # Rainbow parens
 [submodule "vim/bundle/vim-niji"]
 	path = vim/bundle/vim-niji
-  url = https://github.com/amdt/vim-niji.git
+  url = https://github.com/vim-scripts/vim-niji.git
 
 # Auto-match parens
 [submodule "vim/bundle/paredit.vim"]
