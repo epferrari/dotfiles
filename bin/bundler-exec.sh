@@ -62,7 +62,7 @@ unicorn
 unicorn_rails
 )
 
-for CMD in $BUNDLED_COMMANDS; do
+for CMD in "${BUNDLED_COMMANDS[@]}"; do
     if [[ $CMD != "bundle" && $CMD != "gem" ]]; then
       alias $CMD="run-with-bundler $CMD"
     fi
