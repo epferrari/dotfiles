@@ -28,10 +28,13 @@ bind down:shift;alt  nudge +0   +10%
 # bind 1:ctrl;alt         throw 0 resize
 # bind 2:ctrl;alt         throw 1 resize
 # bind 3:ctrl;alt         throw 2 resize
-bind right:ctrl;alt throw right resize
-bind left:ctrl;alt  throw left  resize
-bind up:ctrl;alt    throw up    resize
-bind down:ctrl;alt  throw down  resize
+
+# bind right:ctrl;alt throw right resize
+# bind left:ctrl;alt  throw left  resize
+# bind up:ctrl;alt    throw up    resize
+# bind down:ctrl;alt  throw down  resize
+bind pad0:ctrl;alt throw left resize
+bind pad.:ctrl;alt throw right  resize
 
 # Focus Bindings
 bind pad6:cmd;alt focus right
