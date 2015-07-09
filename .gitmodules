@@ -187,4 +187,9 @@
 # Better JavaScript indentation
 [submodule "vim/bundle/JavaScript-Indent"]
 	path = vim/bundle/JavaScript-Indent
-	url = https://github.com/KurtPreston/JavaScript-Indent.git
+  url = https://github.com/KurtPreston/JavaScript-Indent.git
+
+# HAML / SCSS support
+[submodule "vim/bundle/vim-haml"]
+	path = vim/bundle/vim-haml
+	url = https://github.com/tpope/vim-haml.git
