@@ -57,8 +57,9 @@ alias vi='vim'
 
 # Open up last note in vim
 function notes () {
+  vim_cmd="$(which gvim || which mvim || which vim)"
   last_note=$(cd $NOTES_DIR; ls -td $(find . -type f) 2> /dev/null | head -n 1) &&
-  vim $NOTES_DIR/$last_note -c ":NERDTree $NOTES_DIR" -c "wincmd p"
+  $vim_cmd $NOTES_DIR/$last_note -c ":NERDTree $NOTES_DIR" -c "wincmd p"
 }
 
 ######### Rails ###########
@@ -117,11 +118,11 @@ if [[ "$unamestr" == 'Linux' ]]; then
   if [ -f /usr/local/bin/gvim ];
   then
     function gvim () { (/usr/local/bin/gvim -f "$@" &) }
+    alias mvim='gvim'
   else
     function gvim () { (/usr/bin/gvim -f "$@" &) }
   fi
 
-  alias mvim='gvim'
   alias open='gnome-open'
   alias ls='ls --color="auto" -F'
 fi
