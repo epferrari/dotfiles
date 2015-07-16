@@ -105,7 +105,12 @@
 # Faster loading when editing extremely large files
 [submodule "vim/bundle/LargeFile"]
 	path = vim/bundle/LargeFile
-	url = https://github.com/vim-scripts/LargeFile.git
+  url = https://github.com/vim-scripts/LargeFile.git
+
+# Ability to add/remove surrounding quotes, etc.
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
 
 ####### VI Syntax Highlighting ########
 
