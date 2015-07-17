@@ -14,6 +14,9 @@ fi
 DISABLE_AUTO_UPDATE="true"
 . ~/.oh-my-zsh/oh-my-zsh.sh
 
+# Load syntax highlight
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Disable auto-correct
 unsetopt correct_all
 

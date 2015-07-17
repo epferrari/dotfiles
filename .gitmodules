@@ -5,6 +5,11 @@
 	path = oh-my-zsh
   url = git://github.com/robbyrussell/oh-my-zsh.git
 
+# Syntax highlighting for ZSH
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+
 ###### VI Plugins #######
 
 # VI plugin manager
