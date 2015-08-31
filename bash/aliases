@@ -249,3 +249,16 @@ function unzipall() {
 function unrarall() {
   ls *.rar | awk -F'.rar' '{print "mkdir \""$1"\" && unrar x \""$0"\" \""$1"\""}' | sh
 }
+
+############## ITERM ###########
+function set_tab_title () {
+  TITLE=$*;
+
+  if [[ "$SHELL" == '/bin/zsh' ]]; then
+    DISABLE_AUTO_TITLE="true"
+    echo -ne "\e]1;$TITLE\a"
+    export PROMPT_COMMAND='echo -ne "\e]1;$TITLE\a"'
+  else
+    export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
+  fi
+}
