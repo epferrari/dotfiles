@@ -109,6 +109,11 @@ alias slq='find . -type f -name "*.feature" -print | xargs ls -rlt | tail -5'
 alias lq='find . -type f -name "*.feature" -print | xargs ls -rt | tail -1 | xargs bundle exec cucumber -r features'
 
 
+####### Karma #########
+alias ks='bundle exec rake karma:start'
+alias kr='bundle exec rake karma:run'
+
+
 ####### Linux-Mac Compatibility ###########
 platform='unknown'
 unamestr=`uname`
