@@ -18,7 +18,7 @@ brew install caskroom/cask/brew-cask
 brew cask install mattr-slate
 brew cask install dropbox
 brew cask install google-chrome
-brew cask install keepassx
+brew cask install dwihn0r-keepassx
 brew cask install iterm2
 brew cask install macvim
 
