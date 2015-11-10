@@ -50,6 +50,8 @@ bind down:cmd;alt focus behind
 bind esc:cmd hint
 
 # Unity-style Bindings
+alias center move    screenOriginX+screenSizeX/2-windowSizeX/2;screenOriginY+screenSizeY/2-windowSizeY/2 windowSizeX;windowSizeY
+
 bind 1:ctrl;alt      corner bottom-left resize:screenSizeX/2;screenSizeY/2
 bind 2:ctrl;alt      push bottom bar-resize:screenSizeY/2
 bind 3:ctrl;alt      corner bottom-right resize:screenSizeX/2;screenSizeY/2
@@ -59,13 +61,15 @@ bind 6:ctrl;alt      push right bar-resize:screenSizeX/2
 bind 7:ctrl;alt      corner top-left resize:screenSizeX/2;screenSizeY/2
 bind 8:ctrl;alt      push top bar-resize:screenSizeY/2
 bind 9:ctrl;alt      corner top-right resize:screenSizeX/2;screenSizeY/2
+bind /:ctrl;alt      move screenSizeX/4+screenOriginX;0 screenSizeX/2;screenSizeY
 
-bind pad1:ctrl;alt      corner bottom-left resize:screenSizeX/2;screenSizeY/2
-bind pad2:ctrl;alt      push bottom bar-resize:screenSizeY/2
-bind pad3:ctrl;alt      corner bottom-right resize:screenSizeX/2;screenSizeY/2
-bind pad4:ctrl;alt      push left bar-resize:screenSizeX/2
-bind pad5:ctrl;alt      push top bar-resize:screenSizeY
-bind pad6:ctrl;alt      push right bar-resize:screenSizeX/2
-bind pad7:ctrl;alt      corner top-left resize:screenSizeX/2;screenSizeY/2
-bind pad8:ctrl;alt      push top bar-resize:screenSizeY/2
-bind pad9:ctrl;alt      corner top-right resize:screenSizeX/2;screenSizeY/2
+bind pad1:ctrl;alt   corner bottom-left resize:screenSizeX/2;screenSizeY/2
+bind pad2:ctrl;alt   push bottom bar-resize:screenSizeY/2
+bind pad3:ctrl;alt   corner bottom-right resize:screenSizeX/2;screenSizeY/2
+bind pad4:ctrl;alt   push left bar-resize:screenSizeX/2
+bind pad5:ctrl;alt   push top bar-resize:screenSizeY
+bind pad6:ctrl;alt   push right bar-resize:screenSizeX/2
+bind pad7:ctrl;alt   corner top-left resize:screenSizeX/2;screenSizeY/2
+bind pad8:ctrl;alt   push top bar-resize:screenSizeY/2
+bind pad9:ctrl;alt   corner top-right resize:screenSizeX/2;screenSizeY/2
+bind pad/:ctrl;alt   move screenSizeX/4+screenOriginX;0 screenSizeX/2;screenSizeY
