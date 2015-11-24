@@ -258,3 +258,6 @@ let g:syntastic_html_tidy_ignore_errors=["proprietary attribute \"ng-", "trimmin
 if filereadable(glob("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+" Fix segmentation fault issue with RVM / ZSH
+let g:syntastic_shell = "/bin/sh"
