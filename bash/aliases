@@ -22,6 +22,12 @@ function replace {
   fi
 }
 
+# whitespace: remove trailing whitespace
+#     example: whitespace *.rb
+function whitespace {
+  replace $1 "[[:space:]]\{1,\}$" ""
+}
+
 # Extension move
 #     example: extmv . jpeg jpg
 extmv () {
