@@ -10,11 +10,17 @@ alias reload='. ~/.bash_profile'
 # replace: find/replace strings across multiple files
 #     example: replace *.rb find_string replace_string
 function replace {
+  # Prepare command
   ignore_hidden_folders="-not -path '*/.*/*'"
   ignore_tmp_dir="-not -path './tmp/*'"
   ignore_bower="-not -path '*/bower_components/*'"
   find_command="find . $ignore_hidden_folders $ignore_tmp_dir $ignore_bower -name \"$1\" -type f -print0"
 
+  # Set character encoding to handle special characters
+  LC_CTYPE=C
+  LANG=C
+
+  # Execute different sed command depending on OS
   if [[ "$unamestr" == 'Darwin' ]]; then
     eval $find_command | xargs -0 sed -i '' -e "s/$2/$3/g"
   else
