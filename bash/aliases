@@ -69,7 +69,7 @@ alias vi='vim'
 
 # Open up last note in vim
 function notes () {
-  vim_cmd="$(which gvim || which mvim || which vim)"
+  vim_cmd="$((which gvim || which mvim || which vim) | tail -n1)"
   last_note=$(cd $NOTES_DIR; ls -td $(find . -type f) 2> /dev/null | head -n 1) &&
   $vim_cmd $NOTES_DIR/$last_note -c ":NERDTree $NOTES_DIR" -c "wincmd p"
 }
