@@ -274,8 +274,6 @@ function set_tab_title () {
   if [[ "$SHELL" == '/bin/zsh' ]]; then
     DISABLE_AUTO_TITLE="true"
     echo -ne "\e]1;$TITLE\a"
-    export PROMPT_COMMAND='echo -ne "\e]1;$TITLE\a"'
-  else
-    export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
   fi
+  export PROMPT_COMMAND='echo -ne "\033]0;$TITLE\007"'
 }
