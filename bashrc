@@ -2,6 +2,7 @@ source ~/.bash/aliases
 source ~/.bash/completions
 source ~/.bash/paths
 source ~/.bash/config
+source ~/.bash/shared_history
 
 if [ "$TERM" != "dumb" ] && [ -n "$TERM" ]; then
   source ~/.bash/prompt
