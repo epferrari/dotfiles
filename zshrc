@@ -24,7 +24,6 @@ unsetopt correct_all
 . ~/.bash/aliases
 . ~/.bash/paths
 . ~/.bash/config
-. ~/.bash/shared_history
 
 # Other zsh settings
 . ~/.zsh/config
