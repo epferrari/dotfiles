@@ -30,6 +30,7 @@ unsetopt correct_all
 . ~/.zsh/aliases
 . ~/.zsh/completion
 . ~/.zsh/prompt
+. ~/.zsh/shared_history
 
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && . ~/.localrc
