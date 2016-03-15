@@ -45,6 +45,10 @@ bind pad8:cmd;alt focus up
 bind pad2:cmd;alt focus down
 bind up:cmd;alt   focus behind
 bind down:cmd;alt focus behind
+bind v:cmd;alt    focus 'MacVim'
+bind c:cmd;alt    focus 'Google Chrome'
+bind t:cmd;alt    focus 'iTerm'
+bind f:cmd;alt    focus 'Finder'
 
 # Window Hints
 bind esc:cmd hint
