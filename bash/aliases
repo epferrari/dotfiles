@@ -51,8 +51,6 @@ function retry {
   done
 }
 
-retry bundle install
-
 # whitespace: remove trailing whitespace
 #     example: whitespace *.rb
 function whitespace {
