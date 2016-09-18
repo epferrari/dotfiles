@@ -129,11 +129,6 @@
 	path = vim/bundle/vim-ruby
   url = https://github.com/vim-ruby/vim-ruby.git
 
-# HTML highlighting
-[submodule "vim/bundle/vim-ragtag"]
-	path = vim/bundle/vim-ragtag
-  url = https://github.com/tpope/vim-ragtag.git
-
 # .JST syntax highlighting support
 [submodule "vim/bundle/vim-jst"]
 	path = vim/bundle/vim-jst
@@ -194,11 +189,6 @@
 	path = vim/bundle/vim-slim
   url = https://github.com/slim-template/vim-slim.git
 
-# Better JavaScript indentation
-[submodule "vim/bundle/JavaScript-Indent"]
-	path = vim/bundle/JavaScript-Indent
-  url = https://github.com/KurtPreston/JavaScript-Indent.git
-
 # HAML / SCSS support
 [submodule "vim/bundle/vim-haml"]
 	path = vim/bundle/vim-haml
@@ -207,4 +197,14 @@
 # React JSX file support
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx.git
+  url = https://github.com/mxw/vim-jsx.git
+
+# JavaScript syntax
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+  url = https://github.com/pangloss/vim-javascript.git
+
+# HTML5 syntax
+[submodule "vim/bundle/html5.vim"]
+	path = vim/bundle/html5.vim
+	url = https://github.com/othree/html5.vim.git
