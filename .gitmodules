@@ -202,4 +202,9 @@
 # HAML / SCSS support
 [submodule "vim/bundle/vim-haml"]
 	path = vim/bundle/vim-haml
-	url = https://github.com/tpope/vim-haml.git
+  url = https://github.com/tpope/vim-haml.git
+
+# React JSX file support
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
