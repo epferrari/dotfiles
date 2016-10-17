@@ -3,7 +3,7 @@
 # ZSH enhancements
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
-  url = git://github.com/robbyrussell/oh-my-zsh.git
+  url = https://github.com/robbyrussell/oh-my-zsh.git
 
 # Syntax highlighting for ZSH
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
@@ -25,12 +25,12 @@
 # Fancier VIM status bar
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
-  url = git://github.com/tpope/vim-rails.git
+  url = https://github.com/tpope/vim-rails.git
 
 # Directory tree with \nt
 [submodule "vim/bundle/NERD_tree"]
 	path = vim/bundle/NERD_tree
-  url = git://github.com/scrooloose/nerdtree.git
+  url = https://github.com/scrooloose/nerdtree.git
 
 # Fuzzy file finder
 [submodule "vim/bundle/ctrlp.vim"]
@@ -65,7 +65,7 @@
 # Clojure library support
 [submodule "vim/bundle/vim-fireplace"]
 	path = vim/bundle/vim-fireplace
-  url = git://github.com/tpope/vim-fireplace.git
+  url = https://github.com/tpope/vim-fireplace.git
 
 # Allow ,w to jump to next subword in variable
 [submodule "vim/bundle/CamelCaseMotion"]
