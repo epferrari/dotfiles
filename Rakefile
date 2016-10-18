@@ -33,7 +33,7 @@ def create_local_files
 end
 
 def setup_vim_plugins
-  if File.exists?('vim/bundle/vimproc.vim/Makefile')
+  if File.exists?('vim/bundle/vimproc.vim/Makefile') && !File.exists?('vim/bundle/vimproc.vim/lib/vimproc_mac.so')
     puts 'Building vimproc'
     system('cd vim/bundle/vimproc.vim && make')
   end
