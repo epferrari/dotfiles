@@ -47,7 +47,7 @@ def setup_vim_plugins
 end
 
 def setup_neovim
-  system('mkdir -p ~/.config && ln -s ~/.vim ~/.config/nvim && ln -s ~/.vimrc ~/.config/nvim/init.vim')
+  system('mkdir -p ~/.config && ln -ns ~/.vim ~/.config/nvim && ln -s ~/.vimrc ~/.config/nvim/init.vim')
 end
 
 def link_files(source_dir, destination_dir, opts)
