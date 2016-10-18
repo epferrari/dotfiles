@@ -38,8 +38,9 @@ def setup_vim_plugins
     system('cd vim/bundle/vimproc.vim && make')
   end
 
-  if File.exists?('vim/bundle/YouCompleteMe') && !File.exists?('vim/bundle/YouCompleteMe/doc/tags')
-    system('cd vim/bundle/YouCompleteMe/ && ./install.sh')
+  if File.exists?('vim/bundle/YouCompleteMe') && !File.exists?('vim/bundle/YouCompleteMe/doc/tags') && which('python')
+    puts 'Setting up YouCompleteMe'
+    system('cd vim/bundle/YouCompleteMe/ && ./install.py --tern-completer')
   end
 end
 
@@ -109,9 +110,20 @@ def replace_file(source, destination, copy = false)
 end
 
 def initialize_submodules
-  system %Q{git submodule init && git submodule update && git submodule status}
+  system %Q{git submodule update --init --recursive && git submodule status}
 end
 
 def file_hash(filename)
   Digest::MD5.hexdigest(IO.read(filename))
+end
+
+def which(cmd)
+  exts = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : ['']
+  ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
+    exts.each { |ext|
+      exe = File.join(path, "#{cmd}#{ext}")
+      return exe if File.executable?(exe) && !File.directory?(exe)
+    }
+  end
+  return nil
 end
