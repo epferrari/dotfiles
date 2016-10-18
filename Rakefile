@@ -13,6 +13,7 @@ task :install do
 
   system('bin/install_powerline_fonts.sh')
 
+  setup_neovim
   setup_vim_plugins
 end
 
@@ -24,6 +25,7 @@ task :promptless_install do
   create_local_files
   link_files(Dir.pwd, ENV['HOME'], :prefix => '.', :replace_all => true)
 
+  setup_neovim
   setup_vim_plugins
 end
 
@@ -41,6 +43,10 @@ def setup_vim_plugins
   if File.exists?('vim/bundle/YouCompleteMe') && !File.exists?('vim/bundle/YouCompleteMe/doc/tags')
     system('cd vim/bundle/YouCompleteMe/ && ./install.sh')
   end
+end
+
+def setup_neovim
+  system('mkdir ~/.config && ln -s ~/.vim ~/.config/nvim && ln -s ~/.vimrc ~/.config/nvim/init.vim')
 end
 
 def link_files(source_dir, destination_dir, opts)
