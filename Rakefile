@@ -13,7 +13,7 @@ task :install do
 
   system('bin/install_powerline_fonts.sh')
 
-  setup_vundle
+  setup_vim_plugins
 end
 
 desc "install dotfiles without any prompts, assuming overwrite"
@@ -24,7 +24,7 @@ task :promptless_install do
   create_local_files
   link_files(Dir.pwd, ENV['HOME'], :prefix => '.', :replace_all => true)
 
-  setup_vundle
+  setup_vim_plugins
 end
 
 def create_local_files
@@ -32,9 +32,12 @@ def create_local_files
   system('touch ~/.gvimrc.local')
 end
 
-def setup_vundle
-  # Set-up vundle and YouCompleteMe plugin
-  system('vim +BundleInstall +qall')
+def setup_vim_plugins
+  if File.exists?('vim/bundle/vimproc.vim/Makefile')
+    puts 'Building vimproc'
+    system('cd vim/bundle/vimproc.vim && make')
+  end
+
   if File.exists?('vim/bundle/YouCompleteMe') && !File.exists?('vim/bundle/YouCompleteMe/doc/tags')
     system('cd vim/bundle/YouCompleteMe/ && ./install.sh')
   end
