@@ -7,3 +7,4 @@ Gemfile
 vimrc.local
 gvimrc.local
 bin/repos
+vim/init.vim
