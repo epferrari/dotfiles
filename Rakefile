@@ -35,12 +35,12 @@ def create_local_files
 end
 
 def setup_vim_plugins
-  if File.exists?('vim/bundle/vimproc.vim/Makefile') && !File.exists?('vim/bundle/vimproc.vim/lib/vimproc_mac.so')
+  if File.exists?('vim/bundle/vimproc.vim/Makefile') && Dir.glob('vim/bundle/vimproc.vim/lib/vimproc_*.so').empty?
     puts 'Building vimproc'
     system('cd vim/bundle/vimproc.vim && make')
   end
 
-  if File.exists?('vim/bundle/YouCompleteMe') && !File.exists?('vim/bundle/YouCompleteMe/doc/tags') && which('python')
+  if File.exists?('vim/bundle/YouCompleteMe') && !File.exists?('vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so') && which('python')
     puts 'Setting up YouCompleteMe'
     system('cd vim/bundle/YouCompleteMe/ && ./install.py --tern-completer')
   end
