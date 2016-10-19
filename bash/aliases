@@ -88,7 +88,10 @@ command_exists () {
 
 alias yumy='yum -y'
 alias yummy='yum -y'
-alias vi='nvim'
+function vi () {
+  vim_cmd="$((which nvim || which vim || which vi) | tail -n1)"
+  $vim_cmd $@
+}
 
 # Open up last note in vim
 function notes () {
