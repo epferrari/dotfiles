@@ -213,7 +213,7 @@ rbrclean () {
   if [ $? -eq 0 ]; then
     echo "Checkout successful -- Updating/cleaning code"
 
-    branches_to_delete="$(git branch -r --merged | grep -v '^\*' | grep -v 'origin/master' | grep -v 'origin/staging' | grep 'origin/' | sed 's/origin\///g')"
+    branches_to_delete="$(git branch -r --merged | grep -v '^\*' | grep -v 'origin/master' | grep -v 'origin/staging' | grep -v 'origin/release' | grep 'origin/' | sed 's/origin\///g')"
     if [[ "$branches_to_delete" == "" ]]; then
       echo "No remote branches to delete"
     else
