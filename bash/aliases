@@ -88,7 +88,7 @@ command_exists () {
 
 alias yumy='yum -y'
 alias yummy='yum -y'
-alias vi='vim'
+alias vi='nvim'
 
 # Open up last note in vim
 function notes () {
