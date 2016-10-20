@@ -245,10 +245,21 @@ noremap <C-M-Down> :resize -1<CR>
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled=1
 
-" Enable Rubocop/Syntastic integration
+" Enable Syntastic checkers
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_html_tidy_ignore_errors=["proprietary attribute \"ng-", "trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_scss_checkers = ['sass_lint']
+let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_json_checkers = ['jsonlint']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Vundle configuration
 "call vundle#rc()
