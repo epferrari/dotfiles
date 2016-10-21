@@ -128,7 +128,12 @@
 	url = https://github.com/Shougo/vimproc.vim.git
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
+  url = https://github.com/Valloric/YouCompleteMe.git
+
+# tmux integration
+[submodule "vim/bundle/vim-tmux-navigator"]
+	path = vim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
 
 ####### VI Syntax Highlighting ########
 

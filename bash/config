@@ -2,6 +2,7 @@ export EDITOR="vi"
 export AUTOFEATURE="true"
 export NOTES_DIR=~/Dropbox/Notes
 export CODE_HOME=~/Code
+export TERM="xterm-256color"
 
 # Automatically load environment variables stored in .env
 function cd {
