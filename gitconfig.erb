@@ -18,6 +18,7 @@
   unignore = update-index --no-assume-unchanged
   ignored = !git ls-files -v | grep "^[[:lower:]]"
   pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
+  sgrep = "!f() { git grep \"$1\"; git submodule foreach \"git grep '$1'; true\" | grep -B 1 \"$1\"; }; f"
 [color]
   diff = auto
   status = auto

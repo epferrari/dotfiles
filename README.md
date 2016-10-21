@@ -74,6 +74,9 @@ Git gets tab completion, colored branch data at the prompt, as well as the follo
   gg -or- git g
     git grep (with line breaks for clearer output)
 
+  gsg -or- git sgrep
+    git grep on main repo AND submodules
+
   ga
     git add
 

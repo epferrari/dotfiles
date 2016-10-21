@@ -191,6 +191,7 @@ alias gma='git commit -am'
 alias gra='git remote add'
 alias grr='git remote rm'
 alias gg='git g'
+alias gsg='git sgrep'
 
 # Branch Clean: clears out all local git branches that have already been merged into the active branch
 brclean () {
