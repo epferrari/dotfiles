@@ -275,3 +275,6 @@ let g:syntastic_shell = "/bin/sh"
 
 " Disable auto-indent for HAML
 autocmd BufEnter * if &filetype == "haml" | setlocal indentexpr= | endif
+
+" Auto-update files
+:set autoread
