@@ -115,7 +115,20 @@
 # Ability to add/remove surrounding quotes, etc.
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
+  url = https://github.com/tpope/vim-surround.git
+
+# TypeScript autocomplete
+[submodule "vim/bundle/tsuquyomi"]
+	path = vim/bundle/tsuquyomi
+  url = https://github.com/Quramy/tsuquyomi.git
+
+# Background process (required by tsuquyomi)
+[submodule "vim/bundle/vimproc.vim"]
+	path = vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
 
 ####### VI Syntax Highlighting ########
 
@@ -209,15 +222,7 @@
 	path = vim/bundle/html5.vim
   url = https://github.com/othree/html5.vim.git
 
-# TypeScript autocomplete
-[submodule "vim/bundle/tsuquyomi"]
-	path = vim/bundle/tsuquyomi
-  url = https://github.com/Quramy/tsuquyomi.git
-
-# Background process (required by tsuquyomi)
-[submodule "vim/bundle/vimproc.vim"]
-	path = vim/bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
+# TypeScript JSX support
+[submodule "vim/bundle/vim-tsx"]
+	path = vim/bundle/vim-tsx
+	url = https://github.com/ianks/vim-tsx.git
