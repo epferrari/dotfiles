@@ -2,3 +2,4 @@ export PATH="/usr/local/bin:$HOME/bin:$HOME/.bin:/usr/local/homebrew/bin:/usr/lo
 export PATH="$PATH:/usr/local/share/npm/bin" # Add NPM binaries
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.local/bin"
