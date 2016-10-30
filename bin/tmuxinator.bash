@@ -21,5 +21,7 @@ _tmuxinator() {
     fi
 }
 
-complete -F _tmuxinator tmuxinator mux
+if [ -x "$(command -v complete)" ]; then
+  complete -F _tmuxinator tmuxinator mux
+fi
 alias mux="tmuxinator"
