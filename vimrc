@@ -60,6 +60,9 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_match_window  = 'top,order:ttb,min:1,max:20,results:20'
 let g:ctrlp_reuse_window = 'startify'
 
+" Don't get lost in submodules
+let g:ctrlp_working_path_mode = 'rw'
+
 let g:no_html_toolbar = 'yes'
 
 " Delete this line (or set g:autoclose_on to 1) to enable autoclose parens
