@@ -96,6 +96,9 @@ map <silent> <LocalLeader>bd :bufdo :bd<CR>
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
 
+" \sv Reload vim config
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
 " Travis hotkeys
 nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical<CR>
 
@@ -252,7 +255,8 @@ let g:vim_markdown_folding_disabled=1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_html_tidy_ignore_errors=["proprietary attribute \"ng-", "trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_scss_checkers = ['sass_lint']
+let g:syntastic_sass_checkers=["sasslint"]
+let g:syntastic_scss_checkers=["sasslint"]
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_json_checkers = ['jsonlint']
 set statusline+=%#warningmsg#
