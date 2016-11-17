@@ -96,6 +96,10 @@ map <silent> <LocalLeader>bd :bufdo :bd<CR>
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
 
+" Find/replace using work under cursor
+nnoremap <Leader>s :%s/\V\<<C-r><C-w>\>/
+nnoremap <Leader>S :argdo :%s/\V\<<C-r><C-w>\>/
+
 " \sv Reload vim config
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
