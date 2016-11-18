@@ -252,6 +252,11 @@ noremap <C-M-Right> :vertical resize +2<CR>
 noremap <C-M-Up> :resize +1<CR>
 noremap <C-M-Down> :resize -1<CR>
 
+noremap <C-M-h> :vertical resize -2<CR>
+noremap <C-M-l> :vertical resize +2<CR>
+noremap <C-M-j> :resize +1<CR>
+noremap <C-M-k> :resize -1<CR>
+
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled=1
 
