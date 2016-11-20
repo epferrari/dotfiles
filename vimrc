@@ -11,6 +11,10 @@ if v:version < '702'
   call add(g:pathogen_disabled, 'vimclojure')
 endif
 
+if !has("patch-7-4-143")
+  let g:loaded_youcompleteme = 1
+endif
+
 call pathogen#infect()
 filetype plugin indent on
 
