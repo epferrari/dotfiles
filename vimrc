@@ -272,6 +272,7 @@ let g:syntastic_sass_checkers=["sasslint"]
 let g:syntastic_scss_checkers=["sasslint"]
 let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_sh_checkers = ['shellcheck']
 let g:tsuquyomi_disable_quickfix = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
