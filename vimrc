@@ -85,7 +85,6 @@ autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 
 imap <C-L> <SPACE>=><SPACE>
 map <silent> <LocalLeader>cj :!clj %<CR>
-map <silent> <LocalLeader>rt :!ctags -F `ack --ruby -f`<CR>
 map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
@@ -99,6 +98,8 @@ map <LocalLeader>aw :Ack '<C-R><C-W>'
 map <silent> <LocalLeader>bd :bufdo :bd<CR>
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
+" \rt -- Reload Tsuquyomi
+map <silent> <LocalLeader>rt :TsuStopServer<CR>:TsuStartServer<CR>:TsuquyomiReload<CR>:w<CR>
 
 " Find/replace using work under cursor
 nnoremap <Leader>s :%s/\V\<<C-r><C-w>\>/
