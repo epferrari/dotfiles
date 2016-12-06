@@ -99,7 +99,9 @@ map <silent> <LocalLeader>bd :bufdo :bd<CR>
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
 " \rt -- Reload Tsuquyomi
-map <silent> <LocalLeader>rt :TsuStopServer<CR>:TsuStartServer<CR>:TsuquyomiReload<CR>:w<CR>
+autocmd FileType typescript map <silent> <LocalLeader>rt :TsuStopServer<CR>:TsuStartServer<CR>:TsuquyomiReload<CR>:w<CR>
+autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)
+autocmd FileType typescript nmap <buffer> <Leader>E <Plug>(TsuquyomiRenameSymbolC)
 
 " Find/replace using work under cursor
 nnoremap <Leader>s :%s/\V\<<C-r><C-w>\>/
