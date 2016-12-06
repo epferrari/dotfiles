@@ -14,7 +14,8 @@ function replace {
   ignore_hidden_folders="-not -path '*/.*/*'"
   ignore_tmp_dir="-not -path './tmp/*'"
   ignore_bower="-not -path '*/bower_components/*'"
-  find_command="find . $ignore_hidden_folders $ignore_tmp_dir $ignore_bower -name \"$1\" -type f -print0"
+  ignore_node="-not -path '*/node_modules/*'"
+  find_command="find . $ignore_hidden_folders $ignore_tmp_dir $ignore_bower $ignore_node_modules -name \"$1\" -type f -print0"
 
   # Set character encoding to handle special characters
   LC_CTYPE=C
