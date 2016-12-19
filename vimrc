@@ -303,3 +303,15 @@ autocmd BufEnter * if &filetype == "haml" | setlocal indentexpr= | endif
 
 " Auto-update files
 :set autoread
+
+let g:NERDTreeIndicatorMapCustom = {
+  \ "Modified"  : "*",
+  \ "Staged"    : "+",
+  \ "Untracked" : "-",
+  \ "Renamed"   : "^",
+  \ "Unmerged"  : "=",
+  \ "Deleted"   : "x",
+  \ "Dirty"     : "*",
+  \ "Clean"     : "✔︎",
+  \ "Unknown"   : "?"
+  \ }
