@@ -298,3 +298,7 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Clean"     : "✔︎",
   \ "Unknown"   : "?"
   \ }
+
+" Better tmux integration with NERDTree
+let g:NERDTreeMapJumpNextSibling = '<Nop>'
+let g:NERDTreeMapJumpPrevSibling = '<Nop>'
