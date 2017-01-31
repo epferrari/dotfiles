@@ -102,6 +102,8 @@ map <silent> <LocalLeader>uc :TComment<CR>
 autocmd FileType typescript map <silent> <LocalLeader>rt :TsuStopServer<CR>:TsuStartServer<CR>:TsuquyomiReload<CR>:w<CR>
 autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)
 autocmd FileType typescript nmap <buffer> <Leader>E <Plug>(TsuquyomiRenameSymbolC)
+" \h  -- Get TS hint
+autocmd FileType typescript nmap <buffer> <leader>h : <C-u>echo tsuquyomi#hint()<CR>
 
 " Find/replace using work under cursor
 nnoremap <Leader>s :%s/\V\<<C-r><C-w>\>/
@@ -302,3 +304,11 @@ let g:NERDTreeIndicatorMapCustom = {
 " Better tmux integration with NERDTree
 let g:NERDTreeMapJumpNextSibling = '<Nop>'
 let g:NERDTreeMapJumpPrevSibling = '<Nop>'
+
+" Enable mouse in all modes
+set mouse=a
+if has("mouse_sgr")
+  set ttymouse=sgr
+else
+  " set ttymouse=xterm2
+end
