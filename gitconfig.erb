@@ -20,6 +20,7 @@
   pullall = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
   sgrep = "!f() { git grep \"$1\"; git submodule foreach \"git grep '$1'; true\" | grep -B 1 \"$1\"; }; f"
   rs = submodule foreach git reset --hard
+  si = stash-index
 [color]
   diff = auto
   status = auto
