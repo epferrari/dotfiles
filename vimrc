@@ -249,26 +249,11 @@ noremap <C-M-l> :vertical resize +2<CR>
 noremap <C-M-j> :resize +1<CR>
 noremap <C-M-k> :resize -1<CR>
 
+" Enable Ale syntax highlighter
+let &runtimepath.=',~/.vim/bundle/ale'
+
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled=1
-
-" Enable Syntastic checkers
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_html_tidy_ignore_errors=["proprietary attribute \"ng-", "trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected"]
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_sass_checkers=["sasslint"]
-let g:syntastic_scss_checkers=["sasslint"]
-let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
-let g:syntastic_json_checkers = ['jsonlint']
-let g:syntastic_sh_checkers = ['shellcheck']
-let g:tsuquyomi_disable_quickfix = 1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 function SetTslintOptions()
   if exists(':TsuStartServer')

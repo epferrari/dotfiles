@@ -152,15 +152,10 @@
 
 ####### VI Syntax Highlighting ########
 
-# Syntax alerts on save
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-  url = https://github.com/scrooloose/syntastic.git
-
-# Syntastic SCSS extension
-[submodule "vim/bundle/vim-sass-lint"]
-	path = vim/bundle/vim-sass-lint
-	url = https://github.com/gcorne/vim-sass-lint.git
+# Asynchronous linter
+[submodule "vim/bundle/ale"]
+	path = vim/bundle/ale
+	url = https://github.com/w0rp/ale.git
 
 # Ruby syntax highlighting
 [submodule "vim/bundle/vim-ruby"]
