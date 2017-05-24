@@ -255,24 +255,6 @@ let &runtimepath.=',~/.vim/bundle/ale'
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled=1
 
-function SetTslintOptions()
-  if exists(':TsuStartServer')
-    " If tsuquyomi is installed, ask for the config file name
-    let tsconfig = tsuquyomi#tsClient#tsProjectInfo(@%, 0)['configFileName']
-
-    " TODO: pull the version number out of syntastic.
-    let tslint_version = system('tslint --version')[0]
-
-    if tslint_version >= 5
-      " tslint v5 requires tsconfig file specified for some rules
-      let g:syntastic_typescript_tslint_args = '--type-check -p ' . tsconfig
-    endif
-  endif
-endfunction
-
-autocmd Filetype typescript call SetTslintOptions()
-
-
 " Vundle configuration
 "call vundle#rc()
 "Bundle 'gmarik/vundle'
