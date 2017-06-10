@@ -1,7 +1,9 @@
+<% print("Your Name: "); STDOUT.flush; name = STDIN.gets.chomp %>
+<% print("Your Email: "); STDOUT.flush; email = STDIN.gets.chomp %>
 <% unless $promptless %>
 [user]
-  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name = <%= name %>
+  email = <%= email %>
 <% end %>
 [alias]
   co = checkout
@@ -10,6 +12,7 @@
   rb = !sh -c 'git fetch &&  git checkout --track -b $0 origin/$0'
   rl = branch -a
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%%an>%Creset' --abbrev-commit --date=relative
+  sup = !sh -c 'git submodule update --init --recursive && git submodule status'
   pup = !sh -c 'git submodule update --init --recursive && git submodule status'
   su = !sh -c 'git submodule -q foreach git pull -q origin master'
   autoformat = !sh -c 'git rev-parse && cp ~/.bin/pre-commit $(git rev-parse --show-cdup).git/hooks/ && echo "Autoformat enabled on commit"'
@@ -21,6 +24,11 @@
   sgrep = "!f() { git grep \"$1\"; git submodule foreach \"git grep '$1'; true\" | grep -B 1 \"$1\"; }; f"
   rs = submodule foreach git reset --hard
   si = stash-index
+  recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+  overview = log --all --since='2 weeks' --oneline --no-merges
+  recap = log --all --oneline --no-merges --author="<%= email %>"
+  today = log --since=00:00:00 --all --no-merges --oneline --author="<%= email %>"
+  graph = log --graph --all --decorate --stat --date=iso
 [color]
   diff = auto
   status = auto
