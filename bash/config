@@ -3,6 +3,7 @@ export AUTOFEATURE="true"
 export NOTES_DIR=~/Dropbox/Notes
 export CODE_HOME=~/Code
 export TERM="xterm-256color"
+export HISTCONTROL="ignoreboth"
 
 # Change caps-lock to another Esc key
 if which setxkbmap > /dev/null; then
