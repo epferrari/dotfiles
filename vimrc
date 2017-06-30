@@ -252,6 +252,14 @@ noremap <C-M-k> :resize -1<CR>
 " Enable Ale syntax highlighter
 let &runtimepath.=',~/.vim/bundle/ale'
 
+" Disable eslint on TypeScript files
+let g:ale_linters = {
+\   'typescript': ['tslint', 'tsserver', 'typecheck']
+\}
+
+" Ale shows linter
+let g:ale_echo_msg_format = '[%linter%] %s'
+
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled=1
 
