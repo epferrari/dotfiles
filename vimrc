@@ -298,10 +298,10 @@ else
   " set ttymouse=xterm2
 end
 
-autocmd BufWritePre,InsertLeave *.js Neoformat
-"autocmd BufWritePre,InsertLeave *.jsx Neoformat
-autocmd BufWritePre,InsertLeave *.ts Neoformat
-"autocmd BufWritePre,InsertLeave *.tsx Neoformat
-autocmd FileType javascript set formatprg=node_modules/.bin/prettier\ --stdin\ --single-quote\ --no-bracket-spacing
-autocmd FileType typescript set formatprg=node_modules/.bin/prettier\ --stdin\ --single-quote\ --no-bracket-spacing
-let g:neoformat_try_formatprg = 1
+" autocmd BufWritePre,InsertLeave *.js Neoformat
+" autocmd BufWritePre,InsertLeave *.jsx Neoformat
+" autocmd BufWritePre,InsertLeave *.ts Neoformat
+" autocmd BufWritePre,InsertLeave *.tsx Neoformat
+" autocmd FileType javascript set formatprg=node_modules/.bin/prettier\ --stdin\ --single-quote\ --no-bracket-spacing
+" autocmd FileType typescript set formatprg=node_modules/.bin/prettier\ --stdin\ --single-quote\ --no-bracket-spacing
+" let g:neoformat_try_formatprg = 1
