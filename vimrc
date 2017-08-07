@@ -252,6 +252,14 @@ noremap <C-M-k> :resize -1<CR>
 " Enable Ale syntax highlighter
 let &runtimepath.=',~/.vim/bundle/ale'
 
+" Disable eslint on TypeScript files
+let g:ale_linters = {
+\   'typescript': ['tslint', 'tsserver', 'typecheck']
+\}
+
+" Ale shows linter
+let g:ale_echo_msg_format = '[%linter%] %s'
+
 " Disable Markdown folding
 let g:vim_markdown_folding_disabled=1
 
@@ -297,11 +305,3 @@ if has("mouse_sgr")
 else
   " set ttymouse=xterm2
 end
-
-autocmd BufWritePre,InsertLeave *.js Neoformat
-"autocmd BufWritePre,InsertLeave *.jsx Neoformat
-autocmd BufWritePre,InsertLeave *.ts Neoformat
-"autocmd BufWritePre,InsertLeave *.tsx Neoformat
-autocmd FileType javascript set formatprg=node_modules/.bin/prettier\ --stdin\ --single-quote\ --no-bracket-spacing
-autocmd FileType typescript set formatprg=node_modules/.bin/prettier\ --stdin\ --single-quote\ --no-bracket-spacing
-let g:neoformat_try_formatprg = 1

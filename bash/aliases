@@ -157,7 +157,7 @@ alias kr='bundle exec rake karma:run'
 platform='unknown'
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
-  alias pbcopy="xsel -b"
+  alias pbcopy="xclip -selection clipboard"
 
   if [ -f /usr/local/bin/gvim ];
   then

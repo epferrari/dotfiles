@@ -246,8 +246,3 @@
 [submodule "vim/bundle/vim-tsx"]
 	path = vim/bundle/vim-tsx
   url = https://github.com/ianks/vim-tsx.git
-
-# Auto-file formatting
-[submodule "vim/bundle/neoformat"]
-	path = vim/bundle/neoformat
-	url = https://github.com/sbdchd/neoformat
