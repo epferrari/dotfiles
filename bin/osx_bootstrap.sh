@@ -2,10 +2,8 @@
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install command line tools
-brew install cmake wget
-brew install nvm python
-brew install neovim/neovim/neovim
-pip install --upgrade neovim
+brew install cmake wget nvm python neovim/neovim/neovim
+pip2 install --upgrade neovim
 
 # RVM
 \curl -sSL https://get.rvm.io | bash -s stable
@@ -30,7 +28,14 @@ rake install
 # Install apps
 brew cask install mattr-slate
 brew cask install dropbox
-brew cask install google-chrome
-brew cask install dwihn0r-keepassx
-brew cask install iterm2
-brew cask install macvim
+brew cask install keepassx
+brew cask install alfred
+brew cask install keepassx
+brew cask install transmission
+brew cask install google-earth-pro
+brew cask install flux
+brew cask install vlc
+brew cask install virtualbox
+brew cask install keepingyouawake
+brew cask install thunderbird
+brew cask install gmvault
