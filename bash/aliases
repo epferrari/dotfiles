@@ -196,7 +196,7 @@ alias gsg='git sgrep'
 
 # Branch Clean: clears out all local git branches that have already been merged into the active branch
 brclean () {
-  branches_to_delete="$( git branch --merged | grep -v '^\*' | grep -v 'master' | grep -v 'staging' )"
+  branches_to_delete="$( git branch --merged | grep -v '^\*' | grep -v 'master' | grep -v 'staging' | grep -v 'release' )"
   if [[ "$branches_to_delete" == "" ]]; then
     echo "No branches to delete"
   else
