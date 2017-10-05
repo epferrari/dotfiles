@@ -30,7 +30,6 @@ brew cask install mattr-slate
 brew cask install dropbox
 brew cask install keepassx
 brew cask install alfred
-brew cask install keepassx
 brew cask install transmission
 brew cask install google-earth-pro
 brew cask install flux
