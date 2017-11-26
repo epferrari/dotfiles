@@ -4,8 +4,12 @@ export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 
+# Python
 if [[ -d $HOME/.local/lib/python2.7/site-packages ]]; then
   export SITE_PACKAGES="$HOME/.local/lib/python2.7/site-packages"
+elif [[ -d $HOME/Library/Python/2.7/lib/python/site-packages ]]; then
+  export SITE_PACKAGES="$HOME/Library/Python/2.7/lib/python/site-packages"
+  export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 else
   export SITE_PACKAGES=`python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"`
 fi
