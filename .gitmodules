@@ -132,11 +132,6 @@
 	path = vim/bundle/vim-surround
   url = https://github.com/tpope/vim-surround.git
 
-# TypeScript autocomplete
-[submodule "vim/bundle/tsuquyomi"]
-	path = vim/bundle/tsuquyomi
-  url = https://github.com/Quramy/tsuquyomi.git
-
 # Background process (required by tsuquyomi)
 [submodule "vim/bundle/vimproc.vim"]
 	path = vim/bundle/vimproc.vim
