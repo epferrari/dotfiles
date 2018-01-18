@@ -98,12 +98,14 @@ map <LocalLeader>aw :Ack '<C-R><C-W>'
 map <silent> <LocalLeader>bd :bufdo :bd<CR>
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
-" \rt -- Reload Tsuquyomi
-autocmd FileType typescript map <silent> <LocalLeader>rt :TsuStopServer<CR>:TsuStartServer<CR>:TsuquyomiReload<CR>:w<CR>
-autocmd FileType typescript nmap <buffer> <Leader>e <Plug>(TsuquyomiRenameSymbol)
-autocmd FileType typescript nmap <buffer> <Leader>E <Plug>(TsuquyomiRenameSymbolC)
-" \h  -- Get TS hint
-autocmd FileType typescript nmap <buffer> <leader>h : <C-u>echo tsuquyomi#hint()<CR>
+
+autocmd FileType typescript setlocal completeopt+=menu,preview
+autocmd FileType typescript nmap <buffer> <leader>rn :YcmCompleter RefactorRename<Space>
+autocmd FileType typescript nmap <buffer> <leader>t :YcmCompleter GetType<CR>
+autocmd FileType typescript nmap <buffer> <leader>h :YcmCompleter GetDoc<CR>
+autocmd FileType typescript nmap <buffer> <leader>gd :YcmCompleter GoToDefinition<CR>
+autocmd FileType typescript nmap <buffer> <leader>gr :YcmCompleter GoToReferences<CR>
+
 
 " Find/replace using work under cursor
 nnoremap <Leader>s :%s/\V\<<C-r><C-w>\>/
