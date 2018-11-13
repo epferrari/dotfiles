@@ -13,6 +13,7 @@ task :install do
 
   system('bin/install_powerline_fonts.sh')
 
+  setup_fzf
   setup_neovim
   setup_vim_plugins
 end
@@ -25,6 +26,7 @@ task :promptless_install do
   create_local_files
   link_files(Dir.pwd, ENV['HOME'], :prefix => '.', :replace_all => true)
 
+  setup_fzf
   setup_neovim
   setup_vim_plugins
 end
@@ -32,6 +34,10 @@ end
 def create_local_files
   system('touch ~/.vimrc.local')
   system('touch ~/.gvimrc.local')
+end
+
+def setup_fzf
+  system('~/.fzf/install')
 end
 
 def setup_vim_plugins

@@ -10,6 +10,11 @@
 	path = zsh/plugins/zsh-syntax-highlighting
   url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 
+# Improved Ctrl + R
+[submodule "fzf"]
+	path = fzf
+	url = https://github.com/junegunn/fzf.git
+
 ###### Tmux Plugins #####
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm

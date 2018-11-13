@@ -31,3 +31,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load tmuxinator completion
 [[ -s "$HOME/.bin/tmuxinator.bash" ]] && source "$HOME/.bin/tmuxinator.bash"
+
+# Load fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
