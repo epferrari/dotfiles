@@ -193,6 +193,8 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gg='git g'
 alias gsg='git sgrep'
+# grs: git reset submodules
+alias grs="git submodule foreach --recursive | tac | sed 's/Entering //' | xargs -n1 -i bash -c 'echo {} && cd {} && git clean -ffd && git reset --hard'"
 
 # Branch Clean: clears out all local git branches that have already been merged into the active branch
 brclean () {
