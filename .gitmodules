@@ -28,9 +28,9 @@
   url = https://github.com/gmarik/vundle.git
 
 # Color schemes
-[submodule "vim/bundle/vim-colorschemes"]
-  path = vim/bundle/vim-colorschemes
-  url = https://github.com/flazz/vim-colorschemes.git
+[submodule "vim/bundle/vimcolors"]
+  path = vim/bundle/vimcolors
+  url = https://github.com/KurtPreston/vimcolors.git
 
 # Fancier VIM status bar
 [submodule "vim/bundle/vim-rails"]
