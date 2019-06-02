@@ -364,3 +364,10 @@ function set_tab_title () {
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 # add support for ctrl+o to open selected file in VS Code
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+
+############## FFMPEG ######################
+function aif2mp3() {
+  for i in *.aif; do
+    ffmpeg -i "$i" -codec:a libmp3lame -qscale:a 4 "${i%.*}.mp3";
+  done
+}
