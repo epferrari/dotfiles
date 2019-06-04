@@ -12,3 +12,10 @@ fi
 if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+       . /etc/bashrc
+fi
