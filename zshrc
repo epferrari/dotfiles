@@ -20,6 +20,8 @@ source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Disable auto-correct
 unsetopt correct_all
 
+export SHELL="$(which zsh)"
+
 # Bash settings
 . ~/.bash/aliases
 . ~/.bash/paths
@@ -31,6 +33,9 @@ unsetopt correct_all
 . ~/.zsh/completion
 . ~/.zsh/prompt
 . ~/.zsh/shared_history
+
+# load fzf for zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && . ~/.localrc
