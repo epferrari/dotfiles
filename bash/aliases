@@ -371,3 +371,19 @@ function aif2mp3() {
     ffmpeg -i "$i" -codec:a libmp3lame -qscale:a 4 "${i%.*}.mp3";
   done
 }
+
+# Splits an audio file into multiple chunks based on silence
+# Use:
+#   splitname $AUDIO_FILE
+function splitaudio() {
+  filename=$(basename -- "$1")
+  extension="${filename##*.}"
+  basename="${filename%.*}"
+
+  min_duration=3
+  max_silence_volume=0.1%
+  tail_duration=0.3 # .3sec
+  sox -V3 "$1" "${basename}_split.${extension}" silence \
+    1 $min_duration $max_silence_volume \
+    1 $tail_duration $max_silence_volume : newfile : restart
+}
