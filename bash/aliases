@@ -387,3 +387,32 @@ function splitaudio() {
     1 $min_duration $max_silence_volume \
     1 $tail_duration $max_silence_volume : newfile : restart
 }
+
+# Rename files according to text document
+# Use:
+#   bulkrename $INDEX_FILE $FILE_QUERY
+#   bulkrename songs.txt "*.aif"
+function bulkrename() {
+   index=$1
+   files=$2
+
+   index_entries=$(wc "$index" | awk '{print $1}')
+   num_files=$(find . -name "$files" | wc -l | awk '{print $1}')
+   echo "Index entries: $index_entries"
+   echo "Files: $num_files"
+   if [ "$index_entries" -ne "$num_files" ]; then
+     echo "Aborting"
+     return
+   fi
+
+   file_list=($files)
+   i=0
+   while read newname; do
+     oldfile=${file_list[$i]}
+     extension="${oldfile##*.}"
+     command="mv \"${oldfile}\" \"${newname}.${extension}\""
+     echo "$command"
+     eval "$command"
+     (( i++ ))
+   done <$index
+}
