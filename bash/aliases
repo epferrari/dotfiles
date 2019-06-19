@@ -393,26 +393,32 @@ function splitaudio() {
 #   bulkrename $INDEX_FILE $FILE_QUERY
 #   bulkrename songs.txt "*.aif"
 function bulkrename() {
-   index=$1
-   files=$2
+  index=$1
+  files=$2
 
-   index_entries=$(awk '1' "$index" | wc -l | awk '{print $1}')
-   num_files=$(find . -name "$files" | wc -l | awk '{print $1}')
-   echo "Index entries: $index_entries"
-   echo "Files: $num_files"
-   if [ "$index_entries" -ne "$num_files" ]; then
-     echo "Aborting"
-     return
-   fi
+  index_entries=$(awk '1' "$index" | wc -l | awk '{print $1}')
+  num_files=$(find . -name "$files" | wc -l | awk '{print $1}')
+  echo "Index entries: $index_entries"
+  echo "Files: $num_files"
+  if [ "$index_entries" -ne "$num_files" ]; then
+    echo "Aborting"
+    return
+  fi
 
-   file_list=($files)
-   i=0
-   while read newname || [ -n "$newname" ]; do
-     oldfile=${file_list[$i]}
-     extension="${oldfile##*.}"
-     command="mv \"${oldfile}\" \"${newname}.${extension}\""
-     echo "$command"
-     eval "$command"
-     (( i++ ))
-   done <$index
+  # Populate file list
+  file_list=()
+  while IFS=  read -r -d $'\0'; do
+     file_list+=("$REPLY")
+  done < <(find . -name "$files" -print0)
+
+  # Iterate over file list, moving all files
+  i=0
+  while read newname || [ -n "$newname" ]; do
+    oldfile="${file_list[$i]}"
+    extension="${oldfile##*.}"
+    command="mv \"${oldfile}\" \"${newname}.${extension}\""
+    echo "$command"
+    eval "$command"
+    (( i++ ))
+  done <$index
 }
