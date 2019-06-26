@@ -416,7 +416,13 @@ function bulkrename() {
   while read newname || [ -n "$newname" ]; do
     oldfile="${file_list[$i]}"
     extension="${oldfile##*.}"
-    command="mv \"${oldfile}\" \"${newname}.${extension}\""
+    newfile="${newname}.${extension}"
+    newdir=$(dirname "$newfile")
+
+    if [ ! -d "$newdir" ]; then
+      mkdir -p "$newdir"
+    fi
+    command="mv \"${oldfile}\" \"${newfile}\""
     echo "$command"
     eval "$command"
     (( i++ ))
