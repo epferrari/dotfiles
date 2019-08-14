@@ -409,7 +409,7 @@ function bulkrename() {
   file_list=()
   while IFS=  read -r -d $'\0'; do
      file_list+=("$REPLY")
-  done < <(find . -name "$files" -print0)
+  done < <(find . -name "$files" -print0 | sort -z)
 
   # Iterate over file list, moving all files
   i=0
