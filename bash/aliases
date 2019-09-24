@@ -380,12 +380,18 @@ function splitaudio() {
   extension="${filename##*.}"
   basename="${filename%.*}"
 
-  min_duration=3
+  # Set sox params
+  min_duration=3 # ignore any sound less than 3s in length
   max_silence_volume=0.1%
   tail_duration=0.3 # .3sec
+
+  # Split file based on silence
   sox -V3 "$1" "${basename}_split.${extension}" silence \
     1 $min_duration $max_silence_volume \
     1 $tail_duration $max_silence_volume : newfile : restart
+
+  # This sometimes produces short undesired artifacts. Delete them
+  find . -name "${basename}_split*.${extensions}" -type f -size -50k -delete
 }
 
 # Rename files according to text document
