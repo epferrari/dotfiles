@@ -367,8 +367,14 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 
 ############## FFMPEG ######################
 function aif2mp3() {
-  for i in *.aif; do
-    ffmpeg -i "$i" -codec:a libmp3lame -qscale:a 4 "${i%.*}.mp3";
+  for i in $1; do
+    ffmpeg -i "$i" -codec:a libmp3lame -qscale:a 2 "${i%.*}.mp3";
+  done
+}
+
+function aif2flac() {
+  for i in $1; do
+    ffmpeg -i "$i" -codec:a flac "${i%.*}.flac";
   done
 }
 
@@ -433,4 +439,45 @@ function bulkrename() {
     eval "$command"
     (( i++ ))
   done <$index
+}
+
+function spacify() {
+  for i in $1
+  do 
+    mv  "$i" "${i//_/ }"
+  done
+}
+
+function encode_video {
+  audio=$1
+  image=$2
+
+  filename=$(basename -- "$1")
+  extension="${filename##*.}"
+  basename="${filename%.*}"
+
+  height=$(identify -format '%h' "$2")
+  width=$(identify -format '%w' "$2")
+
+  even_height=$(( $height - ($height % 2) ))
+  even_width=$(( $width - ($width % 2) ))
+
+  command="ffmpeg \
+    -i \"$audio\" \
+    -loop 1 \
+    -framerate 2 \
+    -i \"$2\" \
+    -map 0 \
+    -map 1 \
+    -c:v libx264 \
+    -preset medium \
+    -tune stillimage \
+    -vf \"crop=$even_width:$even_height\" \
+    -crf 18 \
+    -c:a copy \
+    -shortest \
+    -pix_fmt yuv420p \
+    \"${basename}.mp4\""
+
+  echo $command
 }
